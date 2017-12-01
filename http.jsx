@@ -1,68 +1,106 @@
-function Http(){
+/*
+ *ajax请求使用方式：
+ * http.newAjax({
+ * 		url:'',//路径
+ * 		method:'',//post/get
+ * 		data:{},//数据
+ * 		dataType:'',//默认text，支持json/jsonp/XML/text
+ * 		contentType:'',//post请求，请求头字段设置
+ *      success:function(){},//成功回调函数
+ * 		error:function(){}//错误回调函数,一般是http码状态错误
+ * })
+ * 
+ * */
+
+function Http() {
 	//数据拼接；
-	this.jointData = function(jiont){
+	this.jointData = function(jiont) {
 		let jiontString = ''
-		for(let i in jiont){
-			 jiontString += i+"="+jiont[i]+"&"
+		for(let i in jiont) {
+			jiontString += i + "=" + jiont[i] + "&"
 		}
-		return jiontString.substr(0,jiontString.length-1);
+		return jiontString.substr(0, jiontString.length - 1);
+	}
+	//请求成功移除script；
+	this.removeScript = function(id){
+		var  Bscript = document.getElementById(id);
+	    document.body!=null&&Bscript!=null?document.body.removeChild(Bscript):'';
 	}
 }
+
 //ajax请求封装
-Http.prototype.newAjax = function(option,callback,error){
-let	defaultOption =  {
-		url:'',
-		method:'post',
-		data:{},
-		dataType:'text',
-		contentType:'application/json;charset=UTF-8'
+Http.prototype.newAjax = function(option) {
+	let defaultOption = {
+		url: '',
+		method: 'post',
+		data: {},
+		dataType: 'text',
+		contentType: 'application/json;charset=UTF-8',
+		success:'function',
+		error:'function'
 	}
 	option = option || defaultOption
-	callback = callback || 'callback'
-	error = error || 'error'
-	let setAjax
-	//第一步创建ajax对象
-	if(window.XMLHttpRequest){
-		 setAjax = new XMLHttpRequest();
-	}else{
-		 setAjax = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	let newData = null
-	if(/^get$/i.test(option.method)){
-		const newUrl=option.data?(JSON.stringify(option.data)=='{}'?option.url:option.url+'?'+this.jointData(option.data)):option.url
-		//调取方法，open方法；
-		setAjax.open(option.method,newUrl,true);
-	}else if(/^post$/i.test(option.method)){
-		setAjax.open(option.method,option.url);
-		let contentType = option.contentType?option.contentType:defaultOption.contentType;
-		setAjax.setRequestHeader("Content-type",contentType);
-		//通过Content-type字段拼接设置数据；
-		if(contentType=='application/json;charset=UTF-8'){
-			newData = JSON.stringify(option.data)
-		}else if(contentType=='application/x-www-form-urlencoded;charset=UTF-8'){
-		    newData = option.data?(JSON.stringify(option.data)=='{}'?null:this.jointData(option.data)):null
-		}
-		
-	}
-	setAjax.send(newData);
-	//监听状态请求；
-	setAjax.onreadystatechange=function(){
-     //监听ajax状态码；
-     if(setAjax.readyState==4){
-     	if(setAjax.status>=200&&setAjax.status<300||setAjax.status==304){
-     		
-     			let data = option.dataType=='json'?JSON.parse(setAjax.responseText):option.dataType=='XML'?setAjax.responseXML:setAjax.responseText;
-     			callback(data);
-     	}else{
-       		let err = setAjax.responseText?JSON.parse(setAjax.responseText):setAjax.responseText;
-     		error(err);
-     	}
-     }
-    }
-	//return setAjax
-}
-Http.prototype.newFetch = function(){
 	
+	option.url = option.url?option.url:'';
+	
+	if(option.dataType == 'jsonp') {
+		const random = Math.random() * 100;  
+        const number = parseInt(random); 
+        const successRandom = "successrandom_" + number; //指定回调函数  
+        window[successRandom] = option.success;  
+		const Ascript = document.createElement('script');
+		const srcUrl = option.url+'?callback='+successRandom
+		//拼接data数据；
+	    Ascript.src = option.data?(JSON.stringify(option.data) == '{}' ? srcUrl : srcUrl + '&' + this.jointData(option.data)):srcUrl 
+		Ascript.type = 'text/javascript';
+		Ascript.async = true;
+		document.body.appendChild(Ascript);
+		//数据每次请求成功后移除script；
+		Ascript.id=number;
+		this.removeScript(Ascript.id);
+	} else {
+		let setAjax
+		//第一步创建ajax对象
+		if(window.XMLHttpRequest) {
+			setAjax = new XMLHttpRequest();
+		} else {
+			setAjax = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		let newData = null
+		if(/^get$/i.test(option.method)) {
+			const newUrl = option.data ? (JSON.stringify(option.data) == '{}' ? option.url : option.url + '?' + this.jointData(option.data)) : option.url
+			//调取方法，open方法；
+			setAjax.open(option.method, newUrl, true);
+		} else if(/^post$/i.test(option.method)) {
+			setAjax.open(option.method, option.url);
+			let contentType = option.contentType ? option.contentType : defaultOption.contentType;
+			setAjax.setRequestHeader("Content-type", contentType);
+			//通过Content-type字段拼接设置数据；
+			if(contentType == 'application/json;charset=UTF-8') {
+				newData = JSON.stringify(option.data)
+			} else if(contentType == 'application/x-www-form-urlencoded;charset=UTF-8') {
+				newData = option.data ? (JSON.stringify(option.data) == '{}' ? null : this.jointData(option.data)) : null
+			}
+		}
+		//send方法；
+		setAjax.send(newData);
+		//监听状态请求；
+		setAjax.onreadystatechange = function() {
+			//监听ajax状态码；
+			if(setAjax.readyState == 4) {
+				if(setAjax.status >= 200 && setAjax.status < 300 || setAjax.status == 304) {
+      				let data = option.dataType == 'json' ? JSON.parse(setAjax.responseText) : option.dataType == 'XML' ? setAjax.responseXML : setAjax.responseText;
+					option.success(data);
+				} else {
+					let err = setAjax.responseText ? JSON.parse(setAjax.responseText) : setAjax.responseText;
+					option.error(err);
+				}
+			}
+		}
+	}
+}
+Http.prototype.newFetch = function() {
+
 }
 let http = new Http();
 
