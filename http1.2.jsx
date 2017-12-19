@@ -47,7 +47,6 @@ function Http() {
 					}
 				}
 	}
-	//console.log(111);
 }
 //ajax请求封装
 Http.prototype.scottAjax = function(option) {
@@ -55,7 +54,7 @@ Http.prototype.scottAjax = function(option) {
 		url: '',
 		method: 'post',
 		data: {},
-		dataType: 'json',
+		dataType: 'text',
 		contentType: 'application/json;charset=UTF-8',
 		success:function(){},
 		error:function(){},
@@ -63,10 +62,12 @@ Http.prototype.scottAjax = function(option) {
 	    async:true
 	}
 	option = option || defaultOption;
-	option.url = option.url?option.url:'';
+	option.method = option.method || defaultOption.method;
+	option.url = option.url || defaultOption.url;
 	option.contentType = option.contentType ||defaultOption.contentType;
     option.Authorization = option.Authorization || defaultOption.Authorization;
     option.async = option.async===false?option.async:(option.async==true?option.async:defaultOption.async)
+	option.dataType = option.dataType || defaultOption.dataType;
 	//console.log(option.async)
 	if(option.dataType == 'jsonp') {
 		const random = Math.random() * 100;  
