@@ -107,7 +107,7 @@ Http.prototype.scottAjax = function(option) {
 				if(contentType == ('application/json;charset=UTF-8')) {
 					setAjax.setRequestHeader('Authorization', option.Authorization);
 					newData = JSON.stringify(option.data)
-                } else if(contentType == ('application/x-www-form-urlencoded;charset=UTF-8') {
+                } else if(contentType == 'application/x-www-form-urlencoded;charset=UTF-8') {
 					newData = option.data ? (JSON.stringify(option.data) == '{}' ? null : this.jointData(option.data)) : null
 				}
 		}
