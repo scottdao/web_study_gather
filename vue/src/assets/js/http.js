@@ -28,11 +28,9 @@ class Http{
 	ResInterceptored(){
 		let $this = this
 		axios.interceptors.response.use(function (response) {//响应拦截，响应；
-		    // Do something with response data
 		    $this.log(response,1);
 		    return response;
 		}, function (error) {
-		    // Do something with response error
 		    return Promise.reject(error);
 		});
 	}
