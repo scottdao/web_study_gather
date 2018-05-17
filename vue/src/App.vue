@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 	body,html,div,ul,ol,li,a,h2,h1,h3,h4,h5,h6,p{
 		margin: 0;
 		padding: 0;

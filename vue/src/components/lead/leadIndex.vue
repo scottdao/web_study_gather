@@ -18,7 +18,11 @@
 			}
 		},
 		mounted(){
-			console.log('创建完成')
+			//console.log('创建完成')
+			
+		},
+		update(){
+			
 		},
 		beforeDestroy(){
 			console.log('销毁之前')

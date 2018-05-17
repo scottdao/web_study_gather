@@ -8,10 +8,10 @@ const addMin={
   mutations: {//同步调用
     increment (state) {
       // 变更状态
-      state.count<10?
+      state.count<20?
       state.count++
       :
-      alert('大于10')
+      alert('大于20')
     },
     decrement(state){
     	state.count>0?

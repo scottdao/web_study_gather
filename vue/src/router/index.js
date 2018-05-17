@@ -2,10 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LeadIndex from '@/components/lead/leadIndex'
 import Index from '@/components/index/index'
-import Asset from '@/components/index/asset'
-import Market from '@/components/index/market'
-import Transation from '@/components/index/transation'
+import Main from '@/components/index/main'
+import LookFor from '@/components/index/lookFor'
+import Backpack from '@/components/index/backpack'
 import Mine from '@/components/index/mine'
+import ShopCity from '@/components/index/shopCity'
 Vue.use(Router)
 
 export default new Router({
@@ -19,22 +20,27 @@ export default new Router({
 		  path: '/index',
 		  name: 'Index',
 		  component: Index,
-		  redirect: '/asset',//默认路由
+		  redirect: '/main',//默认路由
 		  children:[//二级路由
 		  	  {
-				      path: '/asset',
-				      name: 'Asset',
-				      component: Asset
+				      path: '/main',
+				      name: 'Main',
+				      component: Main
 				    },
 				    {
-				      path: '/market',
-				      name: 'Market',
-				      component: Market
+				      path: '/lookFor',
+				      name: 'LookFor',
+				      component: LookFor
 				    },
 				     {
-				      path: '/transation',
-				      name: 'Transation',
-				      component: Transation
+				      path: '/backpack',
+				      name: 'Backpack',
+				      component: Backpack
+				    },
+				    {
+				      path: '/shopCity',
+				      name: 'ShopCity',
+				      component: ShopCity
 				    },
 				    {
 				      path: '/mine',

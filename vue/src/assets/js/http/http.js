@@ -3,7 +3,7 @@ import { MessageBox } from 'mint-ui';
 import axios from 'axios'
 class Http{
 	constructor(){
-        axios.defaults.baseURL = 'api';
+        axios.defaults.baseURL = 'http://api.wawa.kinlink.cn';
 //		axios.defaults.headers.common['Authorization'] = token;
 		axios.defaults.headers.post['Content-Type']='application/x-www-form-urlencoded';
 		this.baseURL =  axios.defaults.baseURL;

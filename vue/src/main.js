@@ -7,6 +7,7 @@ import MintUI from 'mint-ui'
 import Http from './assets/js/http/http.js'
 import 'mint-ui/lib/style.css'
 import store from './assets/js/store/index.js'
+import './assets/js/rongyun/rongyun_start.js'
 //import Vuex from 'vuex'
 //Vue.use(Vuex)
 Vue.use(MintUI)
