@@ -66,4 +66,76 @@ vuex:状态管理；
 		2.getters:对state数据进行处理，并根据依赖进行缓存；类似于计算属性；
 		
 		3.Mutation方法：同步函数，会接受state作为第一个参数；
+		
+				第一步，引入vuex npm i --save vuex;
+				
+				第二步，进行模块化加载：import Vuex from 'vuex'
+					  
+					  			Vue.use(Vuex)
+								
+								在new vue对象中，引入；
+								new Vue({
+								  el: '#app',
+								  router,
+								  store,
+								  components: { App },
+								  template: '<App/>'
+								})
+								
 
+				第三步，在mutations属性中，写入同步方法。
+					  在其他组件中写入 this.$store.commit('decrement'方法名,this.count传入的参数);
+					  			this.$store.state调用state值。
+					  			
+
+		4.Action方法：
+		
+		  Action 提交的是 mutation，而不是直接变更状态。
+		  
+		  Action 可以包含任意异步操作。
+		
+		5.module模块化：
+		-------------------------------------------------------------------------------
+			
+			const addMin={
+				state: {
+			    count: 0
+			  },
+			  getters:{
+			  	
+			  },
+			  mutations: {//同步调用
+			    increment (state) {
+			      // 变更状态
+			      state.count<10?
+			      state.count++
+			      :
+			      alert('大于10')
+			    },
+			    decrement(state){
+			    	state.count>0?
+			    	state.count--
+			    	:
+			    	state.count = 0
+			    }
+			  },
+			  actions: {//异步调用
+			    increment (context,data) {
+			      context.commit('increment')
+			    },
+			    decrement(context,data){
+			    	context.commit('decrement')
+			    }
+			  }
+			}
+			
+			const store = new Vuex.Store({
+				  modules:{
+				  	addMin:method.addMin,
+				  }
+			})
+
+			各个子级获取值的方法：
+			
+				this.$store.dispatch('increment',this.count)
+				this.count = this.$store.state.addMin.count;
