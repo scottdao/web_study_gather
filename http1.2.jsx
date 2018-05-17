@@ -119,7 +119,6 @@ Http.prototype.scottAjax = function(option) {
 		//监听状态请求；
 		if(option.async){
 			let that = this;
-			//debugger
 			setAjax.onreadystatechange = function() {
 				
 				that.statusFunc(setAjax,option)
