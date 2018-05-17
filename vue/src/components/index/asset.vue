@@ -1,11 +1,10 @@
 <template>
 	<div id="asset">
-		自唱
 		<button @click="add">+</button>
 			<span>{{count}}</span>
 		<button @click="min">-</button>
 		<Details></Details>
-		<button>提交</button>
+		<button @click="getInfo">提交</button>
 	</div>
 </template>
 
@@ -27,12 +26,15 @@
 		},
 		methods:{
 			add(){
-				this.$store.commit('increment',this.count);
-				this.count = this.$store.state.count;
+				this.$store.dispatch('increment',this.count)
+				this.count = this.$store.state.addMin.count;
 			},
 			min(){
-				this.$store.commit('decrement',this.count);
-				this.count = this.$store.state.count;
+				this.$store.dispatch('decrement',this.count);
+				this.count = this.$store.state.addMin.count;
+			},
+			getInfo(){
+				this.http.log(this.$store.state.formInfo.info,1);
 			}
 		},
 		components:{

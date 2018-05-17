@@ -1,6 +1,7 @@
 <template>
 	<div id="detail">
-		<input type="text"  v-model="detail" @change="getInfo" />
+		<input type="text"  v-model="detail"  />
+		<input type="number" v-model="age"  /> 
 	</div>
 </template>
 
@@ -9,12 +10,37 @@
 		name: 'Asset',
 		data(){
 			return{
-				detail:''
+				info:{},
+				
+			}
+		},
+		computed:{
+			detail:{
+				get(){
+					
+				},
+				set(value){
+					this.http.log(value,1);
+					this.info.detail = value
+					this.$store.commit('getInfo',this.info);
+				}
+			},
+			age:{
+				get(){
+					
+				},
+				set(value){
+					this.info.age = value
+					this.$store.commit('getInfo',this.info);
+				}
 			}
 		},
 		methods:{
 			getInfo(){
-				this.http.log(this.detail,1)
+//				this.info.detail = this.detail
+//				this.info.age = this.age
+//				this.http.log(this.info,1)
+				
 			}
 		}
 		
