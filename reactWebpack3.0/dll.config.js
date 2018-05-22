@@ -23,12 +23,12 @@ module.exports = {
         "lib": vendor,
     },
     plugins: [
-    	new webpack.ProvidePlugin({
-    		$:"jquery",
-    		jquery:"jquery",
-    		"window.jquery":"jquery",
-    		
-    	}),
+//  	new webpack.ProvidePlugin({
+//  		$:"jquery",
+//  		jquery:"jquery",
+//  		"window.jquery":"jquery",
+//  		
+//  	}),
     	new webpack.optimize.OccurenceOrderPlugin(),
     	new webpack.optimize.UglifyJsPlugin({
     		compress:{

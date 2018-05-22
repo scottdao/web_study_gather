@@ -25,7 +25,8 @@ function createHappyThread(id,loaders){
 module.exports={
 	//入口文件；
 	entry:{
-		app:['babel-polyfill','./app/index.jsx']
+		polyfills: './polyfills/polyfills.js',
+		app:'./app/index.jsx'
 	},
 	//出口文件；__dirname+'/build/project/'
 	output:{
@@ -35,7 +36,7 @@ module.exports={
 		chunkFilename:'chuncks/chunkfile.min.js'
 	},
 	resolve:{
-		extensions:['.js','.jsx','.json']
+		extensions:['.js','.jsx','.json','vue']
 	},
 	module:{
 		rules:[
@@ -61,6 +62,10 @@ module.exports={
 			{
 				test:/\.(png|jpg|gif|jpeg|svg)$/i,
 				use:'file-loader?limit=2048&name=img/[hash:8].[name].[ext]'
+			},
+			{
+				test:require.resolve('./gobal/gobal.js'),
+				use:'exports-loader?gobal'
 			}
 		]
 	},
@@ -89,7 +94,12 @@ module.exports={
 		    filename: '[name].min.css',
 		    allChunks: true
 		}),
-		 
+		 new webpack.ProvidePlugin({
+			$$:"jquery",
+			jquery:"jquery",
+			"window.jquery":"jquery",
+			
+		}),
 		//html模板插件；
 		new htmlWebpackPlugin({
 			template:__dirname+'/app/index.tmpl.html',

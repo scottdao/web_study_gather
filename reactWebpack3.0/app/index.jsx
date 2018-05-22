@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import './first.scss'
+import './first.scss';
+import RouterIndex from './router/router';
+import Gobal from '../gobal/gobal'
+
 class Index extends Component{
     constructor(){
         super()
@@ -10,9 +13,9 @@ class Index extends Component{
     }
     render(){
         return(
-             <div>
-                我是react3.0
-              </div>
+             <React.Fragment>
+                <RouterIndex/>
+             </React.Fragment>
         )
     }
 }
