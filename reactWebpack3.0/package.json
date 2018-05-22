@@ -2,13 +2,11 @@
   "name": "catchBaby",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "private": true,
   "scripts": {
-    "build.prod": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "prod": "cross-env NODE_ENV=dev webpack-dev-server  --content-base build    --inline",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server  --content-base --config webpack.dev.js",
-    "start": "npm run dev"
+   "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+   "dev": "cross-env NODE_ENV=dev webpack-dev-server  --content-base --config webpack.dev.js",
+   "start": "npm run dev"
   },
   "author": "scott",
   "license": "ISC",

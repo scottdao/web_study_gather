@@ -15,7 +15,7 @@ const webpackServer = {
 }
 module.exports = merge(common, {
 	cache:true,
-	devtool: 'inline-source-map',
+	devtool: 'inline-source-map',//会导致打包后的文件体积庞大，适用于本地
 	devServer: {
 		host: webpackServer.host,
 		port: webpackServer.port,

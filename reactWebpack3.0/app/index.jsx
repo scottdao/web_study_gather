@@ -1,13 +1,12 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-
-
+import './first.scss'
 class Index extends Component{
     constructor(){
         super()
     }
     componentDidMount(){
-    	console.log(111);
+    	//console.log(111);
     }
     render(){
         return(

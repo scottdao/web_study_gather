@@ -94,6 +94,13 @@ module.exports={
 		new htmlWebpackPlugin({
 			template:__dirname+'/app/index.tmpl.html',
 			//favicon:'./favicon.ico'
+		}),
+		 new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./manifest.json'),
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin({
+
 		})
 	]
 }
