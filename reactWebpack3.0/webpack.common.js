@@ -25,8 +25,7 @@ function createHappyThread(id,loaders){
 module.exports={
 	//入口文件；
 	entry:{
-		polyfills: './polyfills/polyfills.js',
-		app:'./app/index.jsx'
+		app:['babel-polyfill','whatwg-fetch','./app/index.jsx']
 	},
 	//出口文件；__dirname+'/build/project/'
 	output:{
@@ -62,10 +61,6 @@ module.exports={
 			{
 				test:/\.(png|jpg|gif|jpeg|svg)$/i,
 				use:'file-loader?limit=2048&name=img/[hash:8].[name].[ext]'
-			},
-			{
-				test:require.resolve('./gobal/gobal.js'),
-				use:'exports-loader?gobal'
 			}
 		]
 	},
@@ -97,7 +92,7 @@ module.exports={
 		 new webpack.ProvidePlugin({
 			$$:"jquery",
 			jquery:"jquery",
-			"window.jquery":"jquery",
+			"window.jquery":"jquery"
 			
 		}),
 		//html模板插件；

@@ -2,8 +2,6 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import './first.scss';
 import RouterIndex from './router/router';
-import Gobal from '../gobal/gobal'
-
 class Index extends Component{
     constructor(){
         super()

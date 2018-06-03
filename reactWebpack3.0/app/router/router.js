@@ -6,8 +6,7 @@ class routerIndex extends Component{
         super()
     }
     componentDidMount(){
-      	console.log($$);
-      	console.log(Gobal)
+      
     }
     render(){
         return(
