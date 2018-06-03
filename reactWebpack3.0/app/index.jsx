@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import './first.scss';
-import RouterIndex from './router/router';
+import 'Css/first.scss';
+import RouterIndex from 'Router/router';
 class Index extends Component{
     constructor(){
         super()
     }
     componentDidMount(){
     	//console.log(111);
+    	//console.log(root)
     }
     render(){
         return(

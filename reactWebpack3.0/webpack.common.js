@@ -35,7 +35,13 @@ module.exports={
 		chunkFilename:'chuncks/chunkfile.min.js'
 	},
 	resolve:{
-		extensions:['.js','.jsx','.json','vue']
+		extensions:['.js','.jsx','.json','vue'],
+		alias: {
+		  Component: path.resolve(__dirname, 'app/component/'),//代替模块路径
+		  Css:path.resolve(__dirname, 'app/css/'),
+		  Router:path.resolve(__dirname, 'app/router/'),
+		  Src:path.resolve(__dirname, 'app/src/')
+		}
 	},
 	module:{
 		rules:[
@@ -92,7 +98,8 @@ module.exports={
 		 new webpack.ProvidePlugin({
 			$$:"jquery",
 			jquery:"jquery",
-			"window.jquery":"jquery"
+			"window.jquery":"jquery",
+			 //root:__dirname
 			
 		}),
 		//html模板插件；
