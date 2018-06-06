@@ -7,7 +7,7 @@ module.exports = {
 		app:['babel-polyfill','whatwg-fetch','./app/index.jsx']
 	}, //入口文件
 	output: { //出口文件
-		filename: '[name].build.js',
+		filename: '[name].[chunkhash].js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	resolve:{
@@ -60,6 +60,7 @@ module.exports = {
 			   verbose:  true,//开启控制台输出信息
 				dry:false//启用删除文件
 			}),
+	     
 		new webpack.ProvidePlugin({
 			$$:"jquery",
 			jquery:"jquery",

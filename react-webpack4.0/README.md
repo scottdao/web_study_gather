@@ -1,4 +1,4 @@
-webapck4.0+react16.0起步先：
+webapck4.0+react16.0+es6语法 起步先：
 --------------------------------------------------
 
 		"private": true,防止意外发布；
@@ -14,4 +14,4 @@ webapck4.0+react16.0起步先：
 						'css-loader',
 						'sass-loader'
 					]
-				},
+				}

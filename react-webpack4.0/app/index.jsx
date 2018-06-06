@@ -8,7 +8,7 @@ class Index extends Component {
     this.state = {count: 1}
   }
  componentDidMount(){
-    	//console.log($$)
+      	console.log($$)
     }
   shouldComponentUpdate(nextProps, nextState) {
     return false;
