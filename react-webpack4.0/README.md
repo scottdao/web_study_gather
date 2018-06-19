@@ -15,3 +15,9 @@ webapck4.0+react16.0起步先：
 						'sass-loader'
 					]
 				},
+				
+		
+		extract-text-webpack-plugin:css分离插件，只需要将版本定位到^4.0.0-beta.0，就可以
+		
+		安装方式：cnpm install --save-dev extract-text-webpack-plugin@next
+		webpack.ProvidePlugin插件:提供全局变量和方法。
