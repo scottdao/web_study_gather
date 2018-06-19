@@ -11,7 +11,7 @@ module.exports = {
 	}, //入口文件
 	output: { //出口文件
 		filename: '[name].build.js',
-		chunkFilename:'chuncks/chunkfile.min.js',
+		filename: '[name].[chunkhash].js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	resolve:{

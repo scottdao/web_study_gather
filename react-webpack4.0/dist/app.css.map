@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./app/style/app/style/reset.scss"],"names":[],"mappings":"AAAA,iCACI,SACA,SAAU","file":"app.css","sourcesContent":["body,html,p,div,h1,h2,h3,h4,h5,a{\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\nbody{\r\n//  background: red;\r\n}\r\n"],"sourceRoot":""}

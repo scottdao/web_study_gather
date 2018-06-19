@@ -1,4 +1,4 @@
-webapck4.0+react16.0起步先：
+webapck4.0+react16.0+es6语法 起步先：
 --------------------------------------------------
 
 		"private": true,防止意外发布；
@@ -14,6 +14,7 @@ webapck4.0+react16.0起步先：
 						'css-loader',
 						'sass-loader'
 					]
+
 				},
 				
 		
@@ -21,3 +22,4 @@ webapck4.0+react16.0起步先：
 		
 		安装方式：cnpm install --save-dev extract-text-webpack-plugin@next
 		webpack.ProvidePlugin插件:提供全局变量和方法。
+
