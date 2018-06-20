@@ -10,8 +10,8 @@ module.exports = {
 		app:['babel-polyfill','whatwg-fetch','./app/index.jsx']
 	}, //入口文件
 	output: { //出口文件
-		filename: '[name].build.js',
-		filename: '[name].[chunkhash].js',
+		//filename: '[name].build.js',
+		filename: '[name].[hash].js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	resolve:{

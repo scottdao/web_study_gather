@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 import {
-  HsahRouter as Router,
+  BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-class RouterIndex extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
   }
@@ -13,8 +13,9 @@ class RouterIndex extends Component {
    }
   render() {
     return(<div>
-		    	我是路由
+    			资产
+    			<Link to='/detail'>进入详情</Link>
 		    </div>)
   }
 }
-export default RouterIndex;
+export default Main;
