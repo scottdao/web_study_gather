@@ -10,7 +10,7 @@ class Mine extends Component {
   }
  componentDidMount(){
  			
-   }
+ }
   render() {
     return(<div>
 		    	我的的界面

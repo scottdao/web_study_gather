@@ -13,14 +13,15 @@ class Http {
 		if(token !='undefined' && token != null ){
 			Object.assign(data,{token:token})
 		}
+		var $url = '';
 		if(/(^https?:\/\/)|(^\d{3}.\d{1,3}.\d{1,3}.\d{1,3}:\d{0,4})/.test(url)){
-			url = url
+			$url = url
 		}else{
-			url = this.URL + url
+			$url = this.URL + url
 		}
 		
 		data = qs.stringify(data);
-		fetch(url,{
+		fetch($url,{
         			 method:'post',
         			 body:data,
         			 headers:{
@@ -31,6 +32,7 @@ class Http {
         	}).catch((err)=>{
         		console.log(err)
         	})
+        $url = null;
 	}
 	
 }

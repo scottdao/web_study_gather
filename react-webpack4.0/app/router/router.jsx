@@ -13,7 +13,7 @@ import Login from 'Src/login/login'
 import Mine from 'Src/index/mine'
 import Main from 'Src/index/main'
 import Detail from 'Src/index/detail'
-//console.log(Login);
+
 class RouterIndex extends Component {
   constructor(props) {
     super(props);

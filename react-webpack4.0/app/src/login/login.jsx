@@ -15,7 +15,7 @@ class Login extends Component {
   	
     return(
     	 <div>
-			<Link to='/index/main'>登录界面</Link>
+			<Link to='/index'>登录界面</Link>
     	 </div>
     )
   }
