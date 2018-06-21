@@ -6,7 +6,7 @@ import {
   Link,
   NavLink 
 } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -20,5 +20,8 @@ class Index extends Component {
 		    	<NavLink  to='/index/mine'>我的</NavLink >
 		    </div>)
   }
+}
+Index.contextTypes = {
+  store: PropTypes.object
 }
 export default Index;
