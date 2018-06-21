@@ -10,7 +10,8 @@ class Detail extends Component {
   }
  componentDidMount(){
  			
-   }
+ 			
+  }
   render() {
     return(<div>
     			详情页面

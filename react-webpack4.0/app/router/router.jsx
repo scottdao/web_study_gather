@@ -13,15 +13,16 @@ import Login from 'Src/login/login'
 import Mine from 'Src/index/mine'
 import Main from 'Src/index/main'
 import Detail from 'Src/index/detail'
-
+import PropTypes from 'prop-types'
+//console.log(connect)
 class RouterIndex extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props,context) {
+    super(props,context);
+  	//console.log(context)
   }
- componentDidMount(){
- 			
-   }
- 
+ 	componentDidMount(){
+
+  }
   render() {
     return(<HashRouter >
 			    	<React.Fragment>
@@ -33,5 +34,8 @@ class RouterIndex extends Component {
 						</React.Fragment>
 					</HashRouter >)
   }
+}
+RouterIndex.contextTypes = {
+  store: PropTypes.object
 }
 export default RouterIndex;
