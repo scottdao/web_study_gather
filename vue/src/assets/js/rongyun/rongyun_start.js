@@ -22,7 +22,7 @@ if(getQueryVariable("token") != undefined) {
 	})
 
 } else {
-	MessageBox('温馨提示', 'token值无效');
+	//MessageBox('温馨提示', 'token值无效');
 }
 
 function initRY(userInfo) {

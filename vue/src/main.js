@@ -14,7 +14,7 @@ Vue.use(MintUI)
 Vue.prototype.http = Http;
 Vue.config.productionTip = false
 /* eslint-disable no-new */
-
+Vue.config.devtools = true
 new Vue({
   el: '#app',
   router,
