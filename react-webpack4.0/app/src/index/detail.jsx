@@ -19,7 +19,7 @@ class Detail extends Component {
 		    </div>)
   }
 }
-Index.contextTypes = {
+Detail.contextTypes = {
   store: PropTypes.object
 }
 export default Detail;
