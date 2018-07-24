@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import PropTypes from 'prop-types'
 class Detail extends Component {
   constructor(props) {
     super(props);
@@ -17,5 +18,8 @@ class Detail extends Component {
     			详情页面
 		    </div>)
   }
+}
+Detail.contextTypes = {
+  store: PropTypes.object
 }
 export default Detail;

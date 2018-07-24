@@ -1,6 +1,5 @@
 webapck4.0+react16.0+es6语法 起步先：
 --------------------------------------------------
-
 		"private": true,防止意外发布；
 		 babel更新的关键：'babel-preset-es2015' ------->'babel-preset-es2017'
 		.babelrc文件变为：es2017
@@ -42,5 +41,17 @@ webapck4.0+react16.0+es6语法 起步先：
 		
 _______________________________________________________________________________________________
 
-         	Redux:
-
+         	Redux:基础redux;
+         	
+         	1.reducer函数，关键业务逻辑，在此处发生。
+         	
+         	2.store
+         	
+         	3.subscribe监听state数据的变化
+         	
+         	4.dispatch异步传导数据。
+         	
+         	5.通过Provider组件提供全局store数据。
+         	prop-types等解决上述问题。
+			
+			replaceReducer会完全替换reducer中的业务逻辑。

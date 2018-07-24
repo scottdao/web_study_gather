@@ -35,7 +35,7 @@ module.exports={
 		chunkFilename:'chuncks/chunkfile.min.js'
 	},
 	resolve:{
-		extensions:['.js','.jsx','.json','vue'],
+		extensions:['.js','.jsx','.json'],
 		alias: {
 		  Component: path.resolve(__dirname, 'app/component/'),//代替模块路径
 		  Css:path.resolve(__dirname, 'app/css/'),
