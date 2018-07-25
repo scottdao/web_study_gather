@@ -5,7 +5,7 @@
   "author": "scott",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress flase --open chrome --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --open chrome --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
