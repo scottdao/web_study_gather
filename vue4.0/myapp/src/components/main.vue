@@ -14,6 +14,10 @@ export default {
   },
   mounted(){
   	console.log(this.$refs.can);
+    var ct = this.$refs.can;
+    var cxt=ct.getContext("2d");
+    cxt.fillStyle="#fff";
+    cxt.fillRect(0,0,300,300);
   	console.log('主页');
   },
   components: {
