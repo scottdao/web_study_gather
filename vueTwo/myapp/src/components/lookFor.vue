@@ -20,6 +20,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='scss' scoped>
+  #lookFor{
+    height:20px;
+    width:10px;
+    background:url('../image/bot_01.png')
+  }
 </style>

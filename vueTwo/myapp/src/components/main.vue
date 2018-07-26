@@ -1,7 +1,8 @@
 <template>
   <div id="main">
-  
+  <div class="MainTenNet">
    <canvas ref='can' ></canvas>
+  </div>
   </div>
 </template>
 <script>
@@ -12,12 +13,19 @@ export default {
 
   	}
   },
+ 
   mounted(){
-    var ct = this.$refs.can;
-    var cxt=ct.getContext("2d");
-    cxt.fillStyle="#fff";
-    cxt.fillRect(0,0,300,300);
+   this.createdBorad();
   	console.log('主页');
+  },
+  methods:{
+    createdBorad(){
+      let ct = this.$refs.can;
+      let cxt=ct.getContext("2d");
+      cxt.fillStyle="#ff0000";
+      cxt.fillRect(0,0,300,300);
+      return this;
+    }
   },
   components: {
    
