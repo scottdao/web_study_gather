@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-
+  
    <canvas ref='can' ></canvas>
   </div>
 </template>
@@ -13,7 +13,6 @@ export default {
   	}
   },
   mounted(){
-  	console.log(this.$refs.can);
     var ct = this.$refs.can;
     var cxt=ct.getContext("2d");
     cxt.fillStyle="#fff";
