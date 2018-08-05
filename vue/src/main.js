@@ -8,6 +8,11 @@ import Http from './assets/js/http/http.js'
 import 'mint-ui/lib/style.css'
 import store from './assets/js/store/index.js'
 import './assets/js/rongyun/rongyun_start.js'
+import layer from 'vue-layer'
+Vue.prototype.$layer = layer(Vue, {
+    msgtime: 1,//目前只有一项，即msg方法的默认消失时间，单位：秒
+});
+//console.log(layer)
 //import Vuex from 'vuex'
 //Vue.use(Vuex)
 Vue.use(MintUI)
