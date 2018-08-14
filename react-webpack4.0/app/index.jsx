@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import 'Style/reset.scss'
 import RouterIndex from 'Router/router'
 import {Provider,connect} from 'react-redux';
-
+import createHistory from 'history/createBrowserHistory';
 import store from 'Component/tool/store'
 import http from 'Component/http'
 class Index extends Component {
@@ -22,7 +22,12 @@ class Index extends Component {
     return false;
   }
   render() {
-      return(<Provider store={store}><RouterIndex /></Provider>)
+  	  const history = createHistory()
+      return(<Provider store={store}>
+              <Router  history={history}>
+                  <RouterIndex />
+              </Router>
+            </Provider>)
     //return(<React.Fragment><RouterIndex /></React.Fragment>)
   }
 }
