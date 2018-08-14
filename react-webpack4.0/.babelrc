@@ -1,3 +1,6 @@
 {
-    "presets":["es2017","react"]
+    "presets":["es2017","react"],
+ 	"plugins": [
+    	["import", { libraryName: "antd-mobile", style: "css" }]
+  	]
 }

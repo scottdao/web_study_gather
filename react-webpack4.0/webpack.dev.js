@@ -9,9 +9,9 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        port: 3000,
+        port: 4000,
         inline: true,
-        host: '192.168.0.108',
+       // host: '192.168.1.23',
         historyApiFallback: true,
         noInfo: false,
         proxy: { //通过代理解决本地跨域

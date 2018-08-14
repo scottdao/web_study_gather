@@ -34,7 +34,6 @@ class Http {
         	})
         $url = null;
 	}
-	
 }
 
 const http = new Http();

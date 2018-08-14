@@ -42,7 +42,7 @@
 				
 		
 
-##  Redux:基础redux;
+##  Redux:基础redux;[api](https://redux.js.org/api)
          	
          	1.reducer函数，关键业务逻辑，在此处发生。
          	
@@ -65,3 +65,9 @@
 	1.[共享软屏](https://gitee.com/scottldy/shareWare)
 	
 		1)说明：这个为私人项目，需经本人同意才能查看。
+
+
+
+##	jest javascript测试库
+
+    1.

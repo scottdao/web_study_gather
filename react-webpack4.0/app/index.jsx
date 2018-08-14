@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
+
 import 'Style/reset.scss'
 import RouterIndex from 'Router/router'
 import {Provider,connect} from 'react-redux';
 
 import store from 'Component/tool/store'
-
+import http from 'Component/http'
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class Index extends Component {
    
   }
  componentDidMount(){
-			http.default.post('/V2/Share',{},(res)=>{
+			http.post('/V2/Share',{},(res)=>{
   			console.log(res)
       })
   }

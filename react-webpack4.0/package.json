@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production  webpack   --mode=production --config webpack.prod.js",
     "watch": "cross-env NODE_ENV=production   webpack --watch",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --open --config webpack.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --open chrome --config webpack.dev.js",
     "start": "http-server dist"
   },
   "author": "scott",
@@ -40,6 +40,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "antd-mobile": "^2.2.3",
+    "babel-plugin-import": "^1.8.0",
     "babel-polyfill": "^6.26.0",
     "fastclick": "^1.0.6",
     "jquery": "^3.3.1",
