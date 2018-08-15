@@ -3,7 +3,7 @@
   	<keep-alive :include='["LookFor"]'>
   		<!-- LookFor组件被缓存 -->
 	  	 <router-view/>
-	</keep-alive>
+	  </keep-alive>
     <img src="../image/bot_01.png">
    <router-link to="/main">首页</router-link>
    <router-link to="/lookFor">商城</router-link>
@@ -27,7 +27,6 @@ export default {
 
 }
 </script>
-
 <style scoped lang='css'>
 	#index a{
 		

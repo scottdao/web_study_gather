@@ -1,6 +1,7 @@
 <template>
   <div id="lookFor">
       查询
+      <div class="bg"></div>
   </div>
 </template>
 <script>
@@ -24,6 +25,11 @@ export default {
   #lookFor{
     height:20px;
     width:10px;
-    background:url('../image/bot_01.png')
+    background:url('../image/bot_01.png');
+  }
+  .bg{
+    height:40px;
+    width:40px;
+    background:url('../image/smrz_ico_scsfz.png');
   }
 </style>

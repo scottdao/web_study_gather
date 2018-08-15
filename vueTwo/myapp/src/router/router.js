@@ -6,6 +6,7 @@ const Main = () => import('@/components/main')
 const LookFor = () => import('@/components/lookFor')
 Vue.use(Router)
 let r = new Router({
+	mode:'hash',
 	 routes: [
 	 		{
 	 		path: '/',
