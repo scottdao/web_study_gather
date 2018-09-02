@@ -9,31 +9,44 @@ class Login extends Component {
   constructor(props,context) {
     super(props,context);
     this.state={
-    	first:0
+    	first:1
     }
   }
   componentDidMount(){
 		var store  = this.context.store;
-		console.log(store)
+		//console.log(store)
 		var $this = this;
 		store.subscribe(function(){
 			console.log(store.getState())
 			$this.setState({
-				first:store.getState()
-			})
+        first:store.getState().reducer
+      })
 		})
 		/*store.replaceReducer(function(){
 			return 5
 		})*/
-		store.dispatch({ type: 'ADD',payload:20 })
+		// store.dispatch({
+  //     type: 'ADD',
+  //     text:$this.state.first
+  //   })
 		//console.log(store.getState())
    }
   
   render() {
+    var store  = this.context.store;
     return(
     	 <div>
-    	 {this.state.first}
+    	     
 					<Link to='/index'>登录界面</Link>
+            <button onClick={()=>{
+              this.state.first+1;
+              store.dispatch({
+                type: 'ADD',
+                text:this.state.first
+              })
+            }}>+</button>
+              {this.state.first}
+            <button>-</button>
     	 </div>
     )
   }

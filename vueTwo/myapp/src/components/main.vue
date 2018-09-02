@@ -3,6 +3,7 @@
   <div class="MainTenNet">
    <canvas ref='can' ></canvas>
   </div>
+  <img src="../image/home_ico_tianjiabizhong.png" />
   </div>
 </template>
 <script>

@@ -1,4 +1,4 @@
-
+var webpack = require('webpack')
 module.exports={
 	baseUrl: process.env.NODE_ENV === 'production'
     ? '.'
@@ -26,11 +26,12 @@ module.exports={
 
 		}
 	},
+	
 	devServer:{
 		hot:true,
 		//inline: false,//浏览器信息输出日志，lazy,懒加载，不会监听任何文件的改变，会与热更新hot冲突。
-		port: 8080,
-		host:'127.0.0.1',
+		//port: 8080,
+		//host:'127.0.0.1',
 		clientLogLevel: 'none',
 		contentBase:'./dist',
 		historyApiFallback: true,
@@ -48,7 +49,15 @@ module.exports={
 	configureWebpack: {
 	    output: {
 	      filename: 'js/[name]-[hash].js',
-	      chunkFilename: 'js/[name]-[hash].js',
-	    }
+	      chunkFilename: 'js/[name]-[hash].js'
+	    } ,
+  	 plugins: [
+  	 	new webpack.ProvidePlugin({ //引入成为全局模块
+            $$: "jquery",
+            jquery: "jquery",
+            "window.jquery": "jquery",
+            //"http": 'Component/http.js'
+        })
+  	 ]
   	}
 }
