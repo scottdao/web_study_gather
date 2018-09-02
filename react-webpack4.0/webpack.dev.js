@@ -6,12 +6,14 @@ module.exports = merge(common, {
     module: {
         rules: [{ test: /\.(css|scss)$/, use: ['style-loader', 'css-loader', 'sass-loader'] }]
     },
+   
     devServer: {
         contentBase: './dist',
         hot: true,
         port: 3000,
         inline: true,
-        host: '192.168.0.108',
+        //host: '192.168.0.108',
+        host:'localhost',
         historyApiFallback: true,
         noInfo: false,
         proxy: { //通过代理解决本地跨域

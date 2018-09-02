@@ -42,6 +42,14 @@
 				
 		
 
+###  es7语法，class类中加箭头函数，
+$ npm install --save-dev babel-preset-stage-0
+$ npm install --save-dev babel-preset-stage-1 
+$ npm install --save-dev babel-preset-stage-2
+$ npm install --save-dev babel-preset-stage-3
+
+
+
 ##  Redux:基础redux;
          	
          	1.reducer函数，关键业务逻辑，在此处发生。

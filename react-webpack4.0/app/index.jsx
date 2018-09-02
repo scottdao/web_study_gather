@@ -5,7 +5,8 @@ import RouterIndex from 'Router/router'
 import {Provider,connect} from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import store from 'Component/tool/store'
-
+import {Switch,Redirect,Router} from 'react-router'
+import http from './component/http';
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +14,12 @@ class Index extends Component {
    
   }
  componentDidMount(){
-			http.default.post('/V2/Share',{},(res)=>{
+			http.post('/V2/Share',{},(res)=>{
   			console.log(res)
       })
+  }
+  Name=()=>{
+    console.log(111);
   }
   shouldComponentUpdate(nextProps, nextState) {
     return false;
