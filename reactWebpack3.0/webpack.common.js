@@ -40,7 +40,7 @@ module.exports={
 		  Component: path.resolve(__dirname, 'app/component/'),//代替模块路径
 		  Css:path.resolve(__dirname, 'app/css/'),
 		  Router:path.resolve(__dirname, 'app/router/'),
-		  Src:path.resolve(__dirname, 'app/src/')
+		  JS:path.resolve(__dirname, 'app/js/')
 		}
 	},
 	module:{
