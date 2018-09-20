@@ -5,42 +5,28 @@ import PropTypes from 'prop-types';
 class AddMin extends Component{
     constructor(props,context){
         super(props,context)
-      //console.log(this.props);
-      this.state = {
-      	val:props.children
-      }
     }
-   
     componentDidMount(){
      
     }
     render(){
-    	let store = this.context.store;
-    	//console.log(store);
-    		
+    	const add = this.props.add;
+        const min = this.props.min;
+        const children = this.props.children;
         return(
             <div>
             	<button onClick = {
             	()=>{
-
-            			store.dispatch({type:'adde',num:1,max:20})
-            			var s = store.getState();
-            			let $this = this
-        				$this.setState({
-        					val:s.adder
-        				})
+                     add()
+            			
             		}
             	}>+</button>
             	 {
-            	 	this.state.val
+            	 	children
             	 }	
             	<button 
             	onClick={()=>{
-            		store.dispatch({type:'min',num:1,min:0})
-            		var s = store.getState();
-            		this.setState({
-            			val:s.adder
-            		})
+            		min()
             	}}
             	>-</button>
             </div>

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import {hashHistory,Link} from 'react-router';
+
 import 'Css/first.scss';
 import RouterIndex from 'Router/router';
 import {Provider,connect} from 'react-redux';

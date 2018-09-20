@@ -1,37 +1,57 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import AddMin from 'Component/AddMin'
+import AddMin from 'Component/addMin'
+import Tab from 'Component/tab';
+import {hashHistory,Link} from 'react-router';
+import tool from 'Component/tool'
 
 class Login extends Component{
     constructor(props,context){
         super(props,context)
         this.state={
 
-        	index:1
+        	index:0
 
         }
       
     }
 
     componentDidMount(){
-     var store = this.context.store;
-    	var s = store.getState();
-    	//console.log(s.adder);
-    	store.subscribe(()=>{
-    		console.log(s.adder);
-    	})
+        tool.http.post()
     }
     render(){
-    	
+        const store = this.context.store;
+        let $this = this;
+        let index = this.state.index 
+        store.subscribe(()=>{
+            let s = store.getState();
+           $this.setState({
+                index:s.adder
+            })
+        })
+        
         return(
             <div>
             		我是登录页
-            		<AddMin> 
+            		<AddMin add={()=>{
+                        store.dispatch({type:'adde',max:20})
+                    }} 
+                    min = {()=>{
+                        store.dispatch({type:'min',min:0})
+                    }}
+                    >
             		  {
-            		  	this.state.index
+            		  	index
             		  }
             		</AddMin>
+                    <Tab>
+                        {index}
+                    </Tab>
+
+                    <div onClick = {()=>{
+                        hashHistory.push('/index');
+                    }}>登录</div>
             </div>
         )
     }

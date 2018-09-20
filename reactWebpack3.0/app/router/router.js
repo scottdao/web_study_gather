@@ -4,8 +4,9 @@ import {Router,Route,IndexRedirect,hashHistory} from 'react-router';
 import Login from 'JS/login';
 import Index from 'JS/index';
 import {Provider,connect} from 'react-redux';
-import store from 'Component/redux/store';
+import configureStore  from 'Component/redux/store';
 import PropTypes from 'prop-types';
+const store = configureStore();
 class routerIndex extends Component{
     constructor(props,context){
         super(props,context)
