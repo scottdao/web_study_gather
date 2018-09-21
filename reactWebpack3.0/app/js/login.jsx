@@ -5,7 +5,8 @@ import AddMin from 'Component/addMin'
 import Tab from 'Component/tab';
 import {hashHistory,Link} from 'react-router';
 import tool from 'Component/tool'
-
+//let POST = tool.http.post;
+//tool.http.post()
 class Login extends Component{
     constructor(props,context){
         super(props,context)
@@ -18,7 +19,7 @@ class Login extends Component{
     }
 
     componentDidMount(){
-        tool.http.post()
+       // POST()
     }
     render(){
         const store = this.context.store;
