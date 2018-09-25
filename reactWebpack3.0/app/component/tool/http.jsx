@@ -1,8 +1,14 @@
 import qs from 'qs';
 import publicData from './public';
 
+import Toast from './toast';
+/*
+*request 请求 
+*兼容性：IE不兼容,fetch请求；
+*支持get post
+*/
 function Http(req,URL){
-	//私有属性；私有方法；
+	
 	this.request = req 
 	this.URL = URL;
 	this.commonData = publicData.data;
@@ -12,6 +18,7 @@ function Http(req,URL){
 			}
 			return data;
 	};
+	//私有属性；私有方法；
 	var isToken = function(data,that){
 
 		var token = '12345678';
@@ -21,7 +28,7 @@ function Http(req,URL){
 		return data;
 	};
 	var isUrl = function(url,that){
-		// var $url = this.URL;
+		
 		if(/(^https?:\/\/)|(^\d{3}.\d{1,3}.\d{1,3}.\d{1,3}:\d{0,4})/.test(url))return url;
 
 		else url = that.URL + url;
@@ -34,6 +41,19 @@ function Http(req,URL){
 		return {
 			url:isUrl(url,that),
 			data:isToken(data,that)
+		}
+	};
+	this.getData = function(data,type){
+		if(type === 'getData'){
+				var gData = '';
+				for(var i in data){
+						gData += i +'=' + data[i] + '&';
+				}
+				gData = gData.substring(0,gData.length-1);
+
+			return gData;
+		   }else{
+			throw new Error('The method is private,you connot use it!')
 		}
 	};
 	return this;
@@ -54,7 +74,7 @@ Http.prototype.post = function(url,data,callBack,failer){
         			 }
        }).then((res)=>res.json()).then((req)=>{
         		//console.log(req)
-        		if(req.code==200){
+        		if(req.code==publicData.successCode){
         			callBack && callBack(req)
         		}else{
         			failer && failer(req)
@@ -65,15 +85,27 @@ Http.prototype.post = function(url,data,callBack,failer){
         	})
 };
 Http.prototype.get = function(url,data,callBack,failer){
-	data = data ||{get:'get'};
-	url = url || 'get';
+	data = data ||{};
+	url = url || '';
 	data = this.assign(data,this.commonData);
-	var combine = this.combine(url,data)
+	var isurl = this.combine(url,{}).url;
+	data = this.getData(data,'getData');
+	fetch(isurl+'?'+data,{
+        			 method:'get',
+                     mode:'cors',
+                     cache: "force-cache"
+    }).then((res)=>res.json()).then((req)=>{
+		if(req.code == publicData.testCode){
+			callBack && callBack(req)
+		}else{
+			failer && failer(req)
+		}
+   	}).catch((err)=>{
+    	console.log(err)
+    })
 }	
 Http.prototype.scoket = function(argument){
 	
 };
-
 var http = new Http('request',publicData.api);
-
 export default http;

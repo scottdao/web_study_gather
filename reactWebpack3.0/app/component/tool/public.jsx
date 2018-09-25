@@ -5,13 +5,21 @@ var data = {
 }
 
 var api = {
-			  prod:'http://screen.kinlink.cn/api/',
+			  //prod:'http://screen.kinlink.cn/api/',
+			  prod:'https://pcw-api.iqiyi.com/subscribe/subscription/',
 			  test:'',
 			  dev:'',
 			  douban:''
 		}
 
+var statusCode = {
+	success:200,
+	testsuccess:'A00000'
+}
+
 export default  {
 		data,
-		api:api.prod
+		api:api.prod,
+		successCode:statusCode.success,
+		testCode: statusCode.testsuccess
 };

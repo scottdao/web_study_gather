@@ -60,5 +60,4 @@ class Login extends Component{
 Login.contextTypes = {
 	store:PropTypes.object
 }
-
 export default Login;
