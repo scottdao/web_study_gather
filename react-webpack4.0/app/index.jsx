@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-
 import 'Style/reset.scss'
 import RouterIndex from 'Router/router'
 import {Provider,connect} from 'react-redux';

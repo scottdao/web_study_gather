@@ -3,10 +3,13 @@ import { combineReducers } from 'redux'
 
 const defaultState = 0;
 const reducer = (state = 0, action) => {
+  //console.log(action);
   switch (action.type) {
     case 'ADD':
       //return state.concat([action.text]);
-      return state+action.text 
+      return state+action.text; 
+    case 'min':
+      return  state-action.text;
     default: 
       return state;
   }
@@ -22,6 +25,7 @@ const counter=(state =0, action) =>{
   }
 }
 export default combineReducers({
-	reducer,
+  //reducer:combineReducers({reducer}),
+  reducer,
 	counter
 })

@@ -5,6 +5,8 @@ import {
   Link
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux';
+
 class Login extends Component {
   constructor(props,context) {
     super(props,context);
@@ -12,41 +14,28 @@ class Login extends Component {
     	first:1
     }
   }
-  componentDidMount(){
-		var store  = this.context.store;
-		//console.log(store)
-		var $this = this;
-		store.subscribe(function(){
-			console.log(store.getState())
-			$this.setState({
-        first:store.getState().reducer
-      })
-		})
-		/*store.replaceReducer(function(){
-			return 5
-		})*/
-		// store.dispatch({
-  //     type: 'ADD',
-  //     text:$this.state.first
-  //   })
-		//console.log(store.getState())
-   }
-  
+
   render() {
-    var store  = this.context.store;
+    console.log(this.props.history);
     return(
     	 <div>
     	     
 					<Link to='/index'>登录界面</Link>
             <button onClick={()=>{
-              this.state.first+1;
-              store.dispatch({
+              
+              this.props.dispatch({
                 type: 'ADD',
-                text:this.state.first
+                text:1
               })
             }}>+</button>
-              {this.state.first}
-            <button>-</button>
+              {this.props.reducer}
+            <button onClick={()=>{
+              
+              this.props.dispatch({
+                type: 'min',
+                text:1
+              })
+            }}>-</button>
     	 </div>
     )
   }
@@ -54,4 +43,7 @@ class Login extends Component {
 Login.contextTypes = {
   store: PropTypes.object
 }
-export default Login;
+//console.log(111);
+const mapStateToProps = (state) =>({reducer: state.reducer, counter: state.counter})
+
+export default connect(mapStateToProps)(Login);

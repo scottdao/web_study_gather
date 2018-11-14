@@ -11,3 +11,5 @@ code-communitybuild
 dist/
 .cache
 webpack.config.js
+/.project
+/app/src/.DS_Store
