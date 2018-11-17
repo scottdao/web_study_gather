@@ -43,37 +43,18 @@
 		
 
 
-###  es7语法，class类中加箭头函数
-
-
+###  es7语法，class类中加箭头函数，
 $ npm install --save-dev babel-preset-stage-0
-
-
 $ npm install --save-dev babel-preset-stage-1 
-
-
 $ npm install --save-dev babel-preset-stage-2
-
-
 $ npm install --save-dev babel-preset-stage-3
 
 
 
-##  Redux:基础redux;[api](https://redux.js.org/api)
-         	
-         	1.reducer函数，关键业务逻辑，在此处发生。
-         	
-         	2.store
-         	
-         	3.subscribe监听state数据的变化
-         	
-         	4.dispatch异步传导数据。
-         	
-         	5.通过Provider组件提供全局store数据。
-         	prop-types等解决上述问题。
-			
-			replaceReducer会完全替换reducer中的业务逻辑。
-			
+##  Redux:基础redux;[api](https://redux.js.org/api)                                        
+         页面 -> action({type:a,payload:b}) -> reducer((preState,action)=>{}) -> store({})--connect()-> 页面;
+
+		 涉及界面复杂度(redux-saga)：fetch / api    success/failed	
 			
 			
 
