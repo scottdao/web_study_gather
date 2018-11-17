@@ -9,13 +9,21 @@ class Detail extends Component {
   constructor(props) {
     super(props);
   }
+  componentWillMount(){
+  	console.info(new Date()+':',1)
+  }
  componentDidMount(){
- 			
+ 		console.info(new Date()+':',2)	
  			
   }
+  componentWillUnMount(){
+  	console.info(new Date()+':',4)
+  }
+  
   render() {
+  	console.info(new Date()+':',3)	
     return(<div>
-    			详情页面
+    			组件
 		    </div>)
   }
 }

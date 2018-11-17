@@ -11,18 +11,15 @@ import {Switch,Redirect,Router} from 'react-router'
 
 import http from 'Component/http'
 class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {count: 1}
-   
+  state={
+    count:1
   }
- componentDidMount(){
+ async componentDidMount(){
+
+  console.log(this.state.count)
 			http.post('/V2/Share',{},(res)=>{
   			console.log(res)
       })
-  }
-  Name=()=>{
-    console.log(111);
   }
   shouldComponentUpdate(nextProps, nextState) {
     return false;

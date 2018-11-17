@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import Detail from './de'
 class Login extends Component {
   constructor(props,context) {
     super(props,context);
@@ -12,7 +13,11 @@ class Login extends Component {
     	first:1
     }
   }
+  componentWillMount(){
+    console.info(new Date()+':',0)
+  }
   componentDidMount(){
+
 		var store  = this.context.store;
 		//console.log(store)
 		var $this = this;
@@ -47,6 +52,7 @@ class Login extends Component {
             }}>+</button>
               {this.state.first}
             <button>-</button>
+            <Detail />
     	 </div>
     )
   }

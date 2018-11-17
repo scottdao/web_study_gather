@@ -43,10 +43,18 @@
 		
 
 
-###  es7语法，class类中加箭头函数，
+###  es7语法，class类中加箭头函数
+
+
 $ npm install --save-dev babel-preset-stage-0
+
+
 $ npm install --save-dev babel-preset-stage-1 
+
+
 $ npm install --save-dev babel-preset-stage-2
+
+
 $ npm install --save-dev babel-preset-stage-3
 
 
