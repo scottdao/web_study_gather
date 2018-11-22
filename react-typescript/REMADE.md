@@ -7,3 +7,5 @@
        创建ts应用
 
 [typescript](https://ts.xcatliu.com/)
+
+[tsconfig.json](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html)
