@@ -26,6 +26,6 @@ const counter=(state =0, action) =>{
 }
 export default combineReducers({
   //reducer:combineReducers({reducer}),
-  reducer,
+  reducer:combineReducers({reducer}),
 	counter
 })

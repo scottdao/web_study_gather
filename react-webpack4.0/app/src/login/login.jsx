@@ -16,7 +16,7 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props.history);
+    console.log(this.props);
     return(
     	 <div>
     	     
@@ -36,6 +36,7 @@ class Login extends Component {
                 text:1
               })
             }}>-</button>
+            
     	 </div>
     )
   }
@@ -44,6 +45,6 @@ Login.contextTypes = {
   store: PropTypes.object
 }
 //console.log(111);
-const mapStateToProps = (state) =>({reducer: state.reducer, counter: state.counter})
+const mapStateToProps = (state) =>{console.log(state);return ({reducer: state.reducer.reducer, counter: state.counter})}
 
 export default connect(mapStateToProps)(Login);
