@@ -4,6 +4,7 @@ class Http {
 	constructor() {
 		if (ENV =='dev') {
 		  this.URL = 'api'
+		  //this.URL = 'http://api.wawa.kinlink.cn/';
 		}else if(ENV =='production'){
 		  this.URL = 'http://api.wawa.kinlink.cn/'
 		}

@@ -54,18 +54,32 @@ $ npm install --save-dev babel-preset-stage-3
 ##  Redux:基础redux;[api](https://redux.js.org/api)                                        
          页面 -> action({type:a,payload:b}) -> reducer((preState,action)=>{}) -> store({})--connect()-> 页面;
 
-		 涉及界面复杂度(redux-saga)：fetch / api    success/failed	
+		 涉及界面复杂度(redux-saga)：fetch / api    success/failed	;
+
+1. redux-action;			
 			
-			
+     未用之前：
 
-##  react相关项目：
-	
-	1.[共享软屏](https://gitee.com/scottldy/shareWare)
-	
-		1)说明：这个为私人项目，需经本人同意才能查看。
+     	action文件的代码：![action]('./image/action.jpg');
+
+    	login.js文件：
 
 
+    		const mapDispatchToProps = (dispatch) =>{
+			  return{
+			    add:payload=>{dispatch(add(payload))},
+			    min:payload=>{dispatch(min(payload))}
+			  }
+			   
+			}
 
-##	jest javascript测试库
+			export default connect(mapStateToProps,mapDispatchToProps)(Login);
 
-    1.
+		reducer.js代码： ![reducer](./image/reducer.jpg);
+		
+
+
+
+
+
+

@@ -33,7 +33,6 @@ class Index extends Component {
                   <RouterIndex />
               </Router>
             </Provider>)
-    //return(<React.Fragment><RouterIndex /></React.Fragment>)
   }
 }
 
