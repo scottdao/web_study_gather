@@ -21,10 +21,13 @@ class Detail extends Component {
   }
   
   render() {
-  	console.info(new Date()+':',3)	
-    return(<div>
+  	console.info(new Date()+':',3);	
+    //console.log(this.props);
+    return (
+        <div>
     			组件
-		    </div>)
+		    </div>
+        )
   }
 }
 Detail.contextTypes = {

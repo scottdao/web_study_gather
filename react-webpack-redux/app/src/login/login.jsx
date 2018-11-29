@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
-import {add,min} from 'Component/tool/action'
+import {addCount,minCount} from 'Component/store/action/login-management/count-action';
 
 class Login extends Component {
   constructor(props,context) {
@@ -20,22 +20,14 @@ class Login extends Component {
     //console.log(this.props);
     return(
     	 <div>
-    	      {/*this.props.dispatch({
-                type: 'ADD',
-                text:1
-              })*/}
-              {/* this.props.dispatch({
-                type: 'min',
-                text:1
-              })*/}
-					<Link to='/index'>登录界面</Link>
-            <button onClick={()=>{
-               this.props.add(1)
+    	    <Link to={`/index/1`}>登录界面</Link>
+            <button onClick={() => {
+               this.props.addCount(1);
              
             }}>+</button>
               {this.props.reducer}
-            <button onClick={()=>{
-              this.props.min(1);
+            <button onClick={() => {
+              this.props.minCount(1);
             
             }}>-</button>
              
@@ -47,18 +39,12 @@ Login.contextTypes = {
   store: PropTypes.object
 }
 //console.log(111);
-const mapStateToProps = (state) =>({reducer: state.reducer.reducer, counter: state.counter});
-
-{/*const mapDispatchToProps = (dispatch) =>{
-  return{
-    add:payload=>{dispatch(add(payload))},
-    min:payload=>{dispatch(min(payload))}
-  }
-   
-}*/}
-const = const mapDispatchToProps = {
-  add,
-  min
+const mapStateToProps = (state) =>({
+  reducer: state.loginManagementReducer.countReducer.reducer
+ });
+const mapDispatchToProps = {
+  addCount,
+  minCount
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

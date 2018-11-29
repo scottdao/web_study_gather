@@ -27,7 +27,7 @@ class RouterIndex extends Component {
     return(<HashRouter >
 			    	<React.Fragment>
 					    <Route exact path="/" component={Login}/>
-						  <Route strict path="/index"  component={Index}/>
+						  <Route strict path="/index/:id"  component={Index}/>
 							<Route  path='/index/mine' component={Mine} />
 							<Route  path='/index/main' component={Main} />
 							<Route  path='/detail' component={Detail} />
