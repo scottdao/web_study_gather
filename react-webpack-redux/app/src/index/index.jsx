@@ -17,7 +17,7 @@ class Index extends Component {
  			
    }
   render() {
-    //console.log(this.props);
+    //console.log(this.props);/V2/GoodTerm
     return(<div>
     			<NavLink  to='/index/main'>资产</NavLink >
 		    	<NavLink  to='/index/mine'>我的</NavLink >

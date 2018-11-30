@@ -22,7 +22,7 @@ class Login extends Component {
     //console.log(this.props.loginShare);
     //LoginSharePost();
     let loginShare = this.props.loginShare || {};
-    console.log(loginShare);
+    //console.log(loginShare);
     return(
     	 <div>
     	    <Link to={`/index/1`}>登录界面</Link>
@@ -51,7 +51,5 @@ const mapStateToProps = (state) =>({
 const mapDispatchToProps = {
   addCount,
   minCount
-  //LoginSharePost
 }
-
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

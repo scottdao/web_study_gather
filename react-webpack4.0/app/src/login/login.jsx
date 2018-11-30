@@ -22,12 +22,12 @@ class Login extends Component {
     	 <div>
     	     
 					<Link to='/index'>登录界面</Link>
-            <button onClick={()=>{
+            <button onClick={() => {
               
               this.props.add(1)
             }}>+</button>
               {this.props.reducer}
-            <button onClick={()=>{
+            <button onClick={() => {
               
               this.props.min(1)
             }}>-</button>
@@ -39,9 +39,7 @@ class Login extends Component {
 Login.contextTypes = {
   store: PropTypes.object
 }
-//console.log(111);
 const mapStateToProps = (state) =>({reducer: state.reducer.reducer, counter: state.counter})
-
 const mapDispatchToProps = (dispatch) =>{
   return{
     add:payload=>{dispatch(add(payload))},

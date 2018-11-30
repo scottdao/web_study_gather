@@ -13,9 +13,9 @@ class Index extends Component {
     this.state = {count: 1}
   }
  componentDidMount(){
-			// http.post('/V2/Share',{},(res) =>{
-  	// 		console.log(res)
-   //    })
+	// http.post('/V2/Share',{},(res) =>{
+  // 		console.log(res)
+  // })
   }
   Name = () => {
     console.log(111);

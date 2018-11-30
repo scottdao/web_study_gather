@@ -4,7 +4,7 @@ const defaultState = {
   reducer:0
 }
 const countReducer = handleActions({
-  [ADD_COUNT]:(state,action) =>{console.log(action);return({
+  [ADD_COUNT]:(state,action) =>{return({
   	...state,
   	reducer:state.reducer+action.payload.payload
   })},
