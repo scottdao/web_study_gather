@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import {addCount,minCount} from 'Component/store/action/login-management/count-action';
-
+import LoginSharePost from 'Component/store/http/login-management/login-share';
 class Login extends Component {
   constructor(props,context) {
     super(props,context);
@@ -15,9 +15,14 @@ class Login extends Component {
     	first:1
     }
   }
-
+  componentDidMount(){
+   LoginSharePost()
+  }
   render() {
-    //console.log(this.props);
+    //console.log(this.props.loginShare);
+    //LoginSharePost();
+    let loginShare = this.props.loginShare || {};
+    console.log(loginShare);
     return(
     	 <div>
     	    <Link to={`/index/1`}>登录界面</Link>
@@ -40,11 +45,13 @@ Login.contextTypes = {
 }
 //console.log(111);
 const mapStateToProps = (state) =>({
-  reducer: state.loginManagementReducer.countReducer.reducer
+  reducer: state.loginManagementReducer.countReducer.reducer,
+  loginShare:state.loginManagementReducer.loginShareReducer.loginShare
  });
 const mapDispatchToProps = {
   addCount,
   minCount
+  //LoginSharePost
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

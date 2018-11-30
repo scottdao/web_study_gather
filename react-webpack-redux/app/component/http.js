@@ -9,7 +9,7 @@ class Http {
 		  this.URL = 'http://api.wawa.kinlink.cn/'
 		}
 	}
-	post(url,data,callBack){
+	post(url,data,callBack,failer){
 		var token = '123'
 		if(token !='undefined' && token != null ){
 			Object.assign(data,{token:token})
@@ -30,8 +30,10 @@ class Http {
         			 }
        }).then((res)=>res.json()).then((req)=>{
         		callBack(req)
+        		//错误500
         	}).catch((err)=>{
         		console.log(err)
+        		failer && failer(err);
         	})
         $url = null;
 	}
