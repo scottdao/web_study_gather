@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const openBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     module: {
@@ -29,6 +30,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+	new webpack.openBrowserPlugin({url:'localhost:4000',browser:'chrome',delay:0})
     ]
 });

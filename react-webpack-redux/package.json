@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production  webpack   --mode=production --config webpack.prod.js",
     "watch": "cross-env NODE_ENV=production   webpack --watch",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --open chrome --config webpack.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --config webpack.dev.js",
     "start": "http-server dist"
   },
   "author": "scott",
@@ -29,7 +29,7 @@
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "node-sass": "^4.9.0",
-    "open-browser-webpack-plugin": "^0.0.5",
+    "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.1.5",
     "redux-devtools": "^3.4.1",
     "sass-loader": "^7.0.2",
