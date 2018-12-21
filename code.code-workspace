@@ -1,11 +1,19 @@
 {
-	"folders": [
-		{
-			"path": "/Users/liudaoyun/Documents/myself/nodeKnowledge"
-		},
-		{
-			"path": "/Users/liudaoyun/Documents/UniCareer/dashboard"
-		}
-	],
-	"settings": {}
+  "folders": [],
+  "settings": {
+    "html.format.indentHandlebars": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "beautify.JSfiles": [
+      "js",
+      "jsbeautifyrc",
+      "jshintrc",
+      "ts",
+      "jsx",
+      "html",
+      "css",
+      "less",
+      "scss"
+    ]
+  }
 }

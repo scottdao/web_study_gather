@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production  webpack   --mode=production --config webpack.prod.js",
     "watch": "cross-env NODE_ENV=production   webpack --watch",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --config webpack.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development   --config webpack.dev.js",
     "start": "http-server dist"
   },
   "author": "scott",

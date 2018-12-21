@@ -67,8 +67,7 @@ module.exports = {
         new webpack.ProvidePlugin({ //引入成为全局模块
             $$: "jquery",
             jquery: "jquery",
-            "window.jquery": "jquery",
-            //"http": 'Component/http.js'
+            "window.jquery": "jquery"
         }),
         new webpack.DefinePlugin({ //设置全局变量
             ENV: JSON.stringify(process.env.NODE_ENV)

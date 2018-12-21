@@ -2,6 +2,10 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const openBrowserPlugin = require('open-browser-webpack-plugin');
+const apiServer = {
+    port:4000,
+    host:'localhost'
+}
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     module: {
@@ -11,10 +15,10 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        port: 4000,
+        port: apiServer.port,
         inline: true,
         //host: '192.168.0.108',
-        host:'localhost',
+        host:apiServer.host,
         historyApiFallback: true,
         noInfo: false,
         proxy: { //通过代理解决本地跨域
@@ -31,6 +35,12 @@ module.exports = merge(common, {
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-	new webpack.openBrowserPlugin({url:'localhost:4000',browser:'chrome',delay:0})
+	    new openBrowserPlugin({
+            url:`http://${apiServer.host}:${apiServer.port}`,
+            browser:'Google Chrome',
+            delay:0,
+            ignoreErrors:'true'
+        })
+
     ]
 });
