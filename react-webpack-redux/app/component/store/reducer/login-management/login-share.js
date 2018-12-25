@@ -19,5 +19,4 @@ const loginShareReducer = handleActions({
   })
 },defaultState);
 
-//console.log(loginShareReducer);
 export default loginShareReducer;

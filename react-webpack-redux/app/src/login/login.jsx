@@ -19,10 +19,7 @@ class Login extends Component {
    LoginSharePost()
   }
   render() {
-    //console.log(this.props.loginShare);
-    //LoginSharePost();
     let loginShare = this.props.loginShare || {};
-    //console.log(loginShare);
     return(
     	 <div>
     	    <Link to={`/index/1`}>登录界面</Link>

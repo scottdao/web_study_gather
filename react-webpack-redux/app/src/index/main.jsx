@@ -3,16 +3,19 @@ import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
-import PropTypes from 'prop-types'
+} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {requsetMainListStart} from 'Component/store/action/main-management/main-list'
 class Main extends Component {
   constructor(props,context) {
     super(props,context);
   }
  componentDidMount(){
- 			
+ 			this.props.requsetMainListStart();
    }
   render() {
+    console.log(this.props);
     return(<div>
     			资产
     			<Link to='/detail'>进入详情</Link>
@@ -22,4 +25,11 @@ class Main extends Component {
 Main.contextTypes = {
   store: PropTypes.object
 }
-export default Main;
+//console.log(111);
+const mapStateToProps = (state) =>({
+  mainList:state.mainMangementReducer.mainListReducer
+ });
+const mapDispatchToProps = {
+  requsetMainListStart
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Main);

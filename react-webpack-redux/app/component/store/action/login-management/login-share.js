@@ -6,5 +6,4 @@ const {requsetShareStart,requsetShareSuccess,requestShareFiled} = createActions(
 	[REQUEST_SHARE_FAILED]:payload => ({payload})
 
 });
-//console.log(requsetShareStart);
 export {requsetShareStart,requsetShareSuccess,requestShareFiled};

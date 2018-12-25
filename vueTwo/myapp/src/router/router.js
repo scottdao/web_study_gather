@@ -6,7 +6,7 @@ const Main = () => import('@/components/main')
 const LookFor = () => import('@/components/lookFor')
 Vue.use(Router)
 let r = new Router({
-	mode:'hash',
+	 mode:'hash',
 	 routes: [
 	 		{
 	 		path: '/',
@@ -28,4 +28,5 @@ let r = new Router({
 	 	}
 	 ]
 })
+
 export default r
