@@ -22,14 +22,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  #lookFor{
-    height:20px;
-    width:10px;
-    background:url('../image/bot_01.png');
-  }
-  .bg{
-    height:40px;
-    width:40px;
-    background:url('../image/smrz_ico_scsfz.png');
-  }
+ 
 </style>

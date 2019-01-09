@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {add,min} from 'Component/tool/action';
+import {add,min} from 'Component/tool/actions';
 class Index extends Component {
   constructor(props) {
     super(props);

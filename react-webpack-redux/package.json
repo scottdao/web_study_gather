@@ -41,7 +41,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "antd-mobile": "^2.2.3",
+    "antd": "^3.12.1",
     "babel-plugin-import": "^1.8.0",
     "babel-polyfill": "^6.26.0",
     "fastclick": "^1.0.6",

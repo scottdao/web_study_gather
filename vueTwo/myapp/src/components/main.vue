@@ -1,10 +1,9 @@
 <template>
   <div id="main">
   <div class="MainTenNet">
-   <canvas ref='can' ></canvas>
+        我是主页啦呀！
+         <router-link to="/next">进入下一页</router-link>
   </div>
-  <img src="../image/home_ico_tianjiabizhong.png" />
-  
   </div>
 </template>
 <script>
@@ -17,17 +16,11 @@ export default {
   },
  
   mounted(){
-   this.createdBorad();
+  
   	console.log('主页');
   },
   methods:{
-    createdBorad(){
-      let ct = this.$refs.can;
-      let cxt=ct.getContext("2d");
-      cxt.fillStyle="#ff0000";
-      cxt.fillRect(0,0,300,300);
-      return this;
-    }
+   
   },
   components: {
    

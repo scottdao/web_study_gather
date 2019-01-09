@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         app: ['./app/index.jsx'],
         jquery: ['jquery'],
-        antd: ['antd-mobile'],
+        antd: ['antd'],
         common: ['babel-polyfill', 'whatwg-fetch']
     }, //入口文件
     output: { //出口文件

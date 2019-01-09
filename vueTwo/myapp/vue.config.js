@@ -53,10 +53,6 @@ let vueConfig = {
         }
     },
     configureWebpack: {
-        output: {
-            filename: 'js/[name]-[hash].js',
-            chunkFilename: 'js/[name]-[hash].js'
-        },
         plugins: [
             new webpack.ProvidePlugin({ //引入成为全局模块
                 $$: "jquery",

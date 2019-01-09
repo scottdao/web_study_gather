@@ -3,7 +3,8 @@ import Router from 'vue-router'
 
 const Index = () => import('@/components/index')
 const Main = () => import('@/components/main')
-const LookFor = () => import('@/components/lookFor')
+const LookFor = () => import('@/components/lookFor');
+const Next = () =>import('@/components/next');
 Vue.use(Router)
 let r = new Router({
 	 mode:'hash',
@@ -25,6 +26,11 @@ let r = new Router({
 			      component: LookFor
 				}
 			]
+	 	},
+	 	{
+	 		 path: '/next',
+		      name: 'Next',
+		      component: Next
 	 	}
 	 ]
 })
