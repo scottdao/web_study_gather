@@ -5,7 +5,7 @@ class Http {
 		if (ENV =='dev') {
 		  this.URL = 'api'
 		}else if(ENV =='production'){
-		  this.URL = 'http://api.wawa.kinlink.cn/'
+		  this.URL = ''
 		}
 	}
 	post(url,data,callBack){

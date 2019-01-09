@@ -14,9 +14,9 @@ class Index extends Component {
    
   }
  componentDidMount(){
-			http.post('/V2/Share',{},(res) => {
-  			console.log(res)
-      })
+			//http.post('/V2/Share',{},(res) => {
+  	  // console.log(res)
+      //})
   }
   Name=() => {
     console.log(111);
