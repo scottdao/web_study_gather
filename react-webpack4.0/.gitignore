@@ -13,3 +13,4 @@ dist/
 webpack.config.js
 /.project
 /app/src/.DS_Store
+/.DS_Store
