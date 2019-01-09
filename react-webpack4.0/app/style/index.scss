@@ -1,0 +1,9 @@
+@mixin font-html($size) {
+  font-size: ((75/375) * $size) +0px;
+}
+//$base-size:75;
+@mixin input-font-size {
+  color: #999;
+  font-size: (14/75) * 2 +0rem;
+  letter-spacing: 1px;
+}

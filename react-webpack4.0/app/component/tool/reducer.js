@@ -7,9 +7,9 @@ const reducer = (state = 0, action) => {
   switch (action.type) {
     case 'ADD':
       //return state.concat([action.text]);
-      return state+action.text; 
+      return state+action.payload; 
     case 'min':
-      return  state-action.text;
+      return  state-action.payload;
     default: 
       return state;
   }

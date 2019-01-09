@@ -7,31 +7,67 @@ import {
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import {add,min} from 'Component/tool/actions';
-
+import { Menu, ActivityIndicator, NavBar, Button,List, InputItem, Toast } from 'antd-mobile';
+import 'antd-mobile/dist/antd-mobile.css';
+import { createForm } from 'rc-form';
 class Login extends Component {
   constructor(props,context) {
     super(props,context);
     this.state={
-    	first:1
+    	first:1,
+       hasError: false,
+       value: '',
     }
   }
-
+  onErrorClick = () => {
+    if (this.state.hasError) {
+      Toast.info('Please enter 11 digits');
+    }
+  }
+  onChange = (value) => {
+    if (value.replace(/\s/g, '').length < 11) {
+      this.setState({
+        hasError: true,
+      });
+    } else {
+      this.setState({
+        hasError: false,
+      });
+    }
+    this.setState({
+      value,
+    });
+  }
   render() {
     console.log(this.props);
+     const { form:{getFieldProps} } = this.props;
     return(
     	 <div>
     	     
 					<Link to='/index'>登录界面</Link>
-            <button onClick={() => {
-              
+            <Button  type="primary" size="small" inline onClick={() => {
+               
               this.props.add(1)
-            }}>+</button>
+            }}>+</Button>
               {this.props.reducer}
-            <button onClick={() => {
+            <Button  type="primary" size="small" inline onClick={() => {
               
               this.props.min(1)
-            }}>-</button>
-            
+            }}>-</Button>
+            <InputItem
+            {...getFieldProps('autofocus')}
+                  clear
+                  placeholder="auto focus"
+                  ref={el => this.autoFocusInst = el}
+            >标题</InputItem>
+              <InputItem
+                  type="phone"
+                  placeholder="input your phone"
+                  error={this.state.hasError}
+                  onErrorClick={this.onErrorClick}
+                  onChange={this.onChange}
+                  value={this.state.value}
+                >手机号码</InputItem>
     	 </div>
     )
   }
@@ -49,4 +85,4 @@ const mapDispatchToProps = (dispatch) =>{
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(mapStateToProps,mapDispatchToProps)(createForm()(Login));
