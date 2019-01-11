@@ -13,10 +13,16 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": false,
+    "noImplicitAny": false, // 默认不带类型的就为 any
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "emitDecoratorMetadata": true, // 允许使用装饰器的相关功能
+    "experimentalDecorators": true, // 同上
+    "paths": {
+      // 设着alias别名，类似webpack，相对上面设置的基础路径
+      "@/*": ["./src/*"]
+    }
   },
   "exclude": [
     "node_modules",
@@ -31,5 +37,5 @@
     "ordered-imports": false,
     "import-sources-order": "any",
     "named-imports-order": "any"
-    }
+  }
 }

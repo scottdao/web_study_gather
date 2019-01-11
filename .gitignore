@@ -1,0 +1,8 @@
+.meteor/
+node_modules/
+.DS_Store/
+code.code-workspace/
+code.code-workspace
+.git/
+*/.DS_Store
+

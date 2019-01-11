@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import Slider from './slider';
 class AudioPlayer extends Component{
 	constructor(props) {
 	    super(props);
@@ -17,7 +17,7 @@ class AudioPlayer extends Component{
 					console.log(222)
 				}} 
 				ref={(ref) => {
-					if(ref)ref.src = 'http://fs.w.kugou.com/201901081616/7b21dc800a58b8c65d8809d0d29a975b/G022/M06/12/03/9pMEAFWKLteAftb0AD8A_yIk33g406.mp3'
+					if(ref)ref.src = ''
 				}}
               	src={srcAudio} 
               	controls
@@ -29,7 +29,7 @@ class AudioPlayer extends Component{
               	<div>
 	              	<div>
 		              	<span>00:10</span>
-		              	<div>播放进度条</div>
+		              	<Slider />
 		              	<span>12:00</span>
 	              	</div>
 	              	<div>
@@ -37,11 +37,7 @@ class AudioPlayer extends Component{
 	              		<span>音频进度条</span>
 	              	</div>
               	</div>
-
-              	{
-              	//<a download  target="_blank" href='http://fs.w.kugou.com/201901081616/7b21dc800a58b8c65d8809d0d29a975b/G022/M06/12/03/9pMEAFWKLteAftb0AD8A_yIk33g406.mp3'> 下载 </a>
-                }
-			</div>);
+            </div>);
 	}
 }
 

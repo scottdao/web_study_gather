@@ -22,3 +22,5 @@ const mapDispatchToProps = (dispatch) =>{
 
 reducer.js 代码：
 ![reducer](./image/reducer.jpg);
+
+[文档](https://reacttraining.com/react-router/web/guides/quick-start)

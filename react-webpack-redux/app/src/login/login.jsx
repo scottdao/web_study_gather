@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import {addCount,minCount} from 'Component/store/action/login-management/count-action';
 import LoginSharePost from 'Component/store/http/login-management/login-share';
 import {
-  Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Switch
+  Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Switch, Slider
 } from 'antd';
 import 'antd/dist/antd.css';
 import MyInput from './myInput'
@@ -109,7 +109,7 @@ class Login extends Component {
    
     return(
     	 <Form layout="inline" onSubmit={this.handleSubmit}>
-    	    <Link to={`/index/1`}>登录界面</Link>
+    	    <Link to={`/index`}>登录界面</Link>
             <button onClick={() => {
                this.props.addCount(1);
             }}>+</button>
@@ -146,8 +146,8 @@ class Login extends Component {
                   },required:true }],
                 })(<MyInput />)}
              </Form.Item>
-             {//<AudioPlayer />
-             }
+               <AudioPlayer />
+               <Slider />
                <AutoComplete
                   dataSource={dataSource}
                   style={{ width: 200 }}

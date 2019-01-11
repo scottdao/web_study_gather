@@ -6,9 +6,13 @@ import {
   Link,
   NavLink 
 } from 'react-router-dom'
+import {Switch,Redirect} from 'react-router'
 import PropTypes from 'prop-types'
 import {addCount,minCount} from 'Component/store/action/login-management/count-action';
 import {connect} from 'react-redux';
+
+import Mine from 'Src/index/mine'
+import Main from 'Src/index/main'
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -18,11 +22,14 @@ class Index extends Component {
    }
   render() {
     //console.log(this.props);/V2/GoodTerm
+    console.log(this.props);
+    let {match, extra} = this.props;
     return(<div>
-    			<NavLink  to='/index/main'>资产</NavLink >
-		    	<NavLink  to='/index/mine'>我的</NavLink >
-          {this.props.reducer}
-         
+        			<NavLink  to={`${match.path}/main`}>资产</NavLink >
+    		    	<NavLink  to={`${match.path}/mine`}>我的</NavLink >
+
+              <Route       path={`${match.path}/mine`} component={Mine} />
+              <Route        path={`${match.path}/main`}  component={Main} />
 		    </div>)
   }
 }

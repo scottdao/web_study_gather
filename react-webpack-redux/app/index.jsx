@@ -5,7 +5,14 @@ import RouterIndex from 'Router/router'
 import {Provider,connect} from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import store from 'Component/store'
-import {Switch,Redirect,Router} from 'react-router'
+import {Switch,Redirect} from 'react-router'
+import {
+   Router,
+  HashRouter,
+  BrowserRouter,
+  Route,
+  Link
+} from 'react-router-dom'
 import http from 'Component/http'
 class Index extends Component {
   constructor(props) {
@@ -25,10 +32,11 @@ class Index extends Component {
   }
   render() {
   	  const history = createHistory()
+    // history={history}
       return(<Provider store={store}>
-              <Router  history={history}>
+              <BrowserRouter forceRefresh={true}>
                   <RouterIndex />
-              </Router>
+              </BrowserRouter>
             </Provider>)
   }
 }

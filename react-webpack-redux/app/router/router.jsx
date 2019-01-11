@@ -24,15 +24,20 @@ class RouterIndex extends Component {
 
   }
   render() {
-    return(<HashRouter >
-			    	<React.Fragment>
-					    <Route exact path="/" component={Login}/>
-						  <Route strict path="/index/:id"  component={Index}/>
-							<Route  path='/index/mine' component={Mine} />
-							<Route  path='/index/main' component={Main} />
-							<Route  path='/detail' component={Detail} />
-						</React.Fragment>
-					</HashRouter >)
+    let loginQX = 1;//strict
+    return(
+      
+			    	<Switch>
+					   <Route exact path="/" component={Login}/>
+             <Route       path='/detail' component={Detail} />
+
+              <BrowserRouter basename='/index'>
+                   <Route    path="/"  render={props => <Index {...props} />}/>
+               </BrowserRouter>
+                <Route  component={render =><div>走丢啦！</div>} />
+						</Switch>
+            
+					)
   }
 }
 RouterIndex.contextTypes = {
