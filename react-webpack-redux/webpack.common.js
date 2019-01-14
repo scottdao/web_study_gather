@@ -16,6 +16,7 @@ module.exports = {
         //filename: '[name].build.js',
         filename: 'js/[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
+       
         chunkFilename: 'js/[name].js'
     },
     resolve: {

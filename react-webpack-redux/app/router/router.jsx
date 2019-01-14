@@ -24,17 +24,13 @@ class RouterIndex extends Component {
 
   }
   render() {
-    let loginQX = 1;//strict
+    let loginQX = 0;//strict
     return(
-      
-			    	<Switch>
-					   <Route exact path="/" component={Login}/>
-             <Route       path='/detail' component={Detail} />
-
-              <BrowserRouter basename='/index'>
-                   <Route    path="/"  render={props => <Index {...props} />}/>
-               </BrowserRouter>
-                <Route  component={render =><div>走丢啦！</div>} />
+			    	<Switch >
+					    <Route exact path="/" component={() => loginQX==1?<Redirect to='/index' />:<Login />}/>
+              <Route  path="/index"  component={props => <Index {...props} />}/>
+              <Route  path='/detail' component={Detail} />
+              <Route       component={() => <div>404</div>} />
 						</Switch>
             
 					)

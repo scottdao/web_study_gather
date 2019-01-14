@@ -14,6 +14,7 @@ class Detail extends Component {
  			
   }
   render() {
+    //console.log(this.props);
     return(<div>
     			详情页面
 		    </div>)

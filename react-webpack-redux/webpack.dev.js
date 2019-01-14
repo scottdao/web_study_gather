@@ -8,6 +8,9 @@ const apiServer = {
 }
 module.exports = merge(common, {
     devtool: 'inline-source-map',
+    output:{
+        publicPath:'/',
+    },
     module: {
         rules: [{ test: /\.(css|scss)$/, use: ['style-loader', 'css-loader', 'sass-loader'] }]
     },

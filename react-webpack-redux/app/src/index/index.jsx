@@ -21,15 +21,15 @@ class Index extends Component {
  			
    }
   render() {
-    //console.log(this.props);/V2/GoodTerm
-    console.log(this.props);
-    let {match, extra} = this.props;
+    let {match, extra, location} = this.props;
     return(<div>
-        			<NavLink  to={`${match.path}/main`}>资产</NavLink >
-    		    	<NavLink  to={`${match.path}/mine`}>我的</NavLink >
-
-              <Route       path={`${match.path}/mine`} component={Mine} />
-              <Route        path={`${match.path}/main`}  component={Main} />
+        			<NavLink  to={`${match.url}/main`}>资产</NavLink >
+    		    	<NavLink  to={`${match.url}/mine`}>我的</NavLink >
+              <Switch location={location}>
+                 <Route       path={`${match.url}/mine`} component={Mine} />
+                 <Route       path={`${match.url}/main`}  component={Main} />
+                 <Route       component={() => <Redirect to={`${match.url}/main`} />} />
+              </Switch>
 		    </div>)
   }
 }

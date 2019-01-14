@@ -7,7 +7,7 @@ import createHistory from 'history/createBrowserHistory';
 import store from 'Component/store'
 import {Switch,Redirect} from 'react-router'
 import {
-   Router,
+  Router,
   HashRouter,
   BrowserRouter,
   Route,
@@ -30,13 +30,19 @@ class Index extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return false;
   }
+
   render() {
   	  const history = createHistory()
-    // history={history}
-      return(<Provider store={store}>
-              <BrowserRouter forceRefresh={true}>
+      //console.log(process.env.NODE_ENV);
+     const ConfigRouter = () =>{
+      return  process.env.NODE_ENV==='development'? (<BrowserRouter >
                   <RouterIndex />
-              </BrowserRouter>
+              </BrowserRouter>):(<HashRouter >
+                  <RouterIndex />
+              </HashRouter>)
+     }
+      return(<Provider store={store}>
+              <ConfigRouter />
             </Provider>)
   }
 }
