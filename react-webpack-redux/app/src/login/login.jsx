@@ -11,7 +11,7 @@ import LoginSharePost from 'Component/store/http/login-management/login-share';
 import {
   Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Switch, Slider
 } from 'antd';
-import 'antd/dist/antd.css';
+
 import MyInput from './myInput'
 import {AudioPlayer} from 'Src/components'; 
 

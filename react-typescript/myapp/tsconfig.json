@@ -31,7 +31,8 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
+    "src/setupTests.ts",
+		"src/App.test.tsx"//去除app.test.tsx
   ],
   "rules": {
     "ordered-imports": false,

@@ -13,7 +13,7 @@ class Mine extends Component {
  			//console.log(this.context)
  }
   render() {
-    return(<div>
+    return(<div style={{height:'100px', width:"100px", backgroundColor:"red"}}>
 		    	我的的界面
 		    </div>)
   }

@@ -17,7 +17,7 @@ class AudioPlayer extends Component{
 					console.log(222)
 				}} 
 				ref={(ref) => {
-					if(ref)ref.src = ''
+					if(ref)ref.src = 'http://fs.w.kugou.com/201901151600/78062821b7a4a35049fe74776d24191a/G114/M07/1F/04/sg0DAFlKHeeAIuuhAFKMQ0TqEYw721.mp3'
 				}}
               	src={srcAudio} 
               	controls

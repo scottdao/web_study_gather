@@ -6,6 +6,7 @@ import {Provider,connect} from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import store from 'Component/store'
 import {Switch,Redirect} from 'react-router'
+import 'antd/dist/antd.css';
 import {
   Router,
   HashRouter,

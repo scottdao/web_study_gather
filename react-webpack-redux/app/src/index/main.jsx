@@ -16,7 +16,7 @@ class Main extends Component {
    }
   render() {
     console.log(this.props);
-    return(<div>
+    return(<div style={{color:'red',height:'100px',width:'100px',backgroundColor:'blue'}}>
     			资产
     			<Link to='/detail'>进入详情</Link>
 		    </div>)
