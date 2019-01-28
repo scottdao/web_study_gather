@@ -1,5 +1,6 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [],
+	"defaultSeverity": "warning",
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -9,6 +10,10 @@
   },
   "rules": {
     "no-console": [false],
-    "only-arrow-functions": [false]
+    "only-arrow-functions": [false],
+		"ordered-imports":[false],//解决Import sources within a group must be alphabetized.的问题
+		"jsx-no-lambda":[false],//尾部空格检测；
+		"no-var-keyword":[false],//关键字var检测
+		"quotemark": [false]
   }
 }

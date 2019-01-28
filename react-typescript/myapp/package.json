@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.17.0"
   },
   "scripts": {
@@ -19,5 +23,13 @@
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "typescript": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": "myapp",
+    "rules": {
+      "no-undef": "1",
+      "no-restricted-globals": "1",
+      "no-unused-vars": "1"
+    }
   }
 }

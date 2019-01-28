@@ -1,26 +1,24 @@
 import * as React from "react";
-
-// interface IState {
-//   count: number;
-// }
-// interface HelloProps {
-//   color: string;
-//   size: string;
-// }
-export interface IProps {
-  name: string;
-  enthusiasmLevel?: number;
-}
-class App extends React.Component<IProps,{}> {
+import { Provider } from 'mobx-react'
+import Router from './router';
+import {
+  HashRouter,
+} from 'react-router-dom'
+import CreateStore from './component/store/store'
+// console.log(CreateStore);
+class App extends React.Component<{},{}> {
     
-//   public state = {
-// 		count:1
-// 	};
+  public state = {
+		count:1
+	};
   public render(){
-		const { name, enthusiasmLevel } = this.props;
-		console.log(name);
+		
 	 return(
-		<div>11111111{name}---{enthusiasmLevel}</div>
+	 <Provider CreateStore={CreateStore}>
+		<HashRouter>
+			<Router />
+		</HashRouter>
+	</Provider>
 	 )
  }
 }
