@@ -14,7 +14,7 @@ import {
 
 import MyInput from './myInput'
 import {AudioPlayer} from 'Src/components'; 
-
+// import 'Style/iconfont/iconfont.css';
 const { Option } = Select;
 
 class PriceInput extends React.Component {
@@ -157,6 +157,9 @@ class Login extends Component {
                   onSearch={this.handleSearch}
                   placeholder="input here"
                 />
+								 <span className="icon iconfont">&#xe77d;</span>
+								 <span className="icon iconfont">&#xe77e;</span>
+								 <span className="icon iconfont">&#xe77f;</span>
       	 </Form>
     )
   }
