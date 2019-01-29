@@ -5,8 +5,12 @@ class Login extends React.Component<{},{}> {
   public state = {
 		count:1
 	};
+  public componentDidMount(){
+   }
+  
   public render(){
-		
+// 	let loginQx:number = 1;
+// 	console.log(loginQx);
 	 return(
 		<div>
 		登录

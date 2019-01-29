@@ -4,6 +4,10 @@
 ###  [react-ts](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter)
 ###  [tsconfig.json](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 ###  [tsconfig.json模版文件](http://json.schemastore.org/tsconfig)
+###  [mobx状态管理库](https://github.com/mobxjs/mobx)
+###  [ts-mobx状态管理](https://github.com/mobxjs/mobx-state-tree)
+###  [js-mobx中文文档](https://github.com/SangKa/MobX-Docs-CN)
+###  [在线编写html](https://jsbin.com/hamiha/edit?js,console,output)
 - 环境配置
 - tsconfig.json配置说明
 
