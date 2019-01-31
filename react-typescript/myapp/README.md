@@ -8,6 +8,10 @@
 ###  [ts-mobx状态管理](https://github.com/mobxjs/mobx-state-tree)
 ###  [js-mobx中文文档](https://github.com/SangKa/MobX-Docs-CN)
 ###  [在线编写html](https://jsbin.com/hamiha/edit?js,console,output)
+###  
+###  [mobx文档](https://cn.mobx.js.org/refguide/observable-decorator.html)
+###  
+###  [react-mobx案例](https://github.com/dimafeng/typescript-react-mobx-template)
 - 环境配置
 - tsconfig.json配置说明
 
