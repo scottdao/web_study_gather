@@ -6,7 +6,7 @@ import {
 import {Switch, Redirect} from 'react-router';
 import Main from'./index/main';
 import Mine from './index/mine';
-export interface IProps {
+interface IProps {
  match?:any,
  location?:object,
  history?:any

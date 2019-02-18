@@ -1,20 +1,27 @@
 import * as React from "react";
-import { Provider} from 'mobx-react'
 import Router from './router';
 import {
   HashRouter,
 } from 'react-router-dom'
-import store from './component/store/store'
+import {actions, store} from './component/store/store';
 
-class App extends React.Component<{},{}> {
+import { Provider } from 'mobx-react';
+
+interface IProps {
+ match?:any,
+ location?:object,
+ history?:any,
+ store?:any,
+ actions?:any
+}
+class App extends React.Component<IProps, {}> {
     
   public state = {
 		count:1
 	};
   public render(){
-	
 	return(
-	 <Provider store={store}>
+	 <Provider store={store} actions={actions}>
 		<HashRouter>
 			<Router />
 		</HashRouter>

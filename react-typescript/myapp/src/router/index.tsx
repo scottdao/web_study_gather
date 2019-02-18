@@ -8,7 +8,7 @@ class RouterIndex extends React.Component<{}, {}> {
   public render(){
 	 return(
 			<Switch >
-			  <Route  exact={true} path="/" component={Login}/>
+							<Route  exact={true} path="/" component={Login}/>
               <Route  path="/index"  component={props=> <Index {...props} />}/>
               <Route  path='/detail' component={Detail} />
               <Route       component={() => <div>404</div>} />

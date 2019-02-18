@@ -1,8 +1,17 @@
 import * as React from "react";
 import {Link } from 'react-router-dom';
-// import {Button} from 'antd-mobile';
+import {observer, inject} from 'mobx-react'
 
-class Login extends React.Component<{},{}> {
+interface IProps {
+ match?:any,
+ location?:object,
+ history?:any,
+ store?:any,
+ actions?:any
+}
+@inject('store', 'actions')
+@observer
+class Login extends React.Component<IProps,{}> {
     
   public state = {
 		count:1
@@ -11,12 +20,17 @@ class Login extends React.Component<{},{}> {
    }
   
   public render(){
+	  const { store, actions } = this.props;
+	  console.log(this.props);
 	 return(
 		<div>
 		登录
 		<Link to='./index'>进入首页</Link>
-	{//	<Button>点击进入</Button>\
-	}
+		 <p>{store.a}</p>
+        <p>
+          <button className="ui-btn" onClick={actions.incA}>增加 a</button>
+          <button className="ui-btn" onClick={actions.decA}>减少 a</button>
+        </p>
 		</div>
 	 )
  }
