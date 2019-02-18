@@ -3,5 +3,5 @@
 *.js linguist-language=webpack
 *.js linguist-language=vue
 *.js linguist-language=meteor
-*.js linguist-language=typescript
+*.js linguist-language=react
 
