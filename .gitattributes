@@ -1,5 +1,5 @@
-
-*.js linguist-language=typescript；
-*.css linguist-language=typescript；
-*.html linguist-language=typescript
-
+*.js linguist-language=react
+*.js linguist-language=webpack
+*.js linguist-language=vue
+*.js linguist-language=meteor
+*.js linguist-language=typescript
