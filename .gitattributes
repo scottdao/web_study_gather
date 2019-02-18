@@ -1,1 +1,1 @@
-*.js linguist-language=react webpack vue meteor typescript
+*.js linguist-language=react-vue
