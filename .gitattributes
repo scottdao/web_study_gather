@@ -1,7 +1,3 @@
 
-*.js linguist-language=react
-*.js linguist-language=webpack
-*.js linguist-language=vue
-*.js linguist-language=meteor
-*.js linguist-language=typescript
+
 
