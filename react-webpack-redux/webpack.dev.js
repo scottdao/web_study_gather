@@ -40,9 +40,7 @@ module.exports = merge(common, {
         new webpack.HotModuleReplacementPlugin(),
 	    new openBrowserPlugin({
             url:`http://${apiServer.host}:${apiServer.port}`,
-            browser:'Google Chrome',
-            delay:0,
-            ignoreErrors:'true'
+           
         })
 
     ]
