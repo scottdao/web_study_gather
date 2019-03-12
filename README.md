@@ -14,3 +14,6 @@
 - git rebase -i  c(id值) 释放出c以前的所有节点
 - 会进入vim命令文本，找出b节点提交的id，将前面的pick改为drop；
 - git push origin HEAD  --force
+
+2. **合并特定的分支节点**
+- git cherry-pick commit_id
