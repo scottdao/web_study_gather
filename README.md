@@ -17,3 +17,7 @@
 
 2. **合并特定的分支节点**
 - git cherry-pick commit_id
+
+3. **版本回退**
+- git reset --hard commit_id
+- git push -f origin 分支
