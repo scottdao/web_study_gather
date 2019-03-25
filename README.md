@@ -25,3 +25,4 @@
 4. **删除远程分支**
 - git branch -r -d origin/分支名；
 - git push origin :分支名
+**或者：** git push origin --delete 分支名  
