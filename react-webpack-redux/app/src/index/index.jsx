@@ -10,7 +10,6 @@ import {Switch,Redirect} from 'react-router'
 import PropTypes from 'prop-types'
 import {addCount,minCount} from 'Component/store/action/login-management/count-action';
 import {connect} from 'react-redux';
-
 import Mine from 'Src/index/mine'
 import Main from 'Src/index/main'
 class Index extends Component {
@@ -28,9 +27,9 @@ class Index extends Component {
               <Switch location={location}>
                  <Route       path={`${match.url}/mine`} component={Mine} />
                  <Route       path={`${match.url}/main`}  component={Main} />
-                 <Route       component={() => <Redirect to={`${match.url}/main`} />} />
+                 <Route render={() => <div>Not Found</div>} />
               </Switch>
-		    </div>)
+		      </div>)
   }
 }
 Index.contextTypes = {
@@ -44,5 +43,7 @@ const mapDispatchToProps = {
   addCount,
   minCount
 }
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(Index);

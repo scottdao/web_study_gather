@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const openBrowserPlugin = require('open-browser-webpack-plugin');
+
 const apiServer = {
     port:4000,
     host:'localhost'
@@ -40,8 +41,16 @@ module.exports = merge(common, {
         new webpack.HotModuleReplacementPlugin(),
 	    new openBrowserPlugin({
             url:`http://${apiServer.host}:${apiServer.port}`,
+<<<<<<< HEAD
            
         })
+=======
+            browser:'Google Chrome',
+            delay:0,
+            ignoreErrors:'true'
+        })
+		
+>>>>>>> acb5935779078324e8d1f4038dcf6e45b6b89b3f
 
     ]
 });

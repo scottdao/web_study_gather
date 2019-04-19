@@ -56,11 +56,6 @@
          }
      },
      plugins: [
-         /* new ImageminPlugin({
-              pngquant: {
-                  quality: '95-100'
-              }
-          }),*/
          new webpack.HashedModuleIdsPlugin(),
          new ExtractTextPlugin({
              filename: (getPath) => {

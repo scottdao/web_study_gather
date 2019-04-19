@@ -19,7 +19,7 @@ class routerIndex extends Component{
                <Provider store={store}>
                 	<Router history={hashHistory} store={store}>
                                <Route path='/' component={Login} ></Route> 
-                               <Route path='/index' component={Index}></Route>
+                               <Route path='/index' component ={Index} ></ Route>
                            </Router>
                 </Provider >
             )

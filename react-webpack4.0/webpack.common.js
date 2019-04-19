@@ -10,7 +10,8 @@ module.exports = {
         app: ['./app/index.jsx'],
         jquery: ['jquery'],
         antd: ['antd-mobile'],
-        common: ['babel-polyfill', 'whatwg-fetch']
+        common: ['babel-polyfill', 'whatwg-fetch'],
+        lodash:['lodash']
     }, //入口文件
     output: { //出口文件
         //filename: '[name].build.js',
@@ -32,9 +33,9 @@ module.exports = {
         rules: [{
                 test: /\.(jsx|js)$/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader',//Rule.use可以是应用于模块的UseEntry数组。每个条目指定要使用的加载器。
                 },
-                exclude: /node_modules/
+                exclude: /node_modules/ //条件必须不匹配
             },
             {
                 test: /\.(png|svg|jpg|gif)$/i,
@@ -47,7 +48,7 @@ module.exports = {
                 }
             },
             {
-                test: /\. (woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     'file-loader'
                 ]
@@ -56,7 +57,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + '/app/index.html'
+            template: __dirname + '/app/index.html',
+            favicon:'./app/1.ico'
         }),
         new CleanWebpackPlugin(['dist'] //匹配删除的文件
             , {
@@ -68,10 +70,16 @@ module.exports = {
             $$: "jquery",
             jquery: "jquery",
             "window.jquery": "jquery",
-            //"http": 'Component/http.js'
+            _:'lodash'
         }),
-        new webpack.DefinePlugin({ //设置全局变量
-            ENV: JSON.stringify(process.env.NODE_ENV)
+        new webpack.DefinePlugin({ //设置全局常量
+            ENV: JSON.stringify(process.env.NODE_ENV),
+            PRODUCTION: JSON.stringify(true),
+            VERSION: JSON.stringify('5fa3b9'),
+            BROWSER_SUPPORTS_HTML5: true,
+            TWO: '5fa3b9',
+            'typeof window': JSON.stringify('object'),
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ]
 };

@@ -1,6 +1,6 @@
  const webpack = require('webpack');
  const merge = require('webpack-merge');
- const ImageminPlugin = require('imagemin-webpack-plugin').default
+ //const ImageminPlugin = require('imagemin-webpack-plugin').default
  const common = require('./webpack.common.js');
  const ExtractTextPlugin = require('extract-text-webpack-plugin');
  const path = require('path')
@@ -56,11 +56,6 @@
          }
      },
      plugins: [
-         /* new ImageminPlugin({
-              pngquant: {
-                  quality: '95-100'
-              }
-          }),*/
          new webpack.HashedModuleIdsPlugin(),
          new ExtractTextPlugin({
              filename: (getPath) => {

@@ -40,7 +40,13 @@ class Login extends Component {
   }
   render() {
     console.log(this.props);
+    console.log(_);
+    var array = [1];
+    var other = _.concat(array, 2, [3], [[4]]);
+     console.log(other);
      const { form:{getFieldProps} } = this.props;
+     console.log(VERSION);
+    // console.log(TWO);
     return(
     	 <div>
     	     

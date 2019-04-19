@@ -4,6 +4,7 @@ const webpack = require('webpack');
 //console.log(webpack)
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //const path = require('path')
 module.exports = {
     entry: {
@@ -48,7 +49,7 @@ module.exports = {
                 }
             },
             {
-                test: /\. (woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     'file-loader'
                 ]
@@ -72,6 +73,6 @@ module.exports = {
         }),
         new webpack.DefinePlugin({ //设置全局变量
             ENV: JSON.stringify(process.env.NODE_ENV)
-        })
+        }),
     ]
 };
