@@ -7,7 +7,7 @@
 //console.log(this);
 //console.log(gobal);
 
-const plused =a=>a+1;
-const mult = a=>a*2;
-console.log(define('2333'));
+// const plused =a=>a+1;
+// const mult = a=>a*2;
+// console.log(define('2333'));
 		

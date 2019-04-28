@@ -3,12 +3,66 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<!-- <script type="text/javascript" src="scott-plg.js">
-		</script> -->
-		<!-- <script type="text/javascript" charset="utf-8">
-			console.log(this);
-		</script> -->
+		<script type="text/javascript" src="../node_modules/moment/moment.js">
+		</script>
+		<script type="text/javascript" charset="utf-8">
+			//console.log();
+// 			var dateTime = new Date();
+// 			var a = moment(dateTime).format('YYYY-MM-DD HH:ss');
+// 			console.log(a);
+			var curryStore = function(){
+// 				return function(b){
+// 						console.log(a+b);
+// 				}
+			/*
+			*
+			* arguments数组转化方案es6
+			* 数组结构法；
+			* */
+// 				console.log(arguments);
+// 				const [...b] = arguments;
+// 				console.log([...b]);
+			/*
+			*
+			* 利用apply传参方案
+			* 
+			* */
+// 			var b = Array.apply(null, arguments);
+// 			console.log(b);
+		/*
+		*
+		* 利用for循环遍历方案解决
+		* ***/
+			console.log(arguments);
+// 			var b = [];
+// 			for(var i = 0;i<arguments.length;i++){
+// 				b.push(arguments[i])
+// 			}
+// 			console.log(b);
+		/*
+		*利用数组的原型prototype
+		* 
+		*/
+		//console.log(Array.prototype);
+		//var b = Array.prototype.slice.apply(arguments);
+         //var b =Array.prototype.concat.apply([], arguments)
+		//console.log(b);
+	
+		}
+		
+var newCurry = curryStore(2, 33)
+// 			newCurry(2)
+// 			newCurry(2)
+// 			newCurry(2)
+			// console.log(b);
+		</script>
 	</head>
 	<body>
+		<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
+		<script type="text/javascript">
+			 function changeEvent(x){
+				console.log(x);
+			}
+		</script> -->
 	</body>
 </html>
