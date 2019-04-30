@@ -4,8 +4,14 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script type="text/javascript" src="../node_modules/moment/moment.js">
+			
 		</script>
+		<script type="text/javascript" src="scott-plg.js"></script>
 		<script type="text/javascript" charset="utf-8">
+			
+			//console.log(plg);
+			
+			
 			//console.log();
 // 			var dateTime = new Date();
 // 			var a = moment(dateTime).format('YYYY-MM-DD HH:ss');
@@ -24,10 +30,17 @@
 // 				console.log([...b]);
 			/*
 			*
-			* 利用apply传参方案
-			* 
+			* 利用apply传参方案,
+			* 此方法的缺陷，在采用number类型作为参数时，会有个小问题产生，当实参数只有一位时，产生的数组会将传参数字大小作为该数组的长度
+			* 解决这个问题的产生做个判断就好了
+			* 产生的原因：js构造函数特性导致的
 			* */
-// 			var b = Array.apply(null, arguments);
+// 			var b
+// 			if(arguments.length===1 && typeof arguments[0] === 'number'){
+// 				b = [arguments[0]];
+// 			}else{
+// 				b = Array.apply(null, arguments);
+// 			}
 // 			console.log(b);
 		/*
 		*
@@ -49,12 +62,25 @@
 		//console.log(b);
 	
 		}
-		
-var newCurry = curryStore(2, 33)
+		//var newCurry = curryStore(8948)
 // 			newCurry(2)
 // 			newCurry(2)
 // 			newCurry(2)
 			// console.log(b);
+			//console.log(Array.prototype);
+// 			var a = [1]
+			// var c = a.push("kdhfj", 'sdfhkhskj');
+// 			console.log(c)
+// 			var a = [1,34,4];
+// 			var b = [5,2,3];
+// 			var c = a.concat(b);
+// 			console.log(c);
+
+// 			function curry(a){
+// 				return function (6){
+// 					
+// 				}
+// 			}
 		</script>
 	</head>
 	<body>
