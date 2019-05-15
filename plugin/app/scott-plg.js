@@ -13,7 +13,17 @@
 		//null为空对象
 		return object !== null && Object.prototype.toString.call(value) === ['object Object'];
 	}
-
+	
+	/*
+	*number纯数字为true, NaN为false；
+	*/
+	function isPureNumberOrNaN(value){
+		if (typeof (value - 0) === 'number' && !isNaN(value - 0)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	function isEmptyObject(emptyObject) {
 		//keys,可枚举；
 		//getOwnPropertyNames，可枚举与不可枚举；
@@ -34,6 +44,7 @@
 	}
 	/*
 	 *判别empty，空Array,object,number,string,undefiend
+	 * 空为true 非空为false
 	 */
 	function isEmpty(value) {
 		if (value == null) {
@@ -46,12 +57,24 @@
 			return false;
 		}
 	}
-
+	/**
+	 * 防抖函数
+	 */
+	function antiShake(){
+		
+	}
+	/*
+	*节流函数
+	* **/
+	function throttle(){
+		
+	}
 	return {
 		isEmpty,
 		isArray,
 		isObject,
 		isEmptyObject,
-		isEmptyArray
+		isEmptyArray,
+		isPureNumberOrNaN
 	}
 })

@@ -81,6 +81,14 @@
 // 					
 // 				}
 // 			}
+			
+	        console.log(Array.prototype);
+			var a = [1,2,3, 'dsfsdf', '金开大道后方可'];
+			
+			var c = a.copyWithin(2,4,5);
+			console.log(c);//(5) [1, 2, "金开大道后方可", "dsfsdf", "金开大道后方可"]
+			console.log(a)// [1, 2, "金开大道后方可", "dsfsdf", "金开大道后方可"]
+			//console.log(b);//["kfkj"]
 		</script>
 	</head>
 	<body>
