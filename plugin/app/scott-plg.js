@@ -58,15 +58,39 @@
 		}
 	}
 	/**
+	 * 数组对象浅拷贝
+	*/
+	function shallowCopyObject(){
+		   
+	}
+   /*
+   *数组对象深拷贝
+   */
+	function deepCopyObject(){
+		  
+	}
+	/**
 	 * 防抖函数
 	 */
-	function antiShake(){
+	function debounce(){
 		
 	}
 	/*
 	*节流函数
-	* **/
+	*/
 	function throttle(){
+		
+	}
+	function forEach(){
+		
+	} 
+	function filter(){
+		
+	}
+	function map(){
+		
+	} 
+	function filter(){
 		
 	}
 	return {
