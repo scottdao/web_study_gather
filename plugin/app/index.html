@@ -8,6 +8,9 @@
 		</script>
 		<script type="text/javascript" src="scott-plg.js"></script>
 		<script type="text/javascript" charset="utf-8">
+			var x = {a:{s:{d:"39747"},d:{q:"32847"}},c:{s:"2837"}};
+			var y = plg.platObject(x);
+			console.log(y);
 			
 			//console.log(plg);
 			
@@ -70,10 +73,11 @@
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
 		var a = ['2','10','3'];
-		a.sort();
-		console.log('10'.charCodeAt());
-		console.log('2'.charCodeAt());
-		console.log(a);
+		a.reverse();
+		console.log('10'.charCodeAt());//49
+		console.log('2'.charCodeAt());//50
+		console.log('3'.charCodeAt());//51
+		console.log(a);//['10','2','3']
 		
 		
 		</script>

@@ -6,12 +6,13 @@
 		define.amd ? define(fn) : gobal.plg = fn();
 })(this, function() {
 	function isArray(array) {
-		return array instanceof Array || Object.prototype.toString.call(array) === ['object Array'];
+		return array instanceof Array || Object.prototype.toString.call(array) === '[object Array]';
 	}
 
 	function isObject(object) {
+		
 		//null为空对象
-		return object !== null && Object.prototype.toString.call(value) === ['object Object'];
+		return object !== null && object !==undefined/*(IE)*/ && Object.prototype.toString.call(object) === '[object Object]';
 	}
 	
 	/*
@@ -57,6 +58,58 @@
 			return false;
 		}
 	}
+	//数组扁平化 兼容的写法
+	function platArray(dataSource, dataArr = []){
+		if(!dataSource && !isArray(dataSource)){
+			throw new Error(`the dataSource's parameter is ${dataSource}, please writting the right array`);
+			return;
+		}
+		if(dataSource.flat){
+			return dataSource.flat(Infinity)
+		}else{
+			for(var i = 0; i<dataSource.length; i++){
+				if(isArray(dataSource[i])){
+					platArray(dataSource[i], dataArr)
+				}else{
+					dataArr.push(dataSource[i]);
+				}
+			}
+			return dataArr;
+		}
+	}
+	//对象扁平化；{a:{b:{c:"jkfjk"}}}=>{"a.b.c":"jkfjk"}
+	function platObject(dataSource, dataArr={}, keyDot=""){
+		if(!dataSource && !isObject(dataSource)){
+			throw new Error(`the dataSource's parameter is ${dataSource}, please writting the right object`);
+			return;
+		}
+		keyDot = keyDot?keyDot+'.':""
+		for(var i in dataSource){
+			if(isObject(dataSource[i])){
+				
+				platObject(dataSource[i], dataArr, keyDot+i);
+			}else{
+				dataArr[keyDot+i] = dataSource[i];
+			}
+		}
+		return dataArr;
+	}
+	/*
+	 * 对象数组扁平化
+	*/
+	function paltMethods(dataSource){
+		if(!dataSource){
+			throw new Error(`the dataSource’s parameter  is ${dataSource},please check your current file’s Function parameter!`);
+			return;
+		}
+		if(isObject(dataSource)){//object
+			platArray(dataSource)
+		}else if(isArray(dataSource)){//array
+			platObject(dataSource)
+		}else{//其他数据类型，null， undefined
+			return dataSource;
+		}
+	}
 	/**
 	 * 数组对象浅拷贝
 	*/
@@ -99,6 +152,9 @@
 		isObject,
 		isEmptyObject,
 		isEmptyArray,
-		isPureNumberOrNaN
+		isPureNumberOrNaN,
+		platArray,
+		platObject,
+		paltMethods
 	}
 })
