@@ -145,16 +145,20 @@
 	function filter(){
 		
 	}
+	/**
+	 * replace(/(^\d{3})(\d{4})(\d{4}$)/g, "$1****$3");
+	 * 
+	 */
 	function textEncryption(text, targetStr = '*', digit = 4){
 		if(!text){
 			throw new Error(`the text’s parameter  is ${text},please check your current file’s Function parameter!`);
 			return;
 		}
 		text = text + '';
-		if(text.length<digit){
+		/*if(text.length<digit){
 			throw new Error(`the text’s length(${text.length}) can not be over the digit(${digit})!`);
 			return;
-		}
+		}*/
 		var newTargetString = ''
 		for(var i = 0;i<digit;i++){
 			newTargetString += targetStr;
@@ -164,8 +168,7 @@
 		var baseNumber = (len-digit)/2
 		var firstNumber = Math.floor(baseNumber);
 		var lastNumber = Math.ceil(baseNumber);
-		var reg = new RegExp(`(^\\d{${firstNumber}})(\\d{${digit}})(\\d{${lastNumber}}$)`, 'g');
-		
+		var reg = new RegExp(`(^.{${firstNumber}})(.{${digit}})(.{${lastNumber}}$)`, 'g');
 		return text.replace(reg, `$1${newTargetString}$3`);
 	}
 	return {
