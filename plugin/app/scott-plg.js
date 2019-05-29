@@ -26,7 +26,6 @@
 		}
 	}
 	function isEmptyObject(emptyObject) {
-		//keys,可枚举；
 		//getOwnPropertyNames，可枚举与不可枚举；
 		if (Object.getOwnPropertyNames) {
 			return Object.getOwnPropertyNames(value).length === 0;
@@ -163,7 +162,6 @@
 		for(var i = 0;i<digit;i++){
 			newTargetString += targetStr;
 		}
-		
 		var len = text.length;
 		var baseNumber = (len-digit)/2
 		var firstNumber = Math.floor(baseNumber);

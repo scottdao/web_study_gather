@@ -8,9 +8,9 @@
 		</script>
 		<script type="text/javascript" src="scott-plg.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			var phone = 123456666;
-			var a = plg.textEncryption(phone);
-			console.log(a);
+// 			var phone = 123456666;
+// 			var a = plg.textEncryption(phone);
+// 			console.log(a);
 // 			var x = {a:{s:{d:"39747"},d:{q:"32847"}},c:{s:"2837"}};
 // 			var y = plg.platObject(x);
 // 			console.log(y);
@@ -51,7 +51,7 @@
 		*
 		* 利用for循环遍历方案解决
 		* ***/
-			console.log(arguments);
+			//console.log(arguments);
 // 			var b = [];
 // 			for(var i = 0;i<arguments.length;i++){
 // 				b.push(arguments[i])
@@ -74,14 +74,48 @@
 		
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
-		var a = ['2','10','3'];
-		a.reverse();
-		console.log('10'.charCodeAt());//49
-		console.log('2'.charCodeAt());//50
-		console.log('3'.charCodeAt());//51
-		console.log(a);//['10','2','3']
+		var a = [2,10,3,4];
 		
-		
+// 		a.sort(function(a, b){
+// 			return b-a
+// 		})
+		Array.prototype.sortMock = function(fn){
+			var x,y = 0;
+			var len = this.length;
+			//var b = [];
+			for(var i = 0; i<len-1; i++){
+				x = this[i+1];
+				y = this[i];
+				if(fn){
+					if(fn(x,y) !==undefined){
+						//console.log(fn(x,y))
+						if(fn(x,y)>0){
+							this[i] = x;
+							this[i+1] = y;
+							this.sortMock(fn);
+						}else{
+							this[i+1] = x;
+							this[i] = y;
+							
+						}
+						
+					}else{
+						fn()
+						console.log('无返回值')
+					}
+				}else{
+					console.log('默认降序')
+				}
+			}
+			//console.log(this);
+			//return fn(this[0]);
+		}
+		a.sortMock(function(x,y){
+			//console.log(x,y);
+			return x-y;
+			
+		});
+		console.log(a);
 		</script>
 	</head>
 	<body>
