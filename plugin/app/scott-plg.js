@@ -8,7 +8,9 @@
 	function isArray(array) {
 		return array instanceof Array || Object.prototype.toString.call(array) === '[object Array]';
 	}
-
+	function isFunction(func){
+		return func instanceof Function || Object.prototype.toString.call(func) === '[object Function]';
+	}
 	function isObject(object) {
 		
 		//null为空对象
@@ -77,12 +79,12 @@
 		}
 	}
 	//对象扁平化；{a:{b:{c:"jkfjk"}}}=>{"a.b.c":"jkfjk"}
-	function platObject(dataSource, dataArr={}, keyDot=""){
+	function platObject(dataSource, dataArr={}, keyDot="", stringTarget="."){
 		if(!dataSource && !isObject(dataSource)){
 			throw new Error(`the dataSource's parameter is ${dataSource}, please writting the right object`);
 			return;
 		}
-		keyDot = keyDot?keyDot+'.':""
+		keyDot = keyDot?keyDot + stringTarget:"";
 		for(var i in dataSource){
 			if(isObject(dataSource[i])){
 				platObject(dataSource[i], dataArr, keyDot+i);
@@ -144,6 +146,40 @@
 	function filter(){
 		
 	}
+	//排序方法；
+	function sort(sortArr, fn){
+		if(!isArray(sortArr)){
+			throw new Error(`the sortArr is ${sortArr}, it must be array. please notifice!`);
+			return; 
+		}
+		var x,y = 0;
+		var len = sortArr.length;
+		for(var i = 0; i<len-1; i++){
+			x = sortArr[i+1];
+			y = sortArr[i];
+			if(fn){
+				if(!isFunction(fn)){
+					throw new Error(`the fn is ${fn},it must be Function.please notifice!`)
+					return; 
+				}
+				if( fn(x,y) !== undefined ){
+					if(fn(x,y)>0){
+						sortArr[i] = x;
+						sortArr[i+1] = y;
+						sortMock(sortArr, fn);
+					}
+				}else{
+					fn()
+				}
+			}else{
+				if(x-y>0){
+					sortArr[i] = x;
+					sortArr[i+1] = y;
+					sortMock(sortArr, fn);
+				}
+			}
+		}
+	}
 	/**
 	 * replace(/(^\d{3})(\d{4})(\d{4}$)/g, "$1****$3");
 	 * 
@@ -154,10 +190,6 @@
 			return;
 		}
 		text = text + '';
-		/*if(text.length<digit){
-			throw new Error(`the text’s length(${text.length}) can not be over the digit(${digit})!`);
-			return;
-		}*/
 		var newTargetString = ''
 		for(var i = 0;i<digit;i++){
 			newTargetString += targetStr;

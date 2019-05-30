@@ -74,48 +74,47 @@
 		
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
-		var a = [2,10,3,4];
+		var a = [2,10,3,4,5,6,7,183274,63];
 		
 // 		a.sort(function(a, b){
 // 			return b-a
 // 		})
-		Array.prototype.sortMock = function(fn){
-			var x,y = 0;
-			var len = this.length;
-			//var b = [];
-			for(var i = 0; i<len-1; i++){
-				x = this[i+1];
-				y = this[i];
-				if(fn){
-					if(fn(x,y) !==undefined){
-						//console.log(fn(x,y))
-						if(fn(x,y)>0){
-							this[i] = x;
-							this[i+1] = y;
-							this.sortMock(fn);
-						}else{
-							this[i+1] = x;
-							this[i] = y;
-							
-						}
-						
-					}else{
-						fn()
-						console.log('无返回值')
-					}
-				}else{
-					console.log('默认降序')
-				}
-			}
-			//console.log(this);
-			//return fn(this[0]);
-		}
-		a.sortMock(function(x,y){
-			//console.log(x,y);
-			return x-y;
-			
-		});
-		console.log(a);
+// 		Array.prototype.sortMock = function(fn){
+// 			var x,y = 0;
+// 			var len = this.length;
+// 			for(var i = 0; i<len-1; i++){
+// 				x = this[i+1];
+// 				y = this[i];
+// 				if(fn){
+// 					if(fn(x,y) !==undefined){
+// 						if(fn(x,y)>0){
+// 							this[i] = x;
+// 							this[i+1] = y;
+// 							this.sortMock(fn);
+// 						}
+// 					}else{
+// 						fn()
+// 					}
+// 				}else{
+// 					
+// 					if(x-y>0){
+// 						this[i] = x;
+// 						this[i+1] = y;
+// 						this.sortMock(fn);
+// 					}
+// 				}
+// 			}
+// 			//console.log(this);
+// 			//return fn(this[0]);
+// 		}
+// 		
+// 		a.sortMock(function(x,y){
+// 			//console.log(x,y);
+// 			return x-y;
+// 			
+// 		});
+		a.reverse();
+		console.log(Array.prototype);
 		</script>
 	</head>
 	<body>
