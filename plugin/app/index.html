@@ -6,8 +6,9 @@
 		<script type="text/javascript" src="../node_modules/moment/moment.js">
 			
 		</script>
-		<script type="text/javascript" src="scott-plg.js"></script>
+		<script type="text/javascript" src="../../webpack/scott-plg.js"></script>
 		<script type="text/javascript" charset="utf-8">
+			console.log(plg);
 // 			var phone = 123456666;
 // 			var a = plg.textEncryption(phone);
 // 			console.log(a);
@@ -74,7 +75,7 @@
 		
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
-		var a = [2,10,3,4,5,6,7,183274,63];
+		//var a = [2,10,3,4,5,6,7,183274,63];
 		
 // 		a.sort(function(a, b){
 // 			return b-a
@@ -113,11 +114,46 @@
 // 			return x-y;
 // 			
 // 		});
-		a.reverse();
+		var a = [10,3,4,5,6,7,183274,63,2];
+		a.reduce()
+		//a.reverse();
+		/*
+		reverse方法的实现
+		Array.prototype.reverseMock = function(){
+			var newA = [];
+			for(var i = 0, len = this.length;i<len;i++){
+				newA.unshift(this[i]);
+			}
+			var x = 0;
+			while(newA[x]){
+				this[x] = newA[x];
+				x++;
+			}
+		}*/
+// 		var a = [1,2,3,4,5,6,67];
+// 		var c = a.join('-');
+// 		console.log(c);
+// 		console.log(a.toString());
 		console.log(Array.prototype);
+		
+		//function c(d,f,e,g,j,k){
+			//console.log(arguments);
+			//if(a===0){
+				//console.log();
+				//c(12,3,4,5,6,6,4)
+				//a++;
+			//}
+			
+			//console.log(d,f,e,g,j,k)
+		//}
+		//c(1,2,3,4);
 		</script>
 	</head>
 	<body>
+		<input type="text" name="" id="input" value="" />
+		<script type="text/javascript">
+			
+		</script>
 		<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
 		<script type="text/javascript">
 			 function changeEvent(x){

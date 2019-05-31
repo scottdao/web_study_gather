@@ -1,5 +1,5 @@
-// import moment from './scott-plg';
-// console.log(moment)
+import plg from 'scott-plg';
+console.log(plg)
 // (function(gobal, $){
 // 	console.log(gobal);
 // 	console.log($);
