@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<script type="text/javascript" src="../node_modules/moment/moment.js">
-			
-		</script>
-		<script type="text/javascript" src="../../webpack/scott-plg.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			console.log(plg);
-// 			var phone = 123456666;
-// 			var a = plg.textEncryption(phone);
-// 			console.log(a);
-// 			var x = {a:{s:{d:"39747"},d:{q:"32847"}},c:{s:"2837"}};
-// 			var y = plg.platObject(x);
-// 			console.log(y);
-			//console.log(plg);
-			
-			
-			//console.log();
-// 			var dateTime = new Date();
-// 			var a = moment(dateTime).format('YYYY-MM-DD HH:ss');
-// 			console.log(a);
-			var curryStore = function(){
-// 				return function(b){
-// 						console.log(a+b);
-// 				}
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../node_modules/moment/moment.js">
+
+	</script>
+	<script type="text/javascript" src="../../webpack/scott-plg.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		console.log(plg);
+		// 			var phone = 123456666;
+		// 			var a = plg.textEncryption(phone);
+		// 			console.log(a);
+		// 			var x = {a:{s:{d:"39747"},d:{q:"32847"}},c:{s:"2837"}};
+		// 			var y = plg.platObject(x);
+		// 			console.log(y);
+		//console.log(plg);
+
+
+		//console.log();
+		// 			var dateTime = new Date();
+		// 			var a = moment(dateTime).format('YYYY-MM-DD HH:ss');
+		// 			console.log(a);
+		var curryStore = function () {
+			// 				return function(b){
+			// 						console.log(a+b);
+			// 				}
 			/*
 			*
 			* arguments数组转化方案es6
 			* 数组结构法；
 			* */
-// 				console.log(arguments);
-// 				const [...b] = arguments;
-// 				console.log([...b]);
+			// 				console.log(arguments);
+			// 				const [...b] = arguments;
+			// 				console.log([...b]);
 			/*
 			*
 			* 利用apply传参方案,
@@ -41,80 +42,80 @@
 			* 解决这个问题的产生做个判断就好了
 			* 产生的原因：js构造函数特性导致的
 			* */
-// 			var b
-// 			if(arguments.length===1 && typeof arguments[0] === 'number'){
-// 				b = [arguments[0]];
-// 			}else{
-// 				b = Array.apply(null, arguments);
-// 			}
-// 			console.log(b);
-		/*
-		*
-		* 利用for循环遍历方案解决
-		* ***/
+			// 			var b
+			// 			if(arguments.length===1 && typeof arguments[0] === 'number'){
+			// 				b = [arguments[0]];
+			// 			}else{
+			// 				b = Array.apply(null, arguments);
+			// 			}
+			// 			console.log(b);
+			/*
+			*
+			* 利用for循环遍历方案解决
+			* ***/
 			//console.log(arguments);
-// 			var b = [];
-// 			for(var i = 0;i<arguments.length;i++){
-// 				b.push(arguments[i])
-// 			}
-// 			console.log(b);
-		/*
-		*利用数组的原型prototype
-		* 
-		*/
-		//console.log(Array.prototype);
-		//var b = Array.prototype.slice.apply(arguments);
-         //var b =Array.prototype.concat.apply([], arguments)
-		//console.log(b);
-	
+			// 			var b = [];
+			// 			for(var i = 0;i<arguments.length;i++){
+			// 				b.push(arguments[i])
+			// 			}
+			// 			console.log(b);
+			/*
+			*利用数组的原型prototype
+			* 
+			*/
+			//console.log(Array.prototype);
+			//var b = Array.prototype.slice.apply(arguments);
+			//var b =Array.prototype.concat.apply([], arguments)
+			//console.log(b);
+
 		}
-	
-	
+
+
 		//console.log(Array.prototype);
 		//var a = [1,2,3,1,345,'ldfjsl','v'];
-		
+
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
 		//var a = [2,10,3,4,5,6,7,183274,63];
-		
-// 		a.sort(function(a, b){
-// 			return b-a
-// 		})
-// 		Array.prototype.sortMock = function(fn){
-// 			var x,y = 0;
-// 			var len = this.length;
-// 			for(var i = 0; i<len-1; i++){
-// 				x = this[i+1];
-// 				y = this[i];
-// 				if(fn){
-// 					if(fn(x,y) !==undefined){
-// 						if(fn(x,y)>0){
-// 							this[i] = x;
-// 							this[i+1] = y;
-// 							this.sortMock(fn);
-// 						}
-// 					}else{
-// 						fn()
-// 					}
-// 				}else{
-// 					
-// 					if(x-y>0){
-// 						this[i] = x;
-// 						this[i+1] = y;
-// 						this.sortMock(fn);
-// 					}
-// 				}
-// 			}
-// 			//console.log(this);
-// 			//return fn(this[0]);
-// 		}
-// 		
-// 		a.sortMock(function(x,y){
-// 			//console.log(x,y);
-// 			return x-y;
-// 			
-// 		});
-		var a = [10,3,4,5,6,7,183274,63,2];
+
+		// 		a.sort(function(a, b){
+		// 			return b-a
+		// 		})
+		// 		Array.prototype.sortMock = function(fn){
+		// 			var x,y = 0;
+		// 			var len = this.length;
+		// 			for(var i = 0; i<len-1; i++){
+		// 				x = this[i+1];
+		// 				y = this[i];
+		// 				if(fn){
+		// 					if(fn(x,y) !==undefined){
+		// 						if(fn(x,y)>0){
+		// 							this[i] = x;
+		// 							this[i+1] = y;
+		// 							this.sortMock(fn);
+		// 						}
+		// 					}else{
+		// 						fn()
+		// 					}
+		// 				}else{
+		// 					
+		// 					if(x-y>0){
+		// 						this[i] = x;
+		// 						this[i+1] = y;
+		// 						this.sortMock(fn);
+		// 					}
+		// 				}
+		// 			}
+		// 			//console.log(this);
+		// 			//return fn(this[0]);
+		// 		}
+		// 		
+		// 		a.sortMock(function(x,y){
+		// 			//console.log(x,y);
+		// 			return x-y;
+		// 			
+		// 		});
+		var a = [10, 3, 4, 5, 6, 7, 183274, 63, 2];
 		a.reduce()
 		//a.reverse();
 		/*
@@ -130,12 +131,12 @@
 				x++;
 			}
 		}*/
-// 		var a = [1,2,3,4,5,6,67];
-// 		var c = a.join('-');
-// 		console.log(c);
-// 		console.log(a.toString());
+		// 		var a = [1,2,3,4,5,6,67];
+		// 		var c = a.join('-');
+		// 		console.log(c);
+		// 		console.log(a.toString());
 		console.log(Array.prototype);
-		
+
 		//function c(d,f,e,g,j,k){
 			//console.log(arguments);
 			//if(a===0){
@@ -143,22 +144,24 @@
 				//c(12,3,4,5,6,6,4)
 				//a++;
 			//}
-			
+
 			//console.log(d,f,e,g,j,k)
 		//}
 		//c(1,2,3,4);
-		</script>
-	</head>
-	<body>
-		<input type="text" name="" id="input" value="" />
-		<script type="text/javascript">
-			
-		</script>
-		<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
+	</script>
+</head>
+
+<body>
+	<input type="text" name="" id="input" value="" />
+	<script type="text/javascript">
+
+	</script>
+	<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
 		<script type="text/javascript">
 			 function changeEvent(x){
 				console.log(x);
 			}
 		</script> -->
-	</body>
+</body>
+
 </html>
