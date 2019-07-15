@@ -9,7 +9,7 @@
 	</script>
 	<script type="text/javascript" src="../../webpack/scott-plg.js"></script>
 	<script type="text/javascript" charset="utf-8">
-		console.log(plg);
+		//console.log(plg);
 		// 			var phone = 123456666;
 		// 			var a = plg.textEncryption(phone);
 		// 			console.log(a);
@@ -73,7 +73,6 @@
 
 		//console.log(Array.prototype);
 		//var a = [1,2,3,1,345,'ldfjsl','v'];
-
 		//console.log(a.splice(0,2,1,2,'fhdsk'));
 		//console.log(a);
 		//var a = [2,10,3,4,5,6,7,183274,63];
@@ -115,44 +114,24 @@
 		// 			return x-y;
 		// 			
 		// 		});
-		var a = [10, 3, 4, 5, 6, 7, 183274, 63, 2];
-
-		// var c = a.map((res,index,arr)=>{
-		// 	return res
-		// })
-		//console.log(c);
-		Array.prototype.ldyMap = function (fn) {
-			//for(var i = 0;i<this.length;i++){
-
-			if (fn()) {
-				for (var i = 0; i < this.length; i++) {
-					this[i] = fn(this[i], i, this);
-					fn(this[i], i, this)
-				}
-
-			} else {
-				for (var t = 1; t < this.length; t++) {
-					//console.log(this[t]);
-					fn(this[t], t, this)
-				}
-
-
-			}
-
-
-			//}
-
-
-			//if(fn())return this;
-		};
-		let c = a.ldyMap(res => {
-			console.log(res);
-			//return true
-		})
-		//console.log(c);
-		// 
-		//a.reduce()
-		//a.reverse();
+// 		var a = [10, 3, 4, 5, 6, 7, 183274, 63, 2];
+// 
+// 		Array.prototype.ldySome = function(fn){
+// 			var arrFlag = false;
+// 			for (var i = 0; i < this.length; i++) {
+// 				var func = fn(this[i], i, this);
+// 				if(func){
+// 					arrFlag = true
+// 					return true;
+// 				}
+// 			}
+// 			return arrFlag;
+// 		}
+// 		var c = a.ldySome(res=>{
+// 			return res>183273
+// 		})
+// 		console.log(c);
+// 		console.log(Array.prototype);
 		/*
 		reverse方法的实现
 		Array.prototype.reverseMock = function(){
@@ -170,7 +149,7 @@
 		// 		var c = a.join('-');
 		// 		console.log(c);
 		// 		console.log(a.toString());
-		console.log(Array.prototype);
+		
 		//function c(d,f,e,g,j,k){
 		//console.log(arguments);
 		//if(a===0){
