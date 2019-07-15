@@ -1,0 +1,25 @@
+{
+  "name": "scott-plg",
+  "version": "0.0.3",
+  "description": "插件库",
+  "main": "scott-plg.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottdao/scottPackaging.git"
+  },
+  "keywords": [
+    "插件包"
+  ],
+  "author": "scottdao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottdao/scottPackaging/issues"
+  },
+  "homepage": "https://github.com/scottdao/scottPackaging#readme",
+  "dependencies": {
+    "scott-plg": "0.0.1"
+  }
+}

@@ -60,7 +60,8 @@
 		}
 	}
 	//数组扁平化 兼容的写法
-	function platArray(dataSource, dataArr = []){
+	function platArray(dataSource, dataArr){
+		dataArr = dataArr ||[];
 		if(!dataSource && !isArray(dataSource)){
 			throw new Error(`the dataSource's parameter is ${dataSource}, please writting the right array`);
 			return;
@@ -79,7 +80,10 @@
 		}
 	}
 	//对象扁平化；{a:{b:{c:"jkfjk"}}}=>{"a.b.c":"jkfjk"}
-	function platObject(dataSource, dataArr={}, keyDot="", stringTarget="."){
+	function platObject(dataSource, dataArr, keyDot, stringTarget){
+		dataArr = dataArr || {};
+		keyDot = keyDot || '';
+		stringTarget = stringTarget || '.';
 		if(!dataSource && !isObject(dataSource)){
 			throw new Error(`the dataSource's parameter is ${dataSource}, please writting the right object`);
 			return;
@@ -184,7 +188,9 @@
 	 * replace(/(^\d{3})(\d{4})(\d{4}$)/g, "$1****$3");
 	 * 
 	 */
-	function textEncryption(text, targetStr = '*', digit = 4){
+	function textEncryption(text, targetStr, digit){
+		targetStr = targetStr || '*';
+		digit = digit || 4;
 		if(!text){
 			throw new Error(`the text’s parameter  is ${text},please check your current file’s Function parameter!`);
 			return;
