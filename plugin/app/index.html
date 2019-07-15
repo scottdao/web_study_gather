@@ -115,7 +115,42 @@
 // 			
 // 		});
 		var a = [10,3,4,5,6,7,183274,63,2];
-		a.reduce()
+		
+		// var c = a.map((res,index,arr)=>{
+		// 	return res
+		// })
+		//console.log(c);
+		Array.prototype.ldyMap = function(fn){
+			//for(var i = 0;i<this.length;i++){
+				
+				if(fn()){
+					for (var i = 0; i < this.length; i++) {
+						this[i] = fn(this[i], i, this);
+						fn(this[i], i, this)
+					}
+					
+				}else{
+				for(var t= 1; t<this.length;t++){
+					//console.log(this[t]);
+					fn(this[t], t, this)
+				}
+					
+					
+				}
+				
+				
+			//}
+			
+			
+			//if(fn())return this;
+		};
+	let c = 	a.ldyMap(res=>{
+			console.log(res);
+			//return true
+		})
+		//console.log(c);
+		// 
+		//a.reduce()
 		//a.reverse();
 		/*
 		reverse方法的实现
@@ -135,7 +170,6 @@
 // 		console.log(c);
 // 		console.log(a.toString());
 		console.log(Array.prototype);
-		
 		//function c(d,f,e,g,j,k){
 			//console.log(arguments);
 			//if(a===0){
@@ -150,8 +184,15 @@
 		</script>
 	</head>
 	<body>
-		<input type="text" name="" id="input" value="" />
+		<!-- <input type="text" name="" id="input" value="" /> -->
 		<script type="text/javascript">
+			// function changeEvent (e){
+			// 	console.log(1);
+			// }
+			// var Input = document.getElementById('input');
+			// Input.addEventListener('change',function(){
+			// 	console.log(11);
+			// })
 			
 		</script>
 		<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
