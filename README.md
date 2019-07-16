@@ -26,3 +26,7 @@
 - git branch -r -d origin/分支名；
 - git push origin :分支名
 **或者：** git push origin --delete 分支名  
+
+5. **解决git命令出错**
+-  remove .git/gc.log.的错误：命令行-- git config gc.auto 0表示关闭gc功能
+- git config gc.auto 1 表示开启gc功能
