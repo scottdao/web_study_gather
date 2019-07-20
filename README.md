@@ -41,6 +41,7 @@
  - 找到 [remote 'origin']目录下的url进行修改
     - ` 列如： https://github.com/blockChain.git修改成 https://用户名:密码@github.com/blockChain.git保存即可。`
  - 上诉修改不限系统操作环境。
+ 
  8.**解决无需全局配置git环境的用户名和邮箱**
  - 作为程序员会存在很多git账号，不是每个账号的邮箱和账号都是一样的，为了解决这个问题，当前项目配置当前邮箱配置当前账号的问题
  - 进入当前项目目录下进入.git文件vim config文件，在该文件的最后一行输入如下代码
