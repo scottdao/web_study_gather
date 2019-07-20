@@ -30,9 +30,13 @@
 5. **解决git命令出错**
 -  remove .git/gc.log.的错误：命令行-- git config gc.auto 0表示关闭gc功能
 - git config gc.auto 1 表示开启gc功能
+
 6. **解决windows下git全局密码输入不提示**
-   git config --system --unset credential.helper
+
+ -  ` git config --system --unset credential.helper`
+   
 7.**解决git每次输入密码都得提示**
+
  - 进入项目目录下的.git文件夹，通过vim config命令打开文件
  - 找到 [remote 'origin']目录下的url进行修改
     ` 列如： https://github.com/blockChain.git修改成 https://用户名:密码@github.com/blockChain.git保存即可。`
