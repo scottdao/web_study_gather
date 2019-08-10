@@ -1,5 +1,7 @@
 import plg from 'scott-plg';
 console.log(plg)
+
+
 // (function(gobal, $){
 // 	console.log(gobal);
 // 	console.log($);

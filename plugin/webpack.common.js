@@ -1,10 +1,9 @@
 const path = require('path');
 //console.log(path)
 const webpack = require('webpack');
-//console.log(webpack)
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-//const path = require('path')
 module.exports = {
     entry: {
         app: ['./app/index.js'],
