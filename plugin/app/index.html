@@ -4,184 +4,22 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<script type="text/javascript" src="../node_modules/moment/moment.js">
+	<!-- <script type="text/javascript" src="../node_modules/moment/moment.js"> -->
 
 	</script>
 	<script type="text/javascript" src="../../webpack/scott-plg.js"></script>
 	<script type="text/javascript" charset="utf-8">
-		//console.log(plg);
-		// 			var phone = 123456666;
-		// 			var a = plg.textEncryption(phone);
-		// 			console.log(a);
-		// 			var x = {a:{s:{d:"39747"},d:{q:"32847"}},c:{s:"2837"}};
-		// 			var y = plg.platObject(x);
-		// 			console.log(y);
-		//console.log(plg);
-
-
-		//console.log();
-		// 			var dateTime = new Date();
-		// 			var a = moment(dateTime).format('YYYY-MM-DD HH:ss');
-		// 			console.log(a);
+	
 		var curryStore = function () {
-			// 				return function(b){
-			// 						console.log(a+b);
-			// 				}
-			/*
-			 *
-			 * arguments数组转化方案es6
-			 * 数组结构法；
-			 * */
-			// 				console.log(arguments);
-			// 				const [...b] = arguments;
-			// 				console.log([...b]);
-			/*
-			 *
-			 * 利用apply传参方案,
-			 * 此方法的缺陷，在采用number类型作为参数时，会有个小问题产生，当实参数只有一位时，产生的数组会将传参数字大小作为该数组的长度
-			 * 解决这个问题的产生做个判断就好了
-			 * 产生的原因：js构造函数特性导致的
-			 * */
-			// 			var b
-			// 			if(arguments.length===1 && typeof arguments[0] === 'number'){
-			// 				b = [arguments[0]];
-			// 			}else{
-			// 				b = Array.apply(null, arguments);
-			// 			}
-			// 			console.log(b);
-			/*
-			 *
-			 * 利用for循环遍历方案解决
-			 * ***/
-			//console.log(arguments);
-			// 			var b = [];
-			// 			for(var i = 0;i<arguments.length;i++){
-			// 				b.push(arguments[i])
-			// 			}
-			// 			console.log(b);
-			/*
-			 *利用数组的原型prototype
-			 * 
-			 */
-			//console.log(Array.prototype);
-			//var b = Array.prototype.slice.apply(arguments);
-			//var b =Array.prototype.concat.apply([], arguments)
-			//console.log(b);
-
 		}
-
-
-		//console.log(Array.prototype);
-		//var a = [1,2,3,1,345,'ldfjsl','v'];
-		//console.log(a.splice(0,2,1,2,'fhdsk'));
-		//console.log(a);
-		//var a = [2,10,3,4,5,6,7,183274,63];
-
-		// 		a.sort(function(a, b){
-		// 			return b-a
-		// 		})
-		// 		Array.prototype.sortMock = function(fn){
-		// 			var x,y = 0;
-		// 			var len = this.length;
-		// 			for(var i = 0; i<len-1; i++){
-		// 				x = this[i+1];
-		// 				y = this[i];
-		// 				if(fn){
-		// 					if(fn(x,y) !==undefined){
-		// 						if(fn(x,y)>0){
-		// 							this[i] = x;
-		// 							this[i+1] = y;
-		// 							this.sortMock(fn);
-		// 						}
-		// 					}else{
-		// 						fn()
-		// 					}
-		// 				}else{
-		// 					
-		// 					if(x-y>0){
-		// 						this[i] = x;
-		// 						this[i+1] = y;
-		// 						this.sortMock(fn);
-		// 					}
-		// 				}
-		// 			}
-		// 			//console.log(this);
-		// 			//return fn(this[0]);
-		// 		}
-		// 		
-		// 		a.sortMock(function(x,y){
-		// 			//console.log(x,y);
-		// 			return x-y;
-		// 			
-		// 		});
-		// 		var a = [10, 3, 4, 5, 6, 7, 183274, 63, 2];
-		// 
-		// 		Array.prototype.ldySome = function(fn){
-		// 			var arrFlag = false;
-		// 			for (var i = 0; i < this.length; i++) {
-		// 				var func = fn(this[i], i, this);
-		// 				if(func){
-		// 					arrFlag = true
-		// 					return true;
-		// 				}
-		// 			}
-		// 			return arrFlag;
-		// 		}
-		// 		var c = a.ldySome(res=>{
-		// 			return res>183273
-		// 		})
-		// 		console.log(c);
-		// 		console.log(Array.prototype);
-		/*
-		reverse方法的实现
-		Array.prototype.reverseMock = function(){
-			var newA = [];
-			for(var i = 0, len = this.length;i<len;i++){
-				newA.unshift(this[i]);
-			}
-			var x = 0;
-			while(newA[x]){
-				this[x] = newA[x];
-				x++;
-			}
-		}*/
-		// 		var a = [1,2,3,4,5,6,67];
-		// 		var c = a.join('-');
-		// 		console.log(c);
-		// 		console.log(a.toString());
-
-		//function c(d,f,e,g,j,k){
-		//console.log(arguments);
-		//if(a===0){
-		//console.log();
-		//c(12,3,4,5,6,6,4)
-		//a++;
-		//}
-
-		//console.log(d,f,e,g,j,k)
-		//}
-		//c(1,2,3,4);
 	</script>
 </head>
 
 <body>
 	<!-- <input type="text" name="" id="input" value="" /> -->
 	<script type="text/javascript">
-		// function changeEvent (e){
-		// 	console.log(1);
-		// }
-		// var Input = document.getElementById('input');
-		// Input.addEventListener('change',function(){
-		// 	console.log(11);
-		// })
+		
 	</script>
-	<!-- <input type="text"  id='input' onchange="changeEvent(this.id)"/>
-		<script type="text/javascript">
-			 function changeEvent(x){
-				console.log(x);
-			}
-		</script> -->
-
 	<a href="javascript:;" id='a'>唤起chrome浏览器</a>
 	<script>
 		document.getElementById('a').onclick = function () {

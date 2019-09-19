@@ -31,12 +31,12 @@
     </style>
 </head>
 <body>
-    <div class="bg">
+   <!-- <div class="bg">
        <p class="bg-con">
        	 liudaoyun 
        </p>
-       </div>
-    <div style="color: Black">
+       </div> -->
+   <!-- <div style="color: Black"> -->
        <!-- Write your contents here<br />
         Write your contents here<br />
         Write your contents here<br />
@@ -53,6 +53,25 @@
         Write your contents here<br />
         Write your contents here<br />
         Write your contents here<br /> -->
-    </div>
+    <!-- </div> -->
+	<button type="button" id="local">localStorage</button>
+	<script type="text/javascript">
+		function getDom(id){
+			return document.getElementById(id);
+		}
+		window.storageSDk = function(){
+			return{
+				createSDk:function(value){
+					return localStorage.setItem(value)
+				},
+				getSDK:function(value){
+					return localStorage.getItem(value)
+				}
+			}
+		}
+		getDom('local').onclick = function(){
+			console.log(localStorage, localStorage.length);
+		}
+	</script>
 </body>
 </html>
