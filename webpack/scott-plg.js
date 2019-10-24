@@ -1,4 +1,4 @@
-(function(gobal, fn) {
+;(function(gobal, fn) {
 	/**
 	 * 区别运行环境，node/amd/window
 	 */
@@ -207,6 +207,13 @@
 		var reg = new RegExp(`(^.{${firstNumber}})(.{${digit}})(.{${lastNumber}}$)`, 'g');
 		return text.replace(reg, `$1${newTargetString}$3`);
 	}
+	/*
+	*千分付
+	* ***/
+	function millimeter(value, symbol) {
+	 if(isEmpty(value))return 0
+	  return (symbol?`${symbol}${value}`:`${value}`).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
 	return {
 		isEmpty,
 		isArray,
@@ -217,6 +224,7 @@
 		platArray,
 		platObject,
 		paltMethods,
-		textEncryption
+		textEncryption,
+		millimeter
 	}
 })
