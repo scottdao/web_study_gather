@@ -55,7 +55,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + '/app/index.html'
+            template: __dirname + '/app/app.html'
         }),
         new CleanWebpackPlugin(['dist'] //匹配删除的文件
             , {
