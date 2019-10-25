@@ -1,10 +1,14 @@
 {
   "name": "scott-plg",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "插件库",
-  "main": "scott-plg.js",
+  "main": "src/scott-plg.js",
+  "module":"src/scott-plg.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env NODE_ENV=production  webpack   --mode=production --config webpack.config.js",
+    "watch": "cross-env NODE_ENV=production   webpack --watch",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development  --open chrome --config webpack.config.js",
+    "start": "http-server dist"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,35 @@
   "homepage": "https://github.com/scottdao/scottPackaging#readme",
   "dependencies": {
     "scott-plg": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "antd": "3.11.2",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-styleguidist": "^9.0.9",
+    "style-loader": "^0.23.1",
+    "styled-components": "^4.2.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
   }
 }

@@ -30,7 +30,7 @@
 	function isEmptyObject(emptyObject) {
 		//getOwnPropertyNames，可枚举与不可枚举；
 		if (Object.getOwnPropertyNames) {
-			return Object.getOwnPropertyNames(value).length === 0;
+			return Object.getOwnPropertyNames(emptyObject).length === 0;
 		} else {
 			for (var i in emptyObject) {
 				if (emptyObject.hasOwnProperty(i)) {
@@ -41,8 +41,8 @@
 		}
 	}
 	function isEmptyArray(emptyArray){
-		
-		return value.length === 0?true:false;
+		if(!isArray(emptyArray))throw new Error(`${emptyArray} is ${typeof emptyArray}!`)
+		return emptyArray.length === 0?true:false;
 	}
 	/*
 	 *判别empty，空Array,object,number,string,undefiend
@@ -51,7 +51,7 @@
 	function isEmpty(value) {
 		if (value == null) {
 			return true;
-		} else if (isObject) {
+		} else if (isObject(value)) {
 			return isEmptyObject(value);
 		} else if (isArray(value)) {
 			return isEmptyArray(value)
@@ -114,42 +114,70 @@
 			return dataSource;
 		}
 	}
-	/**
-	 * 数组对象浅拷贝
-	*/
-	function shallowCopyObject(){
-		   
+	function getArguments(args){
+		return Array.prototype.slice.apply(args);
 	}
    /*
    *数组对象深拷贝
    */
-	function deepCopyObject(){
-		  
+	function cloneDeep(){
+		const [value] = getArguments(arguments); 
+		if(!isObject(value) && !isArray(value)){
+			throw new Error('expect a object type!')
+		}
+		const targetValue = isArray(value)?[]:{};
+		for(let i in value){
+			 if(value.hasOwnProperty(i)){
+				 if(value[i] && typeof value[i] === 'object'){
+					 targetValue[i] = isArray(value[i])?[]:{};
+					 targetValue[i] = cloneDeep(value[i]);
+				 }else{
+					 targetValue[i]=value[i];
+				 }
+			 }
+		}
+		return targetValue;
 	}
 	/**
 	 * 防抖函数
 	 */
-	function debounce(){
-		
+	function debounce(method, delay){
+		delay  = delay || 300;
+		var timeout;
+		return function (e){
+			clearTimeout(timeout);
+			var content = this, args = arguments;
+			timeout = setTimeout(function(){
+				method.apply(content, args)
+			}, delay)
+		}
 	}
 	/*
-	*节流函数
+	*节流函数 时间戳节流
 	*/
-	function throttle(){
+	function throttle(method, delay){
+		delay  = delay || 300;
+		var prev = Date.now(); 
+		return function(){
+			var now = Date.now();
+			if(now - prev >= delay){
+				method.apply(this, arguments);
+				prev = Date.now();
+			}
+		}
+		/*var timer;
+		return function(){
+			var content = this, args = arguments;
+			if(!timer){
+				timer = setTimeout(function(){
+					method.apply(content,args);
+					timer = null;
+				},delay);
+			}
+		}*/
 		
 	}
-	function forEach(){
-		
-	} 
-	function filter(){
-		
-	}
-	function map(){
-		
-	} 
-	function filter(){
-		
-	}
+
 	//排序方法；
 	function sort(sortArr, fn){
 		if(!isArray(sortArr)){
@@ -225,6 +253,9 @@
 		platObject,
 		paltMethods,
 		textEncryption,
-		millimeter
+		millimeter,
+		debounce,
+		throttle,
+		cloneDeep
 	}
 })
