@@ -1,5 +1,4 @@
-import plg from 'scott-plg';
-console.log(plg)
+import './ext-all.js'
 
 
 // (function(gobal, $){

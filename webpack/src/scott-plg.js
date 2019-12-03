@@ -242,6 +242,8 @@
 	 if(isEmpty(value))return 0
 	  return (symbol?`${symbol}${value}`:`${value}`).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	}
+	
+
 	return {
 		isEmpty,
 		isArray,
