@@ -140,6 +140,35 @@
   function getArguments(args) {
     return Array.prototype.slice.apply(args);
   }
+  // 获取多个数组交集
+  function getMixed() {
+    //arguments 装箱转化 Array
+    var args = Array.prototype.slice.apply(arguments);
+    var targetArr = args[0];
+    var compareArr = args.slice(1, args.length);
+    if (!isObject(targetArr) && !isArray(targetArr)) {
+      console.warn("target arguments must be Array");
+      return targetArr;
+    }
+    if (!isObject(compareArr) && !isArray(compareArr)) {
+      console.warn("compare arguments must be Array");
+      return compareArr;
+    }
+    return targetArr.filter(item =>
+      platArray(compareArr).some(i => i === item)
+    );
+  }
+  // 清除多个数组重复值
+  function setDeference() {
+    //arguments 装箱转化 Array
+    var args = Array.prototype.slice.apply(arguments);
+    var targetArr = args[0];
+    var compareArr = args.slice(1, args.length);
+    // 扁平化参数
+    return targetArr.filter(
+      item => !platArray(compareArr).some(i => i === item)
+    );
+  }
   /*
    *数组对象深拷贝
    */
@@ -294,6 +323,8 @@
     millimeter,
     debounce,
     throttle,
-    cloneDeep
+    cloneDeep,
+    getMixed,
+    setDeference
   };
 });
