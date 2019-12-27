@@ -63,5 +63,5 @@
 - [react/webpack3.0](./react-webpack3.0)
 - [vue](./vueTwo)
 - [utils类插件](./webpack)
-- [react/typescript](./react-typescript)
+- [react/typescript](https://github.com/scottdao/react-typescript/tree/master/practiceArrange)
 - [meteor](./meteor)
