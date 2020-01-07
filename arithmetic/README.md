@@ -12,9 +12,13 @@
 - 删除数据：出栈(pop)
 - 后入先出：Last In First Out(LIFO)
 - 描述：一个有零个或者多个元素的有穷线性表
+- [堆栈数组实现方案](./heap.js)
   ![堆栈](./imgs/堆栈图述.png)
-3. 列队 
+3. 队列
 
 
-##### 线性表相关代码实现
+##### 算法应用代码实现
 - [单向概念链表代码实现](./list.js)
+- [10进制转换成其他进制](./apply/stackApply.js)
+- [parseInt算法模拟](./apply/parseIntMock.js)
+- [击鼓传花循环队列](./apply/circularList.js)
