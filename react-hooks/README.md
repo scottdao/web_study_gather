@@ -81,7 +81,34 @@
   2. 逻辑再抽象
 - 组件性能优化
   1. 纯函数：
-   - 给定相同输入，产生相同的输出
-   - 过程没有副作用:不能改变外部的状态(列如：函数内部对象或者数组，函数内部改变对象或者数组，引起外部对象或者数组的变化)
-   - 没有额外的状态依赖：方法内的状态只在方法的生命周期内存活。
+      - 给定相同输入，产生相同的输出
+      - 过程没有副作用:不能改变外部的状态(列如：函数内部对象或者数组，函数内部改变对象或者数组，引起外部对象或者数组的变化)
+      - 没有额外的状态依赖：方法内的状态只在方法的生命周期内存活。
   2.pureRender
+     - 本质：重新实现了shouldComponentUpdate生命周期的方法，让传入的props和state的类型，与之前做浅比较。如果返回false，不会执行render。
+     - 运用：
+     ```
+       import React, { Component } from 'react';
+       import PureRenderMixin from 'react-addons-pure-render-mixin';
+       class App extends Component { 
+         constructor(props) {
+           super(props);
+         this.shouldComponentUpdate =  PureRenderMixin.shouldComponentUpdate.bind(this); 
+         }
+         render() {
+           return <div className={this.props.className}>foo</div>;
+       } 
+       }
+     ```
+  3. 优化pureRender
+   **注：** pureRender是浅比较带来应用场景并不多，深比较带来性能成本比较昂贵，如：shouldComponentUpdate;为了解决浅比较带来的问题，下面提供几种优化方案：
+   - **直接为props设置对象或者对象**
+  **注：** 每次创建组件实例，传入对象或者数组值没有发生变化，它的引用地址也会发生变化
+  - **设置props方法并通过事件绑定在元素上**
+  **注：** 构造器内绑定方法，不用每次进行事件。现在箭头函数很好解决这个问题。
+  - **设置子组件**
+  **注：** 在子组件设置pureRender,利用pureRender浅比较的性能，以期不被影响。
+  4. immutable
+  **注：** 数据传递时，进行组件性能优化。对象时等引用类型赋值，新值改变容易影响原来对象的变化，而深拷贝是一个解决方案，当然也会带来性能的内存的浪费。
+  - Immutable Data
+  **注：** 结构共享
