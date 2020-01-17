@@ -123,7 +123,62 @@
   6.react-addons-perf检测性能优化工具。
 4. **react 源码学习**
  - virtual DOM
+   1. 虚拟dom基本元素：标签名/节点属性/子节点/标识id
+   ```
+   {
+     tagName:'div',//标签名
+     properties:{//节点属性
+       style:{}
+     },
+     children:[],//子节点
+     key:1//标识
+   }
+   ```
+   2. react 虚拟dom节点 --- reactNode：[ReactElement:[ReactComponentElement, ReactDOMElement],ReactFragment, ReactText]
+   3. 创建React元素：ReactElement.createElement
+   4. 初始化React组件：创建组件，先调用instantiateReactComponent,判断node类型来区分组件入口
+        -  node 不存在，初始化空组件，ReactEmptyComponent.Create()
+        -  node 是对象类型 Dom标签是自定义组件
+        -  node 是数字或者字符串，则初始化ReactNativeComponent.CreateInstanceForText(node)
+        -  否则不处理
+    5. 文本组件：ReactDOMTextComponent
+    6. DOM标签组件:与原生组件名相同，react不会直接操作原生dom,既可能保持性能稳定与高效，可以降低直接操作原生dom而导致错误的风险
+         - 更新属性：通过createOpenTagMarkupAndPutListeners来处理DOM节点属性和事件
+         - 更新子节点：_createContentMarkup (transaction, props, context) 来处理节点的内容， mountChildren来对子节点进行初始化渲染
+    7. 自定义组件
  - 生命周期
+    1.初探生命周期：
+      - 首次挂载组件：getDefaultProps、getInitialState、componentWillMount、 render 和 componentDidMount。
+      - 卸载： componentWillUnmount
+      - 重新挂载：getInitialState、componentWillMount、render 和 componentDidMount，但并不执行 getDefaultProps
+      -  再次渲染：componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render 和 componentDidUpdate    
+  
+    2.详解生命周期：
+      **注：** getDefaultProps 是通过构造函数进行管理的
+      - mountComponent(挂载), updateComponent(接受数据更新组件),unmountComponent(卸载组件)
+      - mounting:初始化state， componentWillMount render componentDidMount，render它是通过递归渲染内容
+      - RECEIVE_PROPS(updateComponent):componentWillReceiveProps、shouldComponent-Update、componentWillUpdate、render 和 componentDidUpdate, 更新组件也是通过递归渲染的
+      - UNMOUNTING：componentWillUnmount/如果存在 componentWillUnmount，则执行并重置所有相关参数、更新队列以及更新状态，如 果此时在 componentWillUnmount 中调用 setState，是不会触发 re-render 的，这是因为所有更新 队列和更新状态都被重置为 null，并清除了公共类，完成了组件卸载操作。
+       ![生命周期](./imgs/生命周期.png)
+
  - setState机制
+    **注：** 异步更新机制，当执行setState时，会将更新的state合并后放入到队列，并不会立刻更新this.state,通过队列机制进行批量更新state。通过状态列队机制实现setState异步更新。避免频繁更新state。
+     ![setState](./imgs/setState调用机制.png)
  - diff算法
- - react patch方法
+  1.diff策略：ui中的dom节点跨层级移动操作特别少；拥有同类型组件生成相似的树形结构，不同类生成不同类的树形结构；对于同一层级一组子节点通过唯一id进行区分。进行tree diff ---  component diff ---- element diff
+  2. tree diff: 树进行分层比较
+    ![tree-diff](./imgs/tree-diff.png)
+  3. component diff:
+      - 判断组件类型，同类型按原策略进行比较虚拟dom
+      - 不是同类型组件，判断为dirtyComponent, 替换整个组件下所有子节点
+      - 对于同一类型的组件，有可能其 Virtual DOM 没有任何变化，如果能够确切知道这点，那么就可以节省大量的 diff 运算时间。因此，React 允许用户通过 shouldComponentUpdate() 来判断该组件是否需要进行 diff 算法分析
+    ![component-diff](./imgs/component-diff.png)
+  4. element diff
+     - 插入，移动与删除
+     - INSERT_MARKUP:新的组件类型不在旧集合里，即全新节点.
+     - MOVE_EXISTING:旧集合中有新组件类型，且 element 是可更新的类型，generateComponent- Children 已调用 receiveComponent，这种情况下 prevChild=nextChild，就需要做移动操作，可以复用以前的 DOM 节点.
+     - REMOVE_NODE:旧组件类型，在新集合里也有，但对应的 element 不同则不能直接复用和更新，需要执行删除操作，或者旧组件不在新集合里的，也需要执行删除操作
+      ![element-diff](./imgs/element-diff.png)
+  5.diff算法运作：对新集合遍历-->通过key判断新旧集合是否存在相同节点————>存在，进行移动在进行位置是否执行该操作。
+ - react patch方法：是将虚拟dom转换成真实dom的方法；通过遍历差异列队实现的。遍历差异列队进行相应的操作，插入删除等。
+
