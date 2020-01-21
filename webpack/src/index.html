@@ -20,7 +20,7 @@
         function useArrUniq(arrTarget) {
             var targetA = [];
             for (var i = 0; i < arrTarget.length; i++) {
-                var isRepeat = false;
+                var isRepeat = false; //加个哨兵检测
                 for (var m = 0; m < targetA.length; m++) {
                     if (targetA[m] === arrTarget[i]) {
                         isRepeat = true
