@@ -1,4 +1,4 @@
-//单向链表实现
+// 单向链表实现
 // 创建链表
 function CreateList() {
   this.headNode = null;
