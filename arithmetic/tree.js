@@ -75,6 +75,56 @@ function BinarySearchTree() {
   this.postOrderTraverse = function(callback) {
     postOrderTraverseNode(root, callback);
   };
+
+  this.maxValue = function() {
+    var node = root;
+    if (node) {
+      while (node && node.left !== null) {
+        node = node.left;
+      }
+      return node.key;
+    }
+    return null;
+  };
+  this.minValue = function() {
+    var node = root;
+    if (node) {
+      while (node && node.right !== null) {
+        node = node.right;
+      }
+      return node.key;
+    }
+    return null;
+  };
+  var findMinNode = function() {
+    var node = root;
+    if (node) {
+      while (node && node.right !== null) {
+        node = node.right;
+      }
+      return node;
+    }
+    return null;
+  };
+  var searchNode = function(node, value) {
+    if (node === null) {
+      return false;
+    }
+    if (node.key > value) {
+      return searchNode(node.left, value);
+    } else if (node.key < value) {
+      return searchNode(node.right, value);
+    } else {
+      return true;
+    }
+  };
+  // 查值
+  this.searchValue = function(value) {
+    return searchNode(root, value);
+  };
+  var removeValueNode = function(node, key) {};
+  // 删除值；
+  this.removeValue = function(value) {};
 }
 var tree = new BinarySearchTree();
 tree.insert(11);
@@ -91,7 +141,8 @@ tree.insert(14);
 tree.insert(20);
 tree.insert(18);
 tree.insert(25);
-
-tree.inOrderTraverse(value => {
-  console.log(value.key + ",");
-});
+var isValue = tree.searchValue(3);
+console.log(isValue);
+// tree.inOrderTraverse(value => {
+//   console.log(value.key + ',');
+// });
