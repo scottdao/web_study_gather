@@ -36,16 +36,23 @@ class Index extends Component {
     const history = createHistory();
     console.log(React, 'react');
     const ConfigRouter = () => {
-      return process.env.NODE_ENV === 'development' ? (
+      return (
         <BrowserRouter>
           <RouterIndex />
         </BrowserRouter>
-      ) : (
-        <HashRouter>
-          <RouterIndex />
-        </HashRouter>
       );
     };
+    // const ConfigRouter = () => {
+    //   return process.env.NODE_ENV === 'development' ? (
+    // <BrowserRouter>
+    //   <RouterIndex />
+    // </BrowserRouter>
+    //   ) : (
+    //     <HashRouter>
+    //       <RouterIndex />
+    //     </HashRouter>
+    //   );
+    // };
     return (
       <Provider store={store}>
         <ConfigRouter />
