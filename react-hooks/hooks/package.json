@@ -1,0 +1,14 @@
+{
+  "name": "hooks",
+  "version": "1.0.0",
+  "description": "1.useState方法 2.useEffect方法 3.useRef方法 4.useMome方法",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asap": "^2.0.6"
+  }
+}
