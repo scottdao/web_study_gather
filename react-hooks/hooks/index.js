@@ -32,6 +32,7 @@
 //   console.log('222');
 // });
 const asap = require('asap/raw');
+const playAsap = function(fn) {};
 // console.log(asap);
 function PlayPromise(fn) {
   // this.playFn = fn;
@@ -57,17 +58,46 @@ function PlayPromise(fn) {
 PlayPromise.prototype.then = function(fulfilled) {
   if (this.state === 1) {
     this.callBacks.push(fulfilled);
-  } else {
-    // fulfilled(this.value);
   }
+  //   else {
+  //    fulfilled(this.value);
+  //   }
 
   // this.callBacks.push(fulfilled);
 };
-console.log(111);
-new PlayPromise(resolve => {
-  console.log('333');
+// console.log(111);
+// new PlayPromise(resolve => {
+//   console.log('333');
+//   resolve();
+// }).then(() => {
+//   console.log(444);
+// });
+// console.log(222);
+
+// function My(fn) {
+//   doMy(fn, this);
+// }
+// My.prototype.then = function() {};
+
+// function doMy(fn, promise) {
+//   console.log(promise);
+//   console.log(promise.prototype);
+// }
+// new My(() => {});
+
+// new Promise((resolve, reject) => {
+//   //   resolve(123);
+//   reject(0);
+//   console.log(333);
+// })
+//   .then(value => {
+//     console.log(value, '22');
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+// console.log(4444);
+new Promise(resolve => {
+  console.log(1111);
   resolve();
-}).then(() => {
-  console.log(444);
-});
-console.log(222);
+}).then(() => {});

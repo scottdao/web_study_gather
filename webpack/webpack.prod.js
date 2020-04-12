@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const path = require('path');
 module.exports = merge(common, {
   devtool: 'source-map',
@@ -65,6 +66,13 @@ module.exports = merge(common, {
         return getPath(path.posix.join('[name].css')).replace('js', 'css');
       },
       allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: __dirname + '/statics',
+        to: __dirname + '/dist'
+        // ignore: ['.*']
+      }
+    ])
   ]
 });
