@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">+</div>
+    <div id="div2">-</div>
+    <div id='div3'></div>
+    <script>
+        /***
+         *
+         * 命令模式：把具体的指令与实现隔离，调用与执行解耦
+         * 做法：将方法、数据分装到单一对象中，调用方和执行方进行解耦，达到职责分离的目的
+         * **/
+        (function () {
+            const state = {
+                count: 0,
+                getDom: function (id) {
+                    return document.getElementById(id);
+                },
+                writeDom: function (id, value) {
+                    this.getDom(id).innerText = value;
+                },
+                add: function (id, writeId, maxNumber) {
+                    var that = this;
+                    this.getDom(id).onclick = function () {
+                        if (maxNumber > that.count) {
+                            that.count++
+                        } else {
+                            alert(`最大值不能超过${maxNumber}`)
+                        }
+                        that.writeDom(writeId, that.count);
+                    }
+                },
+                min: function (id, writeId, minNumber) {
+                    var that = this;
+                    this.count = minNumber;
+                    this.getDom(id).onclick = function () {
+                        if (that.count > minNumber) {
+                            that.count--
+                        } else {
+                            alert(`最小值不能超过${minNumber}`)
+                        }
+                        that.writeDom(writeId, that.count);
+                    }
+                }
+            }
+
+            state.add('div1', 'div3', 50);
+            state.min('div2', 'div3', 1);
+            state.writeDom('div3', state.count);
+        })()
+
+        // const handleDiv = (function () {
+        //     return {
+        //         excute: function (commander) {
+        //             if (typeof commander === 'object') {
+
+        //             } else {
+
+        //             }
+        //         }
+        //     }
+        // })()
+    </script>
+</body>
+
+</html>
