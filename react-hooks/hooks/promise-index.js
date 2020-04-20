@@ -31,8 +31,8 @@
 // }).then(() => {
 //   console.log('222');
 // });
-const asap = require('asap/raw');
-const playAsap = function(fn) {};
+const asap = require('./statics/asap/raw');
+const playAsap = function (fn) {};
 // console.log(asap);
 function PlayPromise(fn) {
   // this.playFn = fn;
@@ -40,14 +40,14 @@ function PlayPromise(fn) {
   this.state = 0; // pending
   this.value = null;
   this.callBacks = [];
-  var resolve = function(value) {
+  var resolve = function (value) {
     this.value = value;
     // this.callBacks(value);
     this.state = 1; // fulfilled
     // fn(value);
     // console
     asap(() => {
-      this.callBacks.forEach(fn => {
+      this.callBacks.forEach((fn) => {
         // console.log(fn);
         fn(value);
       });
@@ -55,7 +55,7 @@ function PlayPromise(fn) {
   };
   fn(resolve.bind(this));
 }
-PlayPromise.prototype.then = function(fulfilled) {
+PlayPromise.prototype.then = function (fulfilled) {
   if (this.state === 1) {
     this.callBacks.push(fulfilled);
   }
@@ -66,13 +66,13 @@ PlayPromise.prototype.then = function(fulfilled) {
   // this.callBacks.push(fulfilled);
 };
 // console.log(111);
-// new PlayPromise(resolve => {
-//   console.log('333');
-//   resolve();
-// }).then(() => {
-//   console.log(444);
-// });
-// console.log(222);
+new PlayPromise((resolve) => {
+  console.log(333);
+  resolve();
+}).then(() => {
+  console.log(444);
+});
+console.log(222);
 
 // function My(fn) {
 //   doMy(fn, this);
@@ -97,7 +97,7 @@ PlayPromise.prototype.then = function(fulfilled) {
 //     console.log(err);
 //   });
 // console.log(4444);
-new Promise(resolve => {
-  console.log(1111);
-  resolve();
-}).then(() => {});
+// new Promise((resolve) => {
+//   console.log(1111);
+//   resolve();
+// }).then(() => {});
