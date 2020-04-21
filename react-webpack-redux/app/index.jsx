@@ -12,7 +12,7 @@ import {
   HashRouter,
   BrowserRouter,
   Route,
-  Link
+  Link,
 } from 'react-router-dom';
 import http from 'Component/http';
 class Index extends Component {
@@ -24,6 +24,9 @@ class Index extends Component {
     // http.post('/V2/Share',{},(res) =>{
     // 		console.log(res)
     // })
+    this.setState({
+      count: 2,
+    });
   }
   Name = () => {
     console.log(111);
@@ -34,7 +37,7 @@ class Index extends Component {
 
   render() {
     const history = createHistory();
-    console.log(React, 'react');
+    // console.log(React, 'react');
     const ConfigRouter = () => {
       return (
         <BrowserRouter>
