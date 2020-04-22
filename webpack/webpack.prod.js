@@ -70,8 +70,8 @@ module.exports = merge(common, {
     new CopyWebpackPlugin([
       {
         from: __dirname + '/statics',
-        to: __dirname + '/dist'
-        // ignore: ['.*']
+        to: __dirname + '/dist',
+        ignore: ['.*']
       }
     ])
   ]

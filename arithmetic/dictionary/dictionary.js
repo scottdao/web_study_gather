@@ -45,6 +45,7 @@ function Dictionary() {
     return Object.keys(items);
   };
 }
-var dictionary = new Dictionary();
-dictionary.set("l", "c"), dictionary.set("we", "78");
-console.log(dictionary.getItems());
+module.exports = Dictionary;
+// var dictionary = new Dictionary();
+// dictionary.set("l", "c"), dictionary.set("we", "78");
+// console.log(dictionary.getItems());

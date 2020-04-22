@@ -1,0 +1,2 @@
+- commonjs:同步，无论加载多少次，结果一致,缓存。应用于 nodejs 服务端。
+- AMD:异步加载，利用 jsonp 异步加载多用于浏览器端。利用 requirejs 加载。

@@ -9,6 +9,7 @@
   "author": "ldy",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "ejs": "^3.0.2",
     "koa": "^2.11.0",
     "koa-ejs": "^4.3.0",

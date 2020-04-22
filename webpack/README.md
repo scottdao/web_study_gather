@@ -62,3 +62,5 @@
  b.d.x='123132'
  console.log(b, a);
  ```
+ - **webpack**
+   - `webpack.NotEmitOnErrorsPlugin`
