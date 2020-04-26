@@ -11,8 +11,25 @@
   <body>
     <div id="app"></div>
     <script type="text/babel">
+    const mountState = (initial)=>{}
+    const initObj = {
+      useState:(initial)=>{
+        return mountState(initial)
+      }
+    }
+    const upDateObj = {
+      useState:(initial)=>{}
+    }
+    //  const PlayUseState = (initialState) => {
+    //    var hook={
+    //      memoizedState:initialState,
+    //      basedState:initialState
+    //    }
+    //    var dispatch = dispatchAction.bind()
+    //  }
       const Index = () => {
         const [state, setState] = React.useState(0);
+       //  console.log(React)
         return (
           <div
             onClick={() => {

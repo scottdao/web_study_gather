@@ -32,7 +32,6 @@
 //   console.log('222');
 // });
 const asap = require('./statics/asap/raw');
-const playAsap = function (fn) {};
 // console.log(asap);
 function PlayPromise(fn) {
   // this.playFn = fn;
