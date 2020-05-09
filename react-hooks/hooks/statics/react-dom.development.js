@@ -18104,12 +18104,12 @@
     workInProgress.memoizedState = null;
     workInProgress.updateQueue = null;
     workInProgress.expirationTime = NoWork; // The following should have already been reset
-    console.log(
-      '执行render：',
-      NoWork,
-      workInProgress.expirationTime,
-      renderExpirationTime
-    );
+    // console.log(
+    //   '执行render：',
+    //   NoWork,
+    //   workInProgress.expirationTime,
+    //   renderExpirationTime
+    // );
 
     // currentHook = null;
     // workInProgressHook = null;
@@ -18137,13 +18137,13 @@
     }
     // console.log(props, secondArg, 'props');
     var children = Component(props, secondArg); // Check if there was a render phase update
-    console.log('children', children, 'hookTypesDev', hookTypesDev);
-    console.log(
-      '执行render：',
-      NoWork,
-      workInProgress.expirationTime,
-      renderExpirationTime
-    );
+    // console.log('children', children, 'hookTypesDev', hookTypesDev);
+    // console.log(
+    //   '执行render：',
+    //   NoWork,
+    //   workInProgress.expirationTime,
+    //   renderExpirationTime
+    // );
     if (workInProgress.expirationTime === renderExpirationTime) {
       // Keep rendering in a loop for as long as render phase updates continue to
       // be scheduled. Use a counter to prevent infinite loops.
@@ -18280,7 +18280,7 @@
       // Append to the end of the list
       workInProgressHook = workInProgressHook.next = hook;
     }
-    console.log(workInProgressHook, '工作进度');
+    // console.log(workInProgressHook, '工作进度');
     return workInProgressHook;
   }
 
@@ -18574,7 +18574,7 @@
     }
 
     hook.memoizedState = hook.baseState = initialState;
-    console.log('mountState--hook--queue', hook);
+    // console.log('mountState--hook--queue', hook);
     var queue = (hook.queue = {
       pending: null,
       dispatch: null,
@@ -19208,7 +19208,7 @@
         mountHookTypesDev();
         var prevDispatcher = ReactCurrentDispatcher.current;
         ReactCurrentDispatcher.current = InvalidNestedHooksDispatcherOnMountInDEV;
-        console.log(prevDispatcher, 'stateMount'); // HooksDispatcherOnMountInDEV
+        // console.log(prevDispatcher, 'stateMount'); // HooksDispatcherOnMountInDEV
         try {
           return mountState(initialState);
         } finally {
@@ -28447,7 +28447,7 @@
         current.key,
         current.mode
       );
-      console.log('FiberNode9', workInProgress);
+     // console.log('FiberNode9', workInProgress);
       workInProgress.elementType = current.elementType;
       workInProgress.type = current.type;
       workInProgress.stateNode = current.stateNode;
@@ -28614,7 +28614,7 @@
       // Without some nodes in the tree having empty base times.
       mode |= ProfileMode;
     }
-    console.log('rootFiberNode', tag);
+  //  console.log('rootFiberNode', tag);
     return createFiber(HostRoot, null, null, mode);
   }
   function createFiberFromTypeAndProps(
@@ -28761,7 +28761,7 @@
     }
 
     fiber = createFiber(fiberTag, pendingProps, key, mode);
-    console.log('FiberNode8', fiber);
+   // console.log('FiberNode8', fiber);
     fiber.elementType = type;
     fiber.type = resolvedType;
     fiber.expirationTime = expirationTime;
@@ -28795,7 +28795,7 @@
   }
   function createFiberFromFragment(elements, mode, expirationTime, key) {
     var fiber = createFiber(Fragment, elements, key, mode);
-    console.log('FiberNode7', fiber);
+   // console.log('FiberNode7', fiber);
     fiber.expirationTime = expirationTime;
     return fiber;
   }
@@ -28813,7 +28813,7 @@
     }
 
     var fiber = createFiber(Profiler, pendingProps, key, mode | ProfileMode); // TODO: The Profiler fiber shouldn't have a type. It has a tag.
-    console.log('FiberNode6', fiber);
+    // console.log('FiberNode6', fiber);
     fiber.elementType = REACT_PROFILER_TYPE;
     fiber.type = REACT_PROFILER_TYPE;
     fiber.expirationTime = expirationTime;
@@ -28824,7 +28824,7 @@
     var fiber = createFiber(SuspenseComponent, pendingProps, key, mode); // TODO: The SuspenseComponent fiber shouldn't have a type. It has a tag.
     // This needs to be fixed in getComponentName so that it relies on the tag
     // instead.
-    console.log('FiberNode5', fiber);
+   // console.log('FiberNode5', fiber);
     fiber.type = REACT_SUSPENSE_TYPE;
     fiber.elementType = REACT_SUSPENSE_TYPE;
     fiber.expirationTime = expirationTime;
@@ -28837,7 +28837,7 @@
     key
   ) {
     var fiber = createFiber(SuspenseListComponent, pendingProps, key, mode);
-    console.log('FiberNode10', fiber);
+   // console.log('FiberNode10', fiber);
     {
       // TODO: The SuspenseListComponent fiber shouldn't have a type. It has a tag.
       // This needs to be fixed in getComponentName so that it relies on the tag
@@ -28851,13 +28851,13 @@
   }
   function createFiberFromText(content, mode, expirationTime) {
     var fiber = createFiber(HostText, content, null, mode);
-    console.log('FiberNode3', fiber);
+    // console.log('FiberNode3', fiber);
     fiber.expirationTime = expirationTime;
     return fiber;
   }
   function createFiberFromHostInstanceForDeletion() {
     var fiber = createFiber(HostComponent, null, null, NoMode); // TODO: These should not need a type.
-    console.log('FiberNode2', fiber);
+   // console.log('FiberNode2', fiber);
     fiber.elementType = 'DELETED';
     fiber.type = 'DELETED';
     return fiber;
@@ -28865,7 +28865,7 @@
   function createFiberFromPortal(portal, mode, expirationTime) {
     var pendingProps = portal.children !== null ? portal.children : [];
     var fiber = createFiber(HostPortal, pendingProps, portal.key, mode);
-    console.log(fiber, 'FiberNode4');
+    // console.log(fiber, 'FiberNode4');
     fiber.expirationTime = expirationTime;
     fiber.stateNode = {
       containerInfo: portal.containerInfo,
@@ -28886,7 +28886,7 @@
     // the hottest path, and Object.assign() was too slow:
     // https://github.com/facebook/react/issues/12502
     // This code is DEV-only so size is not a concern.
-    console.log('targetFiber', target);
+    // console.log('targetFiber', target);
     target.tag = source.tag;
     target.key = source.key;
     target.elementType = source.elementType;
