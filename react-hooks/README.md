@@ -151,7 +151,7 @@
       - 首次挂载组件：getDefaultProps、getInitialState、componentWillMount、 render 和 componentDidMount。
       - 卸载： componentWillUnmount
       - 重新挂载：getInitialState、componentWillMount、render 和 componentDidMount，但并不执行 getDefaultProps
-      -  再次渲染：componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render 和 componentDidUpdate    
+      - 再次渲染：componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render 和 componentDidUpdate    
   
     2.详解生命周期：
       **注：** getDefaultProps 是通过构造函数进行管理的
@@ -162,8 +162,10 @@
        ![生命周期](./imgs/生命周期.png)
 
  - setState机制
-    **注：** 异步更新机制，当执行setState时，会将更新的state合并后放入到队列，并不会立刻更新this.state,通过队列机制进行批量更新state。通过状态列队机制实现setState异步更新。避免频繁更新state。
+    **注：** 异步更新机制，当执行setState时，会将更新的state合并后放入到队列，并不会立刻更新this.state,通过队列机制进行批量更新state。通过状态列队机制实现setState异步更新。避免频繁更新state；
      ![setState](./imgs/setState调用机制.png)
+     - setState是通过队列机制实现 异步更新 state；
+     - setState实际是执行enqueueSetState方法，对partialState和pendingStateQueue更新队列进行合并操作，最后通过enqueueUpdate执行state更新；
  - diff算法
   1.diff策略：ui中的dom节点跨层级移动操作特别少；拥有同类型组件生成相似的树形结构，不同类生成不同类的树形结构；对于同一层级一组子节点通过唯一id进行区分。进行tree diff ---  component diff ---- element diff
   2. tree diff: 树进行分层比较
@@ -182,3 +184,18 @@
   5.diff算法运作：对新集合遍历-->通过key判断新旧集合是否存在相同节点————>存在，进行移动在进行位置是否执行该操作。
  - react patch方法：是将虚拟dom转换成真实dom的方法；通过遍历差异列队实现的。遍历差异列队进行相应的操作，插入删除等。
 
+- flux架构:逻辑和数据永远单向流动；
+  - mvc/mvvm架构：
+    1. mvc:将model（数据）和view（界面）隔离开，通过controller(控制层)管理数据逻辑和用户页面输入，进行一个协调作用。
+       ```mermaid
+          graph LR
+          a[view]--用户输入-->b(controller)
+          b--改变-->c(model)
+          c--告知监听器-->a
+          b--响应-->a
+          a--监听-->c
+     ```
+
+  2. mvvm：双向数据绑定，view, viewModel代替了controller, model
+  3. flux数据模型
+      ![flux模型](./imgs/flux.jpg)
