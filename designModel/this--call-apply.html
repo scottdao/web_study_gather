@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this
+        // 作为对象的方法调用；
+        
+        var obj = {
+            a:0,
+            getA:function(){
+              
+                console.log(this === obj);
+                console.log(this.a)
+            }
+        }
+       //  obj.getA()
+
+        // 函数条用 window
+        
+        window.name = 'ldy'
+        // function whoIsName (){
+        //     // 'use strict'
+        //     // console.log(this)
+        //     return this.name
+        // }
+        // window.whoIsName = function(){
+        //     'use strict'
+        //     return this.name
+        // }
+        var myObj = {
+            name:'12',
+            getName:function(){
+               
+                return this.name
+            },
+          
+        }
+        var getName = myObj.getName;
+       //  console.log(window.whoIsName())
+        // console.log(getName())// ldy
+        // console.log(myObj.getName());// 12
+
+        // 构造器
+
+        var Myself = function(){}
+        // call apply bind 其实就是把一个函数或者方法挂到其他的对象上，让他成为这个方法或者函数的宿主。
+        // function getThis(){
+        //     console.log(this.name,this);
+        // }
+        // getThis.call(myObj, 1,2,3,5)
+        // var yi = 0;
+        // console.log(window.yi)
+        // bind 是通过apply或者call来实现，放回一个函数即可
+    </script>
+
+</body>
+</html>

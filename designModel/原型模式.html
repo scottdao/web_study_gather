@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // 克隆：1.对象字面量
+    var z= {a:1};
+    var cz = Object.create(z)
+    console.log(z.a, cz.a, cz==z)// 对象字面量克隆实现,能继承原对象的属性
+
+    // 2.类
+
+    var Planner =  function () {
+        this.blood= 100
+        this.level= 2
+    }
+    var planner = new Planner();
+    planner.blood = 300;
+
+    var clonePlanner = Object.create(planner);// 通过create创建的是构造函数
+    Object.create = Object.create || function(obj){
+        var F = function(){}
+        F.prototype = obj;
+        return new F();
+    }
+    // console.log(clonePlanner, planner)
+</script>
+    
+</body>
+</html>
