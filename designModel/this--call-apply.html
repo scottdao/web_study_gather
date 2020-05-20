@@ -189,11 +189,11 @@
             sco:'sco3'
         }
         var fool = foo.softBind(liu1);
-        fool(); // sco1
+        // fool(); // sco1
         liu2.foo = foo.softBind(liu1);// 隐式绑定
-        liu2.foo(); // sco2
+        // liu2.foo(); // sco2
 
-        fool.call(liu3); // sco3 显示绑定
+     //   fool.call(liu3); // sco3 显示绑定
         // console.log(liu2.foo())
         // liu2.foo();
 
@@ -206,6 +206,28 @@
         // var Son = function(){}
         // Son.prototype = Object.create(Jon.prototype)
         // console.log(new Son().a())
+         // call;
+        // 作用域链
+
+        var obj2 = {
+            a1:1,
+            obj3:{
+                a1:'obj3',
+                obj4:{
+                    a1:'obj4',
+                    getA:function(){
+                        // console.log(this.a1)
+                        return ()=>{
+                            console.log(this.a1)
+                        }
+                    }
+                    // getA:()=>{
+                    //     console.log(this.a1) // window.a1
+                    // }
+                }
+            }
+        }
+        obj2.obj3.obj4.getA();
     </script>
 
 </body>

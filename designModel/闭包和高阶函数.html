@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /***
+         * 闭包
+         * */ 
+        // 1. 变量作用域：变量有效范围。
+        // 2. 函数作用域：函数可以用来创造函数作用域；函数可以获取外部变量，外部无法获取函数内部变量；如果函数内部没有该变量，函数会根据执行环境创造的作用域链，逐次向外层去寻找该变量。
+        // 代码理解函数寻找变量：
+        var a = 123;
+        var b = 'b1'
+        var fn = function () {
+            var b = 1;
+            var fn1 = function(){
+                var c = 'c'
+                console.log(c) // c
+                console.log(b) // 1
+            }
+            fn1();
+            console.log(c) // c is not defined
+        }
+        // fn()
+       
+
+        // 3.变量生存周期，在函数内部，函数调用结束就会被销毁
+        var fn1 = function(){
+            
+            var a1 = 'a1'
+            console.log(a1); 
+        }
+       
+        // fn1();
+        // 3-1.闭包引用，变量没有销毁
+
+        // 无闭包；
+        var fn2 = function(){
+            var a = 1
+            a++;
+            console.log(a);
+           // return 
+        }
+        // fn2() //2
+        // fn2() //2
+         
+        // 3-2. 闭包，变量递增；
+         var fn3 = function(){
+            var a = 1;
+           return function(){
+               a++;
+               console.log(a)
+           }
+        }
+        // 3-2-1. 闭包，没有引用
+        // fn3()() // 2
+        // fn3()() // 2
+
+        // 3-2-2.闭包，引用。
+        var a2 = fn3()
+        // a2() //2
+        // a2() //3
+        // a2() //4
+    // 闭包，封装全局变量
+    var fn4 = (function(){
+        var cache = {};
+        return function(){
+            var args = Array.prototype.join.call(arguments, ',')
+            if(cache[args]){
+                return cache[args]
+            }
+            var a = 1;
+            for(var i = 0;i<arguments.length; i++){
+                a = a*arguments[i]
+            }
+            return cache[args] = a;
+        }
+    })()
+   //  console.log(fn4(1,2,3,4,5))
+
+   // 高阶函数实现类型判断
+   var isType = function(type){
+       return function(obj){
+         // console.log(Object.prototype.toString.call(obj))
+           return Object.prototype.toString.call(obj) === '[object '+type+']'
+       }
+    }
+
+    var isArray = function(obj){
+        return isType('Array').call(null, obj);
+    }
+    var isNumber = function(obj){
+        return isType('Number').call(null, obj)
+    }
+    // console.log(isArray(null))
+
+    // 高阶函数实现aop(面向切面编程):把核心功能无关写逻辑抽离出来，通过动态植入方式，掺进逻辑模块中；达到模块的纯净与高内聚。
+
+    // 通过Function.prototype扩展
+
+    Function.prototype.before = function(fn){
+        var that = this; // function
+        return function(){
+            fn.apply(this, arguments);
+            return that.apply(this,arguments)
+        }
+    }
+    Function.prototype.after = function(fn){
+        var that = this;
+        return function(){
+           var self = that.apply(this, arguments)// 执行原函数，形成链式调用
+            fn.apply(this, arguments) // 执行掺入函数，修正this
+            return self
+        }
+    }
+    var fng1 = function(){
+        console.log(1)
+    }
+    var fng2 = fng1.before(function(){
+        console.log(0)
+    }).after(function(){
+        console.log(2)
+    })
+    // fng2();
+
+    // currying:柯里化函数实现值得相加
+
+    var cont = (function(){
+        var money = [];
+        return function(){
+            if(arguments.length === 0){
+                var mon = 0;
+                for(var i = 0; i<money.length; i++){
+                    mon +=money[i]
+                }
+                return mon
+            }else{
+                Array.prototype.push.apply(money, arguments)
+            }
+        }
+    })()
+    cont(100);
+    cont(200);
+    // console.log(cont())
+    // 实例2：1+2=3; fn(1, 2) == fn(1)(2) // true
+    var cur1 = function(){
+        var args = Array.prototype.slice.apply(arguments);  
+        if(args.length>1){
+            var num = 0
+            for(var i = 0; i<args.length;i++){
+                num += args[i];
+            }
+           return num     
+        }
+        return function(){
+           var newArgs = Array.prototype.slice.apply(arguments);
+           var n = args[0];
+           for(var j = 0; j<newArgs.length; j++){
+               n += newArgs[j]
+           }
+           return n;
+        }
+    }
+   
+   // console.log(cur1(1,2,3,4,5), cur1(1)(2,3,4,5))
+
+   // unCurrying // 巧妙的借用了call和apply方法
+
+   Function.prototype.unCurrying = function(){
+       var that =this;
+       return function(){
+           var o = Array.prototype.shift.call(arguments);
+           
+           return that.apply(o, arguments)
+       }
+   }
+    var push = Array.prototype.push.unCurrying();
+   (function(){
+       push(arguments, 4)
+     // Array.prototype.push.call(arguments, 5)
+   // var a =  Array.prototype.slice.call(arguments);
+    // console.log(arguments)
+   })(1,2,3)
+    </script>
+</body>
+</html>
