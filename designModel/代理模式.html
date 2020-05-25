@@ -6,24 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
     
-        /**
-         * 一. 策略模式:定义：1 定义一系列的算法，把它们一个个封装起来，并且使它们可以相互替换
-         * 场景：form表单验证， 采用switch case 这种也更适合策略模式
-         * ***/
-        var obj = {
-            A:function(s){
-                return s*3
-            },
-            B:function(s){
-                return s*4
-            },
-            c:function(s){
-                return s*5
-            }
-        }
-        /**
+    /**
          * 二. 代理模式：定义：为一个对象提供一个代用品或占位符，以便控制对它的访问。
          * 场景：模拟代理送花的场景
          * 面向对象的原则：单一职责原则：就一个类(通常也包括对象和函数等)而言，应该仅有一个引起它变 化的原因
@@ -102,6 +88,6 @@
    var min = createProxy(mul);
    var j = min(1,2,3,4)
    // console.log(j)
-   </script>
+    </script>
 </body>
 </html>

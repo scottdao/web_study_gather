@@ -1,31 +1,35 @@
-(function(gobal, fn) {
+(function (gobal, fn) {
   /**
    * 区别运行环境，node/amd/window
    */
-  typeof exports === "object" && typeof module !== undefined
+  typeof exports === 'object' && typeof module !== undefined
     ? (module.exports = fn())
-    : typeof define === "function" && define.amd
+    : typeof define === 'function' && define.amd
     ? define(fn)
     : (gobal.plg = fn());
-})(this, function() {
+})(this, function () {
+  var _toString = Object.prototype.toString;
+
+  var _slice = Array.prototype.slice;
+
+  function isType(dataType) {
+    return function (type) {
+      return _toString.call(dataType) === '[object ' + type + ']';
+    };
+  }
   function isArray(array) {
-    return (
-      array instanceof Array ||
-      Object.prototype.toString.call(array) === "[object Array]"
-    );
+    var hasArray = isType(array);
+    return array instanceof Array || hasArray('Array');
   }
   function isFunction(func) {
-    return (
-      func instanceof Function ||
-      Object.prototype.toString.call(func) === "[object Function]"
-    );
+    var hasFunc = isType(func);
+    return func instanceof Function || hasFunc('Function');
   }
   function isObject(object) {
+    var hasObject = isType(object);
     //null为空对象
     return (
-      object !== null &&
-      object !== undefined /*(IE)*/ &&
-      Object.prototype.toString.call(object) === "[object Object]"
+      object !== null && object !== undefined /*(IE)*/ && hasObject('Object')
     );
   }
 
@@ -33,7 +37,7 @@
    *number纯数字为true, NaN为false；
    */
   function isPureNumberOrNaN(value) {
-    if (typeof (value - 0) === "number" && !isNaN(value - 0)) {
+    if (typeof (value - 0) === 'number' && !isNaN(value - 0)) {
       return true;
     } else {
       return false;
@@ -97,15 +101,15 @@
   //对象扁平化；{a:{b:{c:"jkfjk"}}}=>{"a.b.c":"jkfjk"}
   function platObject(dataSource, dataArr, keyDot, stringTarget) {
     dataArr = dataArr || {};
-    keyDot = keyDot || "";
-    stringTarget = stringTarget || ".";
+    keyDot = keyDot || '';
+    stringTarget = stringTarget || '.';
     if (!dataSource && !isObject(dataSource)) {
       throw new Error(
         `the dataSource's parameter is ${dataSource}, please writting the right object`
       );
       return;
     }
-    keyDot = keyDot ? keyDot + stringTarget : "";
+    keyDot = keyDot ? keyDot + stringTarget : '';
     for (var i in dataSource) {
       if (isObject(dataSource[i])) {
         platObject(dataSource[i], dataArr, keyDot + i);
@@ -138,35 +142,35 @@
   }
   // 类数组数组化
   function getArguments(args) {
-    return Array.prototype.slice.apply(args);
+    return _slice.apply(args);
   }
   // 获取多个数组交集
   function getMixed() {
     //arguments 装箱转化 Array
-    var args = Array.prototype.slice.apply(arguments);
+    var args = _slice.apply(arguments);
     var targetArr = args[0];
     var compareArr = args.slice(1, args.length);
     if (!isObject(targetArr) && !isArray(targetArr)) {
-      console.warn("target arguments must be Array");
+      console.warn('target arguments must be Array');
       return targetArr;
     }
     if (!isObject(compareArr) && !isArray(compareArr)) {
-      console.warn("compare arguments must be Array");
+      console.warn('compare arguments must be Array');
       return compareArr;
     }
-    return targetArr.filter(item =>
-      platArray(compareArr).some(i => i === item)
+    return targetArr.filter((item) =>
+      platArray(compareArr).some((i) => i === item)
     );
   }
   // 清除多个数组重复值
   function setDeference() {
     //arguments 装箱转化 Array
-    var args = Array.prototype.slice.apply(arguments);
+    var args = _slice.apply(arguments);
     var targetArr = args[0];
     var compareArr = args.slice(1, args.length);
     // 扁平化参数
     return targetArr.filter(
-      item => !platArray(compareArr).some(i => i === item)
+      (item) => !platArray(compareArr).some((i) => i === item)
     );
   }
   /*
@@ -174,14 +178,14 @@
    */
   function cloneDeep() {
     if (!isObject(value) && !isArray(value)) {
-      console.warn("expect is object type !");
+      console.warn('expect is object type !');
       return value;
     }
     const [value] = getArguments(arguments);
     const targetValue = isArray(value) ? [] : {};
     for (let i in value) {
       if (value.hasOwnProperty(i)) {
-        if (value[i] && typeof value[i] === "object") {
+        if (value[i] && typeof value[i] === 'object') {
           targetValue[i] = isArray(value[i]) ? [] : {};
           targetValue[i] = cloneDeep(value[i]);
         } else {
@@ -191,17 +195,33 @@
     }
     return targetValue;
   }
+
+  /***
+   *
+   * mixin
+   *
+   * **/
+  var mixin = function (sObj, tObj) {
+    // 原对象进行深拷贝
+    var sourceObj = cloneDeep(sObj);
+    for (var i in sourceObj) {
+      if (!tObj.hasOwnProperty(i)) {
+        tObj[i] = sourceObj[i];
+      }
+    }
+  };
+
   /**
    * 防抖函数
    */
   function debounce(method, delay) {
     delay = delay || 300;
     var timeout;
-    return function(e) {
+    return function (e) {
       clearTimeout(timeout);
       var content = this,
         args = arguments;
-      timeout = setTimeout(function() {
+      timeout = setTimeout(function () {
         method.apply(content, args);
       }, delay);
     };
@@ -212,7 +232,7 @@
   function throttle(method, delay) {
     delay = delay || 300;
     var prev = Date.now();
-    return function() {
+    return function () {
       var now = Date.now();
       if (now - prev >= delay) {
         method.apply(this, arguments);
@@ -275,7 +295,7 @@
    *
    */
   function textEncryption(text, targetStr, digit) {
-    targetStr = targetStr || "*";
+    targetStr = targetStr || '*';
     digit = digit || 4;
     if (!text) {
       throw new Error(
@@ -283,8 +303,8 @@
       );
       return;
     }
-    text = text + "";
-    var newTargetString = "";
+    text = text + '';
+    var newTargetString = '';
     for (var i = 0; i < digit; i++) {
       newTargetString += targetStr;
     }
@@ -294,7 +314,7 @@
     var lastNumber = Math.ceil(baseNumber);
     var reg = new RegExp(
       `(^.{${firstNumber}})(.{${digit}})(.{${lastNumber}}$)`,
-      "g"
+      'g'
     );
     return text.replace(reg, `$1${newTargetString}$3`);
   }
@@ -305,11 +325,10 @@
     if (isEmpty(value)) return 0;
     return (symbol ? `${symbol}${value}` : `${value}`).replace(
       /\B(?=(\d{3})+(?!\d))/g,
-      ","
+      ','
     );
   }
-
-  return {
+  var methods = {
     isEmpty,
     isArray,
     isObject,
@@ -325,6 +344,10 @@
     throttle,
     cloneDeep,
     getMixed,
-    setDeference
+    setDeference,
+    mixin,
+    sort,
   };
+
+  return methods;
 });
