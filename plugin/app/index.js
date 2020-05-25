@@ -1,5 +1,4 @@
-import './ext-all.js'
-
+// import './ext-all.js'
 
 // (function(gobal, $){
 // 	console.log(gobal);
