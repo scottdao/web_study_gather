@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   mode: process.env === 'production' ? 'production' : 'development',
   entry: {
-    app: ['./src/index.js'],
+    app: ['./src/scott-ui.js'],
   }, //入口文件
   output: {
     //出口文件
@@ -30,13 +30,13 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        use: {
-          loader: path.resolve('./index.js'),
-          // options: ,
-        },
-      },
+      // {
+      //   test: /\.vue$/,
+      //   use: {
+      //     loader: path.resolve('./index.js'),
+      //     // options: ,
+      //   },
+      // },
       {
         test: /\.(jsx|js)$/,
         use: {
