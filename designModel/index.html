@@ -78,7 +78,7 @@
           }
         };
         obj.a = 8
-        console.log(obj.a)
+       //  console.log(obj.a)
         // Object.defineProperty(obj, 'a', {
         //      enumerable: false, 
         //      value: 3,
@@ -93,5 +93,40 @@
 
     </script>
 </body>
+<script>
+/**
+ * [[prototype]]:为非空值，所有该值得最终指向，都会指向object.prototype;
+ * 
+ * **/ 
+var obj = {};
+obj.a = '123'
+// 在原型链上层obj.a=123会出现三种情况：
+// 1. 若在[[Prototype]]链上存在名为a的普通数据访问并且没有被标记只读属性（writeable:false）,他就会添加一个a新属性屏蔽属性
+// 2. [[prototype]] 存在 a 标记false只读，无法修改属性或者在obj上创建屏蔽属性。严格模式下报错。这条语句会被忽略；总之不会发生屏蔽。
+// 3. [[prototype]] 存在a并且是个setter，一定回你调用setter方法，不会将a添加到obj，也不会重新定义a这个setter
+
+var anObj = {
+    a:2
+}
+var myObj = Object.create(anObj); //委托方法
+
+myObj.a = myObj.a+1
+// anObj.hasOwnProperty('a') true
+// myObj.hasOwnProperty('a') false
+// console.log(anObj)
+// console.log(myObj)
+var F = function(){
+    this.a = 'a'
+}
+F.prototype.sf = function(){}
+var f = new F();
+var S = function(){
+    this.s = 's'
+}
+S.prototype = Object.create(F.prototype);
+var s = new S();
+// s.a = 123
+console.log(f, s.a, s.sf)
+</script>
 
 </html>

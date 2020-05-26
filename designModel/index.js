@@ -8,7 +8,6 @@ function b() {
 }
 
 /***
- *
  * 有利于tree-shaking
  * tree-shaking是基于export的文档流做的。
  * tree-shaking的消除原理是依赖于ES6的模块特性。
