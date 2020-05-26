@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/***
+ * 适配器模式：解决两个软件实体间的接口不兼容的问题
+ * 
+ * 文件上传：之前接口只支持单文件上传，现在需要支持多文件上传
+ * *****/
+
+// 新老数据接口不匹配的问题，需要通过适配器去修改，不需要修改老接口；
+ 
+ function cities() {
+     return [{name:'1', id:1},{name:'2', id:2}]
+ }
+ var render = function(fn){
+     console.log('渲染');
+     document.write( JSON.stringify(fn()))
+ }
+ var adapterCities = function(oldFn){
+     var oldA = oldFn();
+     var a = {};
+     for (let index = 0; index < oldA.length; index++) {
+         a[oldA[index].name] = oldA[index].id
+     }
+     return function(){
+         return a
+     }
+ }
+//  render(adapterCities(cities))
+
+var mixin = function(sObj,tObj){
+    // 原对象进行深拷贝
+    var copyDeep = function(obj){
+        var deep = {};
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if(obj[key] && typeof obj[key] === 'object'){
+                   deep[key]={}
+                   deep[key] =  copyDeep(obj[key])
+                }else{
+                    deep[key] = obj[key]
+                }
+            }
+        }
+        return deep;
+    }
+    var sourceObj = copyDeep(sObj)
+    for (var i in sourceObj) {
+        if (!tObj.hasOwnProperty(i)) {
+           tObj[i] = sourceObj[i]
+        }
+    }
+   
+}
+/****
+ * 装饰者模式：也叫包装器，对象动态地增加职责的方式
+ * 装饰者模式经常会形成一条 长长的装饰链
+*/
+// 示例1：
+var Plane = function(){}
+Plane.prototype.fire = function(){
+    console.log('子弹')
+}
+
+var DecPlane = function(plane){
+    this.plane = plane
+}
+DecPlane.prototype.fire =function(){
+    this.plane.fire()
+    console.log('发射导弹')
+}
+var plane = new Plane();
+plane = new DecPlane(plane);
+// console.log(plane)
+// plane.fire();
+// 示例2：
+var p = {
+    fire:function(){
+      console.log('飞')  
+    }
+}
+var fire1 = p.fire;
+var autoFire = function(){
+    console.log('飞得高')
+}
+p.fire = function(){
+    fire1();
+    autoFire();
+}
+// p.fire();
+
+
+    /**
+     * 二. 代理模式：定义：为一个对象提供一个代用品或占位符，以便控制对它的访问。
+     * 场景：模拟代理送花的场景
+     * 面向对象的原则：单一职责原则：就一个类(通常也包括对象和函数等)而言，应该仅有一个引起它变 化的原因
+     * 意义：高内聚，低耦合
+     * 特性：代理和本体保持接口一致
+     * 代理模式强调代理与实体一种关系
+     * 代理模式通常只有一层代理本体的引用
+     * ****/
+         var Flower = function(){}
+         var my  = {
+             sendFlower:function(target){
+                 var flower = new Flower()
+                target.receiveFlower(flower)
+             }
+         }
+         // 模拟代理送花
+         var proxySend = {
+             receiveFlower:function(flower){
+                 myGirlFriend.receiveFlower(flower)
+             }
+         }
+         var myGirlFriend = {
+             receiveFlower:function(flower){
+                 console.log(flower, 'flower');
+             }
+         }
+       // my.sendFlower(proxySend)
+
+       // 2.1 虚拟代理，实现图片预加载
+       // 
+       // file:///Users/liudaoyun/Desktop/1.png
+
+       var imageNode = (function(){
+           var imgNode = document.createElement('img');
+           document.body.appendChild(imgNode);
+           return{
+               setImgSrc:function(src){
+                  // console.log(src)
+                   imgNode.src = src
+               }
+           }
+       })()
+       var proxyImg = (function(){
+           var img = new Image();
+           img.onload = function(){
+               
+               imageNode.setImgSrc(this.src)
+           }
+          return {
+              setImgSrc:function(src){
+                  
+                  imageNode.setImgSrc('file:///Users/liudaoyun/Desktop/1.png')
+                  img.src = src
+              }
+          }
+       })()
+      //  proxyImg.setImgSrc('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590055278393&di=6d8e5cfb5d2089da7176d4783bfc7a48&imgtype=0&src=http%3A%2F%2Fa2.att.hudong.com%2F36%2F48%2F19300001357258133412489354717.jpg')
+   // 2.2 缓存代理
+
+   var mul = function(){
+       var a = 1;
+       for (let index = 0; index < arguments.length; index++) {
+          a *=arguments[index];
+       }
+       return a;
+   }
+
+   var createProxy = function(fn){
+       var cache ={};
+       return function(){
+           var args = Array.prototype.join.call(arguments, ',');
+           if(args in cache){
+               return cache[args];
+           }
+           return cache[args] = fn.apply(this, arguments)
+       }
+   }
+   var min = createProxy(mul);
+   var j = min(1,2,3,4)
+   // console.log(j)
+
+</script>
+    
+</body>
+</html>

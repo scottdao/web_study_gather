@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /***
+         * 
+         * 中介者模式：解除对象与对象之间的紧耦合关系，但是会引入一个中介者对象，一旦这个对象特别大也会很难维护。
+         * 
+         * ***/
+        /**
+         * 职责链模式：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系，将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止
+         * **/
+        var Chain = function(fn){
+            this.fn = fn
+            this.successor = null
+        }
+        Chain.prototype.setNextSuccessor = function(successor){
+            return this.successor = successor
+        }
+        Chain.prototype.passRequest = function(){
+            var ret = this.fn.apply(this, arguments);
+            if(ret ==='nextSuccessor'){
+                return this.successor && this.successor.passRequest.apply(this.successor, arguments);
+            }
+            return ret;
+        }
+    </script>
+</body>
+</html>
