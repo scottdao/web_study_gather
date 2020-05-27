@@ -6,14 +6,144 @@
     <title>Document</title>
 </head>
 <body>
+    <div id='button1'>11111</div>
     <script>
         /****
          * 
          * 命令模式:最简单和优雅的模式之一，回调(callback)函数的一个面向对象的替代品。
          * 定义: 是一个执行某些特定事情的指令
          * 场景:不知请求者是谁，也不知道发送者是谁；使得请求发送者和请求接受者能够消除彼此之前的耦合关系。
-         * 
+         * 回调(callback)函数的一个面向对象的替代品。
          * ****/
-    </script>
+        var bindClick = function(button, func){
+            button.onclick =  func
+        }
+        var MeBar = {
+            refresh:function(){
+                console.log('刷新界面')
+            }
+        }
+         
+         var suBar = {
+             add:function(){
+                 console.log('add')
+             }, 
+             del:function(){
+                 console.log('del')
+             }
+         }
+        bindClick(document.getElementById('button1'), MeBar.refresh)
+
+        // 创建宏命令：
+        var closeDoorCommand = {
+            execute:function(){
+                console.log('close')
+            }
+        }
+
+        var openDoorCommand = {
+            execute:function(){
+                console.log('open')
+            }
+        }
+
+        var openQQCommand = {
+            execute:function(){
+                console.log('qq')
+            }
+        }
+
+        // 创建宏命令
+        var MacroCommand = function(){
+            return {
+                commandList:[],
+                add:function(command){
+                    this.commandList.push(command)
+                },
+                execute:function(){
+                    for (var index =0, commandList = this.commandList; index < commandList.length; index++) {
+                      commandList[index].execute();
+                    }
+                },
+                undo:function(obj){
+                    if(!obj){// 全部撤销
+                        this.commandList = []
+                    }
+                    for (var index = 0, commandList = this.commandList; index < commandList.length; index++) {
+                        if(commandList[index] === obj){
+                            this.commandList.splice(index, 1)
+                        }
+                    }
+                }
+            }
+        }
+        var macroCommand = MacroCommand();
+        macroCommand.add(closeDoorCommand)
+        macroCommand.add(openDoorCommand)
+        macroCommand.add(openQQCommand)
+        macroCommand.undo(openQQCommand);
+        macroCommand.execute()
+</script>
 </body>
+<script>
+    // 状态模式
+
+    // 状态工厂
+
+    // var stateFactory = (function(){
+    //     var State = function(){}
+    //     State.prototype.clickHandler = function(){
+    //         console.log('clickHandler')
+    //     }
+    //     State.prototype.clickHandler1 = function(){
+    //         console.log('clickHandler1')
+    //     }
+    //     return function(params){
+    //         var F = function(obj){
+    //             this.obj = obj
+    //         }
+    //         F.prototype = new State();
+    //         for(var i in params){
+    //             F.prototype[i] = params[i]
+    //         }
+    //         return F;
+    //     }
+    // })()
+    var OpenLightState = function(light){
+        this.light = light;
+    }
+    OpenLightState.prototype.open = function(){
+         console.log('开灯')
+        this.light.setState(this.light.closeLight)
+    }
+    var CloseLight = function(light){
+        this.light = light;
+    }
+    CloseLight.prototype.close = function(){
+        console.log('关灯')
+        this.light.setState(this.light.openLight)
+    }
+    var Lights = function(){
+        this.openState = new OpenLightState(this);
+        this.closeState = new CloseLight(this);
+        this.curState = null;
+    }
+    Lights.prototype.setState = function(state){
+        this.curState = state;
+    }
+    Lights.prototype.init = function(){
+       //  this.curState = this.closeState
+       this.curState = this.openState;
+        this.curState.open();
+    }
+    // var openLight = stateFactory({
+    //     clickHandler:function(){},
+    //     clickHandler1:function(){
+    //         this.obj.close()
+    //     }
+    // })
+    var lights = new Lights();
+
+    lights.init();
+</script>
 </html>
