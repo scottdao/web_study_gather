@@ -4,12 +4,12 @@ function CreateList() {
   this.headNode = null;
   this.nodeLength = 0;
   // 单向链表实现
-  this.createNode = function(value) {
+  this.createNode = function (value) {
     this.data = value;
     this.nextNode = null;
   };
 }
-CreateList.prototype.ListLength = function() {
+CreateList.prototype.ListLength = function () {
   let headNode = this.headNode;
   let count = 0;
   if (headNode) {
@@ -22,7 +22,7 @@ CreateList.prototype.ListLength = function() {
   return count;
 };
 // 添加节点
-CreateList.prototype.appendNode = function(value) {
+CreateList.prototype.appendNode = function (value) {
   // console.log(this);
   const node = new this.createNode(value);
   let current = null;
@@ -38,7 +38,7 @@ CreateList.prototype.appendNode = function(value) {
   this.nodeLength++;
 };
 // 插入节点
-CreateList.prototype.insertNode = function(value, location) {
+CreateList.prototype.insertNode = function (value, location) {
   if (location >= 0 && location <= this.nodeLength) {
     let node = new this.createNode(value);
     let current = this.headNode;
@@ -63,7 +63,7 @@ CreateList.prototype.insertNode = function(value, location) {
   }
 };
 // 删除位置节点
-CreateList.prototype.deleteLocationNode = function(location) {
+CreateList.prototype.deleteLocationNode = function (location) {
   if (location >= 0 && location < this.nodeLength) {
     let current = this.headNode;
     let count = 0;
@@ -83,12 +83,12 @@ CreateList.prototype.deleteLocationNode = function(location) {
     this.nodeLength--;
     return true;
   } else {
-    console.warn("超出范围");
+    console.warn('超出范围');
     return false;
   }
 };
 // 查询节点是否存在
-CreateList.prototype.isNode = function(element) {
+CreateList.prototype.isNode = function (element) {
   let current = this.headNode;
   let indexFlag = false;
   if (current.data === element) {
@@ -104,7 +104,7 @@ CreateList.prototype.isNode = function(element) {
   return indexFlag;
 };
 // 查询节点元素位置
-CreateList.prototype.indexOf = function(element) {
+CreateList.prototype.indexOf = function (element) {
   const isElement = this.isNode(element);
   if (isElement) {
     let count = 0;
@@ -125,7 +125,7 @@ CreateList.prototype.indexOf = function(element) {
   }
 };
 // 删除元素节点
-CreateList.prototype.deleteElementNode = function(element) {
+CreateList.prototype.deleteElementNode = function (element) {
   // 判断元素值是否存在
   const isElement = this.isNode(element);
   if (isElement) {
@@ -150,12 +150,12 @@ CreateList.prototype.deleteElementNode = function(element) {
     }
     return count;
   } else {
-    console.warn("元素节点不存在");
+    console.warn('元素节点不存在');
     return false;
   }
 };
 // 转换成字符串
-CreateList.prototype.toString = function() {
+CreateList.prototype.toString = function () {
   let data = this.headNode.data;
   let current = this.headNode.nextNode;
   while (current) {
@@ -165,6 +165,15 @@ CreateList.prototype.toString = function() {
   return data;
 };
 const list = new CreateList();
+list.appendNode(1);
+list.appendNode(2);
+list.appendNode(3);
+list.appendNode(4);
+list.appendNode(5);
+list.appendNode(6);
+list.appendNode(4);
+list.insertNode(9, 3);
+list.insertNode(3, 0);
 /* 
 *****
   test
@@ -190,4 +199,4 @@ console.log("length", list.toString());
 console.log(index);
 */
 
-export default list;
+// export default list;

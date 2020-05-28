@@ -8,59 +8,74 @@
     <title>Document</title>
     <!-- <script src="./list.js"></script> -->
 </head>
+<script>
+// 单向链表创建
+ var CreateList = function(){
+    var headNode = null;
+    this.nodeLength = null;
+    this.node = null
+    var CreateNode = function(data){
+        this.data = data;
+        this.nextNode = null;
+    }
+    this.appendNode = function(value){
+        var node = new CreateNode(value)
+        var current = null;
+        // var next = null
+        
+        if(!headNode){ // 首次添加节点
+            headNode = node
+        }else{
+            current = headNode;
+            while(current.nextNode){// current 类似一个指针
+               current = current.nextNode
+             }
+            current.nextNode = node
+        }
+        this.nodeLength++
+    }
+    this.print = function(){
+       //  console.log(headNode)
+    }
+    this.getNodeList = function(){
+        this.node  = headNode
+    }
+    
+ }
+ var list = new CreateList()
+ 
+ list.appendNode(1)
+ list.appendNode(4)
+ list.appendNode(5)
+//  list.appendNode(6)
+//  list.appendNode(7)
+ list.print();
+ list.getNodeList()
+ console.log(list)
+</script>
 
 <body>
 <script>
-// 单例
-var Singleton =(function(){
-    var state = null
-    var Ton = function(name){
-        this.name = name
-        if(state){
-            return state
-        }
-        return state = this
+// 链表反转
+// console.log(list)
+function reserveList(listNode){
+    var headNode = listNode.headNode;
+    if(headNode.nextNode === null || headNode === null){
+        return listNode
     }
-    Ton.prototype.console = function(){
-        console.log(this.name);
+    var current = headNode;
+    var pre = null;
+    var next = null;
+    
+    while (current) {
+        next = current.nextNode
+        current.nextNode = pre;
+        pre = current
+        current = next;
     }
-
-    return Ton;
-   
-})()
-// 二维数组；
-var a = [[1,2,8,9], [2,4,9,12], [4,7,10,13], [6,8,11,15]];
-function find(arr, num){
-    if(!arr.length || !num){
-        return false
-    }
-    let flag = false;
-    for (let index = 0; index < arr.length; index++) {
-        if(arr[index].indexOf(num) !== -1){
-            flag = true;
-        }
-    }
-    return flag
+    listNode.headNode = pre;
+    return pre
 }
-// 1+2+...+n 不能用乘除，for循环条件
-function add(n, total = 0){
-    if(n < 1){
-        return total;
-    }
-    total +=n; 
-    n--
-   return  add(n, total)
-}
-// console.log(add(1000));
-class Add{
-    constructor(){
-       // this.j()
-    }
-    j(){
-        // console.log(1)
-    }
-}
-new Add()
 </script>
 </body>
 
