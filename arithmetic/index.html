@@ -35,7 +35,7 @@
         this.nodeLength++
     }
     this.print = function(){
-       //  console.log(headNode)
+        console.log(headNode)
     }
     this.getNodeList = function(){
         this.node  = headNode
@@ -47,17 +47,92 @@
  list.appendNode(1)
  list.appendNode(4)
  list.appendNode(5)
-//  list.appendNode(6)
-//  list.appendNode(7)
- list.print();
+ list.appendNode(6)
+ list.appendNode(7)
+ //list.print();
  list.getNodeList()
- console.log(list)
+ // console.log(list)
+</script>
+<script>
+    var Stack = function(){
+        var values = [];
+        this.in = function(value){
+            values.push(value)
+        }
+        this.out = function(){
+            return values.pop();
+        }
+        this.clear = function(){
+            values = [];
+        }
+        this.getValues = function(){
+            this.values = values;
+        }
+    }
+    // var stack1 = new Statck()
 </script>
 
 <body>
 <script>
-// 链表反转
+// 两栈实现一队列
+// 栈：先进后出，队列：先进先出。
+    class CQueue{
+        constructor(){
+            this.stack1 =[ ];
+            this.stack2 =[ ];
+        }
+        appendTail(value){ //进队
+            this.stack1.push(value)// stack1进栈
+        }
+        deleteHead(){ // 出队
+            if(this.stack2.length<=0){
+                while(this.stack1.length){
+                    var top = this.stack1.pop();// stack1 出栈
+                    this.stack2.push(top); // stack2 进栈
+                }
+            }
+            if(this.stack2.length==0){
+                console.warn('stack2 is empty!')
+                return -1;
+            }
+            var head = this.stack2.pop();// 出栈
+            return head;
+        }
+    }
+    var queue = new CQueue();
+        queue.appendTail(3)
+        queue.appendTail(2);    
+        queue.appendTail(4);
+        var a = queue.deleteHead();
+        var b = queue.deleteHead();
+        var c = queue.deleteHead();
+        console.log(a, b, c); // 3,2,4
 // console.log(list)
+// 两队列实现一栈
+function CStack{
+        constructor(){
+            this.queue1 =[ ];
+            this.queue2 =[ ];
+        }
+        enStack(){ // 进栈
+
+        }
+        outStack(){ //出栈
+
+        }
+}
+// 不采用反转链表，从尾到头进行打印；采用递归
+function printNodeLast(head){
+    if(head !== null){
+        if(head.nextNode !==null){
+            printNodeLast(head.nextNode)
+        }
+    }
+   
+    console.log(head);
+}
+// printNodeLast(list.node)
+// 链表反转
 function reserveList(listNode){
     var headNode = listNode.headNode;
     if(headNode.nextNode === null || headNode === null){
