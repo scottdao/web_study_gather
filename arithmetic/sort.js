@@ -47,8 +47,43 @@ function insertSort(arr) {
 }
 
 // 4.归并排序
+function merge(left, right) {
+  var arr = [],
+    ir = 0,
+    il = 0;
+  while (il < left.length && ir < right) {
+    if (left[il] < right[ir]) {
+      arr.push(left[il]);
+      il++;
+    } else {
+      arr.push(right[ir]);
+      ir++;
+    }
+  }
+  while (il < left.length) {
+    arr.push(left[il++]);
+  }
+  while (ir < right.length) {
+    arr.push(right[ir++]);
+  }
+  // console.log(left, right, arr);
+  return arr;
+}
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  var mid = Math.floor(arr.length / 2);
+  var left = arr.slice(0, mid);
+  var right = arr.slice(mid, arr.length);
+
+  mergeSort(left);
+  mergeSort(right);
+  return merge(left, right, arr);
+}
+
 var a = [2, 5, 1, 4, 3, 6, 21, 5];
 // bubble(a);
 // selectSort(a);
-insertSort(a);
+mergeSort(a);
 console.log(a);
