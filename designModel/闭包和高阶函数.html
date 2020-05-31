@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="div1">节流函数</div>
     
     <script>
         /***
@@ -188,6 +189,71 @@
    })(1,2,3)
 
    // 节流函数
+   var div1 = document.querySelectorAll('#div1')[0];
+  var setThrottle =  (function(){
+            var throFlag = true; //节流判断
+            return function(fn, time){
+                var that = this;
+                if(!throFlag){
+                    return false;
+                }
+                throFlag = false;
+                setTimeout(()=>{
+                    fn.apply(this, arguments)
+                    throFlag = true;
+                }, time)
+            }
+        })();
+    const setDateThro = (function(){
+        let old = Date.now();
+        return function(fn, time){
+            if(Date.now()- old > time){
+                fn.apply(this, arguments);
+                old = Date.now();
+            }
+        }
+    })()
+    const componentThro = (function(){
+        let old = Date.now();
+        let timeout;
+        return function(fn, time){
+            const args = arguments;
+            clearTimeout(timeout)
+            if(Date.now()- old > time){
+                fn.apply(this, args);
+                old = Date.now();
+            }else{ // 事件完结后再执行一次
+                
+                timeout = setTimeout(()=>{
+                    fn.apply(this, args);
+                }, time)
+            }
+        }
+    })()
+
+    var deben = (function(){
+        let timeout = undefined;
+        let preFlag = true;
+        return function(fn, time){
+            const args = arguments;
+            if(preFlag){ // 第一次执行一次；
+                fn.apply(this, args)
+            }
+            preFlag = false
+            clearTimeout(timeout)
+            timeout = setTimeout(()=>{
+               
+               fn.apply(this, args)
+                preFlag = true;
+            }, time)
+          
+        }
+    })()
+        div1.onclick = function(){
+            deben(()=>{
+                console.log('防抖')
+            }, 1000)
+        }
    // 惰性加载
     </script>
 </body>
