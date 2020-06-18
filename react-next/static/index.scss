@@ -1,0 +1,6 @@
+@import "./var.scss";
+
+.div {
+    font-size: var(--some-fontSize);
+    color: var(--some-color);
+}

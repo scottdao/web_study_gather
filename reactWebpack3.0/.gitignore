@@ -1,0 +1,12 @@
+.idea
+.vscode
+node_modules
+log
+*.iml
+*.log
+target
+package-lock.json
+build/
+code-communitybuild
+.cache
+webpack.config.js

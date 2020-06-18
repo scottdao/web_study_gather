@@ -1,0 +1,8 @@
+(function () {
+  var moduleA = function (require, module, exports) {
+    /* template */
+  };
+  
+  var module = { exports: {} };
+  moduleA(null, module);
+})();

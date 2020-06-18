@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 单数组去重 模拟 lodash uniq()方法
+        // 1.利用 es6 之 set方法；
+        var a = [1, 1, 1, 2, 3, 3, 4, 7, 8, 9, 10, 10, 2, 4, 6, 6, 7, 7, 7, 5];
+        var b = [...new Set(a)];
+        // console.log(b);
+
+        // 2.利用数组去重；
+        function useArrUniq(arrTarget) {
+            var targetA = [];
+            for (var i = 0; i < arrTarget.length; i++) {
+                var isRepeat = false; //加个哨兵检测
+                for (var m = 0; m < targetA.length; m++) {
+                    if (targetA[m] === arrTarget[i]) {
+                        isRepeat = true
+                        break;
+                    }
+                }
+                if (!isRepeat) {
+                    targetA.push(arrTarget[i]);
+                }
+            }
+            return targetA;
+        }
+        //  console.log(useArrUniq(a));
+        // 3. 利用对象去重
+        function useObjectUniq(arrTarget) {
+            var objectTarget = {};
+            var targetA = [];
+            var i = 0
+            while (++i < arrTarget.length) {
+                if (!objectTarget[arrTarget[i]]) {
+                    targetA.push(arrTarget[i])
+                    objectTarget[arrTarget[i]] = arrTarget[i]
+                }
+            }
+        }
+        useObjectUniq(a);
+    </script>
+    <script src="../statics/dll/vender.dll.js"></script>
+</body>
+
+</html>

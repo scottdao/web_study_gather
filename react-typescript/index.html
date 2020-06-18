@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>切换</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #333;
+			}
+			.all{
+				position: absolute;
+				top: 50%;
+				bottom: 50%;
+				transform: translate(50%, 50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div onclick="myFunc(this)" class="all">
+			<div class="bar top">1</div>
+			<div class="bar middle">2</div>
+			<div class="bar bottom">3</div>
+		</div>
+		<script type="text/javascript">
+			function myFunc(x){
+				//console.log(x.classList);
+				x.classList.toggle('translet')
+			}
+			
+		</script>
+	</body>
+</html>

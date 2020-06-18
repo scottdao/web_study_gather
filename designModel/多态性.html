@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 模拟`多态性`
+
+    //    var makeSound = function (animal) {
+    //         if(animal instanceof Duck){
+    //             console.log('嘎嘎嘎')
+    //         }else if(animal instanceof Check){
+    //             console.log('咯咯咯')
+    //         }else{
+    //             console.log('呵呵呵')
+    //         }
+    //     } 
+    //     var Duck = function(){};
+    //     var Check = function(){};
+
+    //     makeSound(new Duck());
+    //     makeSound(new Check());
+
+        // 对象的多态性:把可变的各自封装起来，共同提取出来。
+        // javascript是面向对象的多态性，是与生俱来的。
+        //
+        // var makeSound = function(animal){
+        //     animal.sound();
+        // }
+
+        // var Duck = function(){}
+        // Duck.protoType.sound = function(){
+        //     console.log('嘎嘎嘎')
+        // }
+        // var Check = function(){}
+        // Check.protoType.sound = function(){}
+
+
+        // 实现多态类型, 共同功能提取，不同的地方单独封装装
+        var baiduMap = {
+            show:function(){
+                console.log('百度地图')
+            }
+        }
+        var googleMap = {
+            show:function(){
+                console.log('google地图')
+            }
+        }
+        var renderMap = function(map){
+            if(map.show instanceof Function){
+                map.show();
+            }
+        }
+        renderMap(googleMap);
+        renderMap(baiduMap);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        /**
+         * 一. 策略模式:定义：1 定义一系列的算法，把它们一个个封装起来，并且使它们可以相互替换
+         * 场景：form表单验证， 采用switch case 这种也更适合策略模式
+         * ***/
+        var obj = {
+            A:function(s){
+                return s*3
+            },
+            B:function(s){
+                return s*4
+            },
+            c:function(s){
+                return s*5
+            }
+        }
+        /**
+         * 状态模式：区分事物内部的状态，事物内部状态的改变往往会带来事物的行为改变
+         * 定义：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。
+         * *****/ 
+        /***
+         * 
+         * 享元模式：用于性能优化的模式
+         * 使用场景：使用大量相似的对象，对象大量的状态都可以剥离出来成外部状态，可以使用较少的共享对象去取代大量对象。
+         * *****/
+        // 对象池的创建
+
+        var toolPool = (function(){
+            var pool = [];
+            return {
+                create:function(){
+                    if(pool.length===0){
+                        var div = document.createElement('div');
+                        document.body.appendChild(div);
+                        return div;
+                    }else{
+                       return  pool.shift()
+                    }
+                },
+                recover:function(toolDom){
+                   return pool.push(toolDom);
+                }
+            }
+        })()
+        var arr = [];
+        for (var index = 0, o = ['A',"B"]; index < o.length; index++) {
+             var d = toolPool.create()
+            d.innerHTML = o[index]
+            arr.push(d);            
+        }
+        // console.log(arr)
+        // 回收
+        for (var i = 0; i < arr.length; i++) {
+            toolPool.recover(arr[i]);
+        }    
+        // 通用对象池
+        var commonPool = function(fn){
+            var poolObject = [];
+            return{
+                create:function(){
+                    var obj = poolObject.length ===0?fn.apply(this, arguments):poolObject.shift()
+                    return obj
+                },
+                recover:function(obj){
+                    poolObject.push(obj)
+                }
+            }
+        }
+   </script>
+</body>
+</html>

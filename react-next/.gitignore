@@ -1,0 +1,13 @@
+.idea
+.vscode
+node_modules
+log
+*.iml
+*.log
+.next
+target
+package-lock.json
+build/
+code-communitybuild
+
+.cache

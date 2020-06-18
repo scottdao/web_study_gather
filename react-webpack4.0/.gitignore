@@ -1,0 +1,16 @@
+.idea
+.vscode
+node_modules
+log
+*.iml
+*.log
+target
+package-lock.json
+build/
+code-communitybuild
+dist/
+.cache
+webpack.config.js
+/.project
+/app/src/.DS_Store
+/.DS_Store

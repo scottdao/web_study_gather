@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Untitled Page</title>
+    <style type="text/css">
+        .bg
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            position: absolute;
+            z-index: 100;
+            top: 0px;
+            left: 0px;
+            background-color: #000;
+            filter: alpha(opacity=5);
+            -moz-opacity: 0.05;
+            opacity: 0.05;
+            font-size: 50px;
+            color: White;
+			
+        }
+		.bg-con{
+			transform: rotate(300deg);
+			min-width: 200px;
+			max-height: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#idName{
+			height:140px;
+			width: 140px;
+			overflow: hidden;
+		}
+		#trapezoid {
+		  height: 100px;
+		  width: 100px;
+		  background-color: aquamarine;
+		  transform: rotate(45deg);
+		  margin-left: 20px;
+		  margin-top: -70px;
+		  border: 1px solid red;
+		}
+    </style>
+	
+</head>
+<body>
+	<div id="idName">
+		<div id="trapezoid">
+			
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="ext-all.js">
+		
+	</script>
+	<!-- <script type="module" crossorigin="anonymous">
+		import './ext-all.js'
+		console.log(window);
+	</script> -->
+   <!-- <div class="bg">
+       <p class="bg-con">
+       	 liudaoyun 
+       </p>
+       </div> -->
+   <!-- <div style="color: Black"> -->
+       <!-- Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br />
+        Write your contents here<br /> -->
+    <!-- </div> -->
+	<!-- <button type="button" id="local">localStorage</button>
+	<script type="text/javascript">
+		function getDom(id){
+			return document.getElementById(id);
+		}
+		window.storageSDk = function(){
+			return{
+				createSDk:function(value){
+					return localStorage.setItem(value)
+				},
+				getSDK:function(value){
+					return localStorage.getItem(value)
+				}
+			}
+		}
+		getDom('local').onclick = function(){
+			console.log(localStorage, localStorage.length);
+		}
+	</script> -->
+</body>
+</html>

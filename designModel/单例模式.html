@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * @ldy
+         * 单例模式
+         * **/ 
+
+        // 定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+
+        // 场景: 登录按钮点击出现登录浮窗，只会被创建一次
+
+        /**
+         * 1. 隐形单例,静态函数
+         * **/ 
+        var Singleton = function (name) {
+            this.name = name;
+            this.instance = null;
+        }
+        Singleton.prototype.getName = function(){
+            console.log(this.name)
+        }
+        Singleton.instanceTon = function(name){
+            if(!this.instance){
+                this.instance = new Singleton(name)
+            }
+            return this.instance;
+        }
+        var a =  Singleton.instanceTon('ldy1');
+        var b =  Singleton.instanceTon('ldy2');
+        // console.log(a == b) // true
+
+        /***
+         * 2. 隐形单例,闭包
+         * **/
+        var Closure = function(name){
+            this.name = name;
+        }
+
+       Closure.instance = (function(){ //惰性单例，需要的时候才会创建，不是页面加载完才创建。
+            var i = null;
+            return function(name){
+                if(!i){
+                    i = new Closure(name)
+
+                }
+                return i
+            }
+           
+        })()
+      //   console.log(Closure.instance('ldy2') == Closure.instance('ldy3')) // true
+
+       /***
+        * 3. 透明单例,闭包,实现了new 关键字可以创造同一个类；
+        * **/
+
+       var  Transparent = (function(){
+           var ins = null;
+           var S = function(name){
+               this.name = name;
+                if(ins){
+                    return ins
+                }
+                return ins = this
+           }
+           S.prototype.init =function(){
+
+           }
+           return S
+       })()
+      //  console.log(new Transparent('ldy2') === new Transparent('ldy3'))// true
+
+      /***
+       * 4. 代理实现单例, 闭包
+       * **/
+      var Create = function(name){
+          this.name = name;
+      }
+      var ProxyCreate = (function(){
+          var ins = null;
+          return function(name){
+              if(!ins){
+                  ins = new Create(name)
+              }
+              return ins
+          }
+      })()
+      // console.log(new ProxyCreate('ldy') == new ProxyCreate('ldy2')) // true
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "build/dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false, // 默认不带类型的就为 any
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "emitDecoratorMetadata": true, // 允许使用装饰器的相关功能
+    "experimentalDecorators": true, // 同上
+    "paths": {
+      // 设着alias别名，类似webpack，相对上面设置的基础路径
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+		"src/App.test.tsx"//去除app.test.tsx
+  ],
+  "rules": {
+    "ordered-imports": false,
+    "import-sources-order": "any",
+    "named-imports-order": "any"
+  }
+}

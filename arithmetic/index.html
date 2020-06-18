@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="./list.js"></script> -->
+</head>
+<script>
+// 单向链表创建
+ var CreateList = function(){
+    var headNode = null;
+    this.nodeLength = null;
+    this.node = null
+    var CreateNode = function(data){
+        this.val = data;
+        this.next = null;
+    }
+    this.appendNode = function(value){
+        var node = new CreateNode(value)
+        var current = null;
+        // var next = null
+        
+        if(!headNode){ // 首次添加节点
+            headNode = node
+        }else{
+            current = headNode;
+            while(current.next){// current 类似一个指针
+               current = current.next
+             }
+            current.next = node
+        }
+        this.nodeLength++
+    }
+    this.print = function(){
+        console.log(headNode)
+    }
+    this.getNodeList = function(){
+        this.node  = headNode
+    }
+    
+ }
+ var list = new CreateList()
+ 
+ list.appendNode(2)
+ list.appendNode(4)
+ list.appendNode(3)
+ //list.print();
+ list.getNodeList()
+ var list1 = new CreateList()
+    list1.appendNode(5)
+    list1.appendNode(6)
+    list1.appendNode(4)
+   
+    //list1.print();
+    list1.getNodeList()
+ // console.log(list)
+</script>
+<script>
+    var Stack = function(){
+        var values = [];
+        this.in = function(value){
+            values.push(value)
+        }
+        this.out = function(){
+            return values.pop();
+        }
+        this.clear = function(){
+            values = [];
+        }
+        this.getValues = function(){
+            this.values = values;
+        }
+    }
+    // var stack1 = new Statck()
+</script>
+
+<body>
+<script>
+// 两栈实现一队列
+// 栈：先进后出，队列：先进先出。
+    class CQueue{
+        constructor(){
+            this.stack1 =[ ];
+            this.stack2 =[ ];
+        }
+        appendTail(value){ //进队
+            this.stack1.push(value)// stack1进栈
+        }
+        deleteHead(){ // 出队
+            if(this.stack2.length<=0){
+                while(this.stack1.length){
+                    var top = this.stack1.pop();// stack1 出栈
+                    this.stack2.push(top); // stack2 进栈
+                }
+            }
+            if(this.stack2.length==0){
+                console.warn('stack2 is empty!')
+                return -1;
+            }
+            var head = this.stack2.pop();// 出栈
+            return head;
+        }
+    }
+    var queue = new CQueue();
+        queue.appendTail(3)
+        queue.appendTail(2);    
+        queue.appendTail(4);
+        var a = queue.deleteHead();
+        var b = queue.deleteHead();
+        var c = queue.deleteHead();
+        // console.log(a, b, c); // 3,2,4
+// console.log(list)
+// 两队列实现一栈
+// function CStack{
+//         constructor(){
+//             this.queue1 =[ ];
+//             this.queue2 =[ ];
+//         }
+//         enStack(){ // 进栈
+
+//         }
+//         outStack(){ //出栈
+
+//         }
+// }
+// 不采用反转链表，从尾到头进行打印；采用递归
+function printNodeLast(head){
+    if(head !== null){
+        if(head.nextNode !==null){
+            printNodeLast(head.nextNode)
+        }
+    }
+   
+    console.log(head);
+}
+// printNodeLast(list.node)
+// 链表反转
+function reserveList(listNode){
+    var headNode = listNode.headNode;
+    if((headNode&&headNode.nextNode === null) || headNode === null){
+        return listNode
+    }
+    var current = headNode;
+    var pre = null;
+    var next = null;
+    
+    while (current) {
+        next = current.nextNode
+        current.nextNode = pre;
+        pre = current
+        current = next;
+    }
+    listNode.headNode = pre;
+    return listNode
+}
+</script>
+</body>
+<script>
+    //打家劫舍
+    var rob = function(nums){
+        if(nums === null || nums.length ===0 ){
+            return 0
+        }
+        if(nums.length ===1){
+            return nums[0]
+        }
+        if(nums.length ===2){
+            return Math.max(nums[0], nums[1])
+        }
+        let sum1 = nums[0];
+        let sum2 = nums[1];
+        for(let i = 2, len = nums.length; i<len; i++ ){
+            let temp = sum1;
+            if(sum2>sum1){// 比较两值得大小
+                sum1 = sum2;
+            }
+            sum2 = temp+nums[i];
+        }
+        return Math.max(sum1, sum2)
+    }
+//    a =  rob([0])
+//    console.log(a);
+
+// 两数相加
+// console.log(list) this.getNodeList
+var node = new CreateList()
+var addTwoNumbers = function(l1, l2){
+    if(!l1 || !l2){
+        return 0
+    }
+   let tempNode = node;
+   let add = 0//是否进一
+    let sum = 0;
+    while(l1 || l2){
+        sum = (l1?l1.val:0)+(l1?l1.val:0)+add
+      
+         node.appendNode(sum%10);
+         node.getNodeList()
+        tempNode.next = node.node 
+        tempNode = tempNode.next;
+        add = sum>10?1:0
+        l1 &&(l1 = l1.next)
+        l2 && (l2  = l2.next)
+        console.log(add)
+    }
+    return tempNode
+}
+addTwoNumbers(list.node, list1.node)
+</script>
+</html>

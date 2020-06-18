@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">+</div>
+    <div id="div2">-</div>
+    <div id='div3'></div>
+    <script>
+        /***
+         *
+         * 命令模式：把具体的指令与实现隔离，调用与执行解耦
+         * 做法：将方法、数据分装到单一对象中，调用方和执行方进行解耦，达到职责分离的目的
+         * **/
+        (function () {
+            const state = {
+                count: 0,
+                getDom: function (id) {
+                    return document.getElementById(id);
+                },
+                writeDom: function (id, value) {
+                    this.getDom(id).innerText = value;
+                },
+                add: function (id, writeId, maxNumber) {
+                    var that = this;
+                    this.getDom(id).onclick = function () {
+                        if (maxNumber > that.count) {
+                            that.count++
+                        } else {
+                            alert(`最大值不能超过${maxNumber}`)
+                        }
+                        that.writeDom(writeId, that.count);
+                    }
+                },
+                min: function (id, writeId, minNumber) {
+                    var that = this;
+                    this.count = minNumber;
+                    this.getDom(id).onclick = function () {
+                        if (that.count > minNumber) {
+                            that.count--
+                        } else {
+                            alert(`最小值不能超过${minNumber}`)
+                        }
+                        that.writeDom(writeId, that.count);
+                    }
+                }
+            }
+
+            state.add('div1', 'div3', 50);
+            state.min('div2', 'div3', 1);
+            state.writeDom('div3', state.count);
+        })()
+
+        // const handleDiv = (function () {
+        //     return {
+        //         excute: function (commander) {
+        //             if (typeof commander === 'object') {
+
+        //             } else {
+
+        //             }
+        //         }
+        //     }
+        // })()
+        var obj = {
+          get a(){
+              // console.log(this._a_, '_a_')
+              return this._a_
+          },
+          set a(val){
+             
+            this._a_ =  val*3; 
+          }
+        };
+        obj.a = 8
+       //  console.log(obj.a)
+        // Object.defineProperty(obj, 'a', {
+        //      enumerable: false, 
+        //      value: 3,
+        //      writable: false,    
+        //      configurable: false 
+        // })
+        
+        // console.log(obj, obj.a)
+        // for (const key in obj) {
+        //    console.log(key)
+        // }
+
+    </script>
+</body>
+<script>
+/**
+ * [[prototype]]:为非空值，所有该值得最终指向，都会指向object.prototype;
+ * 
+ * **/ 
+var obj = {};
+obj.a = '123'
+// 在原型链上层obj.a=123会出现三种情况：
+// 1. 若在[[Prototype]]链上存在名为a的普通数据访问并且没有被标记只读属性（writeable:false）,他就会添加一个a新属性屏蔽属性
+// 2. [[prototype]] 存在 a 标记false只读，无法修改属性或者在obj上创建屏蔽属性。严格模式下报错。这条语句会被忽略；总之不会发生屏蔽。
+// 3. [[prototype]] 存在a并且是个setter，一定回你调用setter方法，不会将a添加到obj，也不会重新定义a这个setter
+
+var anObj = {
+    a:2
+}
+var myObj = Object.create(anObj); //委托方法
+
+myObj.a = myObj.a+1
+// anObj.hasOwnProperty('a') true
+// myObj.hasOwnProperty('a') false
+// console.log(anObj)
+// console.log(myObj)
+var F = function(){
+    this.a = 'a'
+}
+F.prototype.sf = function(){}
+var f = new F();
+var S = function(){
+    this.s = 's'
+}
+S.prototype = Object.create(F.prototype);
+var s = new S();
+// s.a = 123
+// console.log(f, s.a, s.sf)
+</script>
+
+</html>
