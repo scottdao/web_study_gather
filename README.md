@@ -64,6 +64,7 @@
     - git remote show origin 远程仓库信息
     - git remote rename scottdao paul 仓库别名重命名
     - git remote rm paul 删除仓库
+    -  git push -u origin master 采用强制推送
 --------------------------------------
 
 
