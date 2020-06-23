@@ -60,7 +60,7 @@ module.exports = merge(common, {
     }
   },
   plugins: [
-    new webpack.HashedModuleIdsPlugin(), // 维持hash的稳定module.id
+    // new webpack.HashedModuleIdsPlugin(), // 维持hash的稳定module.id
     new ExtractTextPlugin({
       filename: getPath => {
         return getPath(path.posix.join('[name].css')).replace('js', 'css');
