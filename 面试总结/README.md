@@ -144,3 +144,59 @@ let obj= {
 // console.log(obj)
 obj.printValue(()=>{})
 ```
+
+- 多个数组的交集；
+- 第一种解法；
+```
+ function merge(){
+           let args = Array.prototype.slice.call(arguments);
+           let len = args.length;
+           // 扁平化；
+           let new_args = args.flat();
+           // console.log(args, len)
+            let new_obj = {}, new_arr = [];
+            for(let n = 0; n<new_args.length;n++){
+                if(new_obj[new_args[n]]){
+                    new_obj[new_args[n]] = ++new_obj[new_args[n]];
+                }
+                else{
+                    new_obj[new_args[n]] = 1;
+                }
+            }
+            for(let i in new_obj){
+                if(new_obj[i] >= len){
+                    new_arr.push(i - 0)
+                }
+            }
+            return new_arr;
+       }
+
+```
+- 第二种解法
+```
+function merge(){
+    let args = Array.prototype.slice.call(arguments);
+    let col = 0, new_obj = {}, len = args.length, new_arr = [];
+    while(col<args.length){
+        let row = args[col].length - 1,cache_arr = [];
+        while(row>=0){
+            if(new_obj[args[col][row]]){
+                new_obj[args[col][row]] = ++new_obj[args[col][row]];
+            }else{
+            new_obj[args[col][row]] = 1;
+            }
+        //  console.log(new_obj, args[col][row])
+            if(new_obj[args[col][row]]>=len){
+            cache_arr.push(args[col][row])
+            }
+            row--;
+            new_arr = cache_arr;
+        }
+        col++
+    }
+    // console.log(new_obj)
+    return new_arr;
+}
+let a = merge([1,2,3], [2,3,5,2,1,7], [3,41,2,9]);
+console.log(a);
+```
