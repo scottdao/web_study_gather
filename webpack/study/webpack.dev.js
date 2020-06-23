@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
     // watch:true,//默认false，不开启
     // watchOptions:{// 只有开启监听，该属性才有意义
@@ -11,7 +12,7 @@ const config = {
     entry: {index:'./src/index.js',search:'./src/search.js'},
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]_[chunkhash:8].js'
+        filename: '[name].js'
     },
     mode:"production",
     module: {
@@ -51,6 +52,7 @@ const config = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(),
     ],
    
 };

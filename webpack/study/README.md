@@ -95,8 +95,44 @@
     2. WDS:不刷新浏览器，自动更新页面;不输出文件，而是放在内存中；`HotModuleReplacementPlugin`
     3. WDM:将webpack 输出文件传输给服务器，适用于灵活的定制场景
        - `npm i webpack-dev-middleware -D`
+    4. [热更新的原理](./md/HMR.md)
+- **文件指纹之hash**:打包后输出文件名后缀，为了用于文件版本管理，也是用于浏览器缓存
+    1. hash：和整个项目构建相关，只要项目文件有修改，整个项目构建的hash值就会更改。
+    2. chunkhash:和webpack打包的chunk有关，不同的entry会生成不同的chunkhash值。
+    3. contenthash: 根据文件内容来定义hash，文件内容不变，则contenthash不变。
+       - 一段代码里有css又有js代码，如果根据chunkhash，只是改变js代码，后面生成的css代码生成css文件，也会发生变化，这个时候chnkhash就没有太多的必要；
+       - contenthash是根据内容的变化来确定文件变化，js代码变化，css代码未变化，css使用contenthash
+    4. 
 - **plugins**:插件用于bundle文件优化，资源管理和环境变量的注入，作用于整个过程 
-  1. 
+  1. mini-css-extract-plugin:`npm i mini-css-extract-plugin -D`,将css代码提取css文件,
+  2. css文件压缩：`npm i optimize-css-assets-webpack-plugin cssnano -D`,
+        ```
+                new OptimizeCssAssetsWebpackPlugin({
+                assetNameRegExp:/\.css$/g,
+                cssProcessor:require('cssnano')
+            })
+        ```
+   3. html文件压缩：`html-webpack-plugin`,文件模板并压缩打包；
+    ```
+            new HtmlWebpackPlugin({
+            template: path.join(__dirname, '/src/index.html'),
+            filename:'index.html',
+            chunks:['index'],
+            inject:true,
+            minify:{
+                html5:true,
+                collapseWhitespace:true,
+                preserveLineBreak:false,
+                minifyCSS:true,
+                minifyJS:true,
+                removeComments:false
+            }
+            
+            }),
+    ```
+    4. 清除目录文件：`clean-webpack-plugin`
+    5. postcss插件自动补齐css3的前缀:[`autoprefixer`](https://caniuse.com/)
+        - `postcss-loader autoprefixer`
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
