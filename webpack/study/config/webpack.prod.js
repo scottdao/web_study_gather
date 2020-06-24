@@ -1,14 +1,16 @@
 'use strict';
+
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin= require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { entry, htmlWebpackPlugins } = require('./mutli-page-config.js');
+
 const config = {
-    entry: {index:'./src/index/index.js',search:'./src/search/index.js'},
+    entry:entry,
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name]_[chunkhash:8].js'
     },
     mode:"production",
@@ -18,13 +20,6 @@ const config = {
                 test: /\.js|.jsx$/,
                 use: 'babel-loader'
             },
-            // {
-            //     test:/\.css$/,
-            //     use:[
-            //         MiniCssExtractPlugin.loader,
-            //         'css-loader'
-            //     ] // 从右向左执行，先将css文件解析好之后，再传递给style-loader
-            // },
             {
                 test:/\.(less|css)$/,
                 use:[
@@ -83,36 +78,28 @@ const config = {
            cssProcessor:require('cssnano')
        }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-         template: path.join(__dirname, '/src/index/index.html'),
-         filename:'index.html',
-         chunks:['index'],
-         inject:false,
-         minify:{
-             html5:true,
-             collapseWhitespace:true,
-             preserveLineBreak:true,
-             minifyCSS:true,
-             minifyJS:true,
-             removeComments:true
-         }
-        
-        }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, '/src/search/index.html'),
-            filename:'search.html',
-            chunks:['search'],
-            inject:true,
-            minify:{
-                html5:true,
-                collapseWhitespace:true,
-                preserveLineBreak:false,
-                minifyCSS:true,
-                minifyJS:true,
-                removeComments:false
-            }
-        }),
+        ...htmlWebpackPlugins,
+
     ],
+  //  devtool:"cheap-source-map",
+  optimization: {
+    splitChunks: {
+        // minSize:0,
+        cacheGroups:{
+            vendor: {
+                test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+                name: 'vendor',
+                chunks: 'all',
+            },
+            // commons:{
+            //     name:"commons",
+            //     chunks:'all',
+            //     // minchunks:2// 被引用两次会单独打包成一个文件
+            // }
+        }
+     
+    }
+  },
 };
 
 module.exports = config

@@ -2,19 +2,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { entry, htmlWebpackPlugins } = require('./mutli-page-config.js');
 const config = {
-    // watch:true,//默认false，不开启
-    // watchOptions:{// 只有开启监听，该属性才有意义
-    //     ignored:/node_modules/,// 默认为空，不监听的文件或者文件夹，支持正则匹配
-    //     aggregateTimeout:300,// 监听变化发生后等待300ms再去执行，默认300ms
-    //     poll:1000//判断文件是否发生变化通过轮询系统文件有没有文件变化，默认1次/ms;每秒1000次；
-    // },
-    entry: {index:'./src/index.js',search:'./src/search.js'},
+    entry: entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
     },
-    mode:"production",
+    mode:"development",
     module: {
         rules: [
             {
@@ -53,8 +48,10 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
+        ...htmlWebpackPlugins
     ],
-   
+   devtool:"inline-source-map"
+//    devtool:"cheap-source-map"
 };
 
 module.exports = config

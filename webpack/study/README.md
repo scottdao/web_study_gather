@@ -145,6 +145,14 @@
        - 请求层面：减少http网络请求，小图片或者字体内联(url-loader)；
        - style-loader:内联css；html-inline-css-webpack-plugin;
     8. [多页面打包](./md/多页面打包.md)
+- **source-map**:通过source-map定位源码，开发环境开启，线上环境关闭
+    1. 线上排查问题得时候可以将sourcemap上传到错误监控系统；
+    2. eval:使用eval包裹模块代码
+    3. source map:产生.map文件
+    4. cheap:不包含列信息
+    5. inline:将map作为dataURI嵌入，不单独生成.map文件
+    6. module: 包含loader的sourcemap
+- 
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
