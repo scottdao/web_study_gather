@@ -5,9 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin= require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// console.log(CleanWebpackPlugin)
 const config = {
-    entry: {index:'./src/index.js',search:'./src/search.js'},
+    entry: {index:'./src/index/index.js',search:'./src/search/index.js'},
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name]_[chunkhash:8].js'
@@ -42,7 +41,13 @@ const config = {
                     }
                 },
                 'less-loader',
-               
+                {
+                    loader:"px2rem-loader",
+                    options:{
+                        remUnit:75,
+                        remPrecesion:8
+                    }
+                }
                 ] // 从右向左执行，先将css文件解析好之后，再传递给style-loader
             },
             {
@@ -66,7 +71,7 @@ const config = {
                         // 图片的hash跟css和js的hash概念不一样，图片的hash,md5由图片内容来决定，css/js只要有文件变化，整个项目都会发生变化。
                     }
                 }
-            }
+            },
         ]
     },
     plugins: [
@@ -79,22 +84,22 @@ const config = {
        }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-         template: path.join(__dirname, '/src/index.html'),
+         template: path.join(__dirname, '/src/index/index.html'),
          filename:'index.html',
          chunks:['index'],
-         inject:true,
+         inject:false,
          minify:{
              html5:true,
              collapseWhitespace:true,
-             preserveLineBreak:false,
+             preserveLineBreak:true,
              minifyCSS:true,
              minifyJS:true,
-             removeComments:false
+             removeComments:true
          }
         
         }),
-         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '/src/search.html'),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, '/src/search/index.html'),
             filename:'search.html',
             chunks:['search'],
             inject:true,

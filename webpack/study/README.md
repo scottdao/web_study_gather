@@ -127,12 +127,24 @@
                 minifyJS:true,
                 removeComments:false
             }
-            
             }),
     ```
     4. 清除目录文件：`clean-webpack-plugin`
     5. postcss插件自动补齐css3的前缀:[`autoprefixer`](https://caniuse.com/)
         - `postcss-loader autoprefixer`
+    6. rem 转换:px2rem-loader:`npm i px2rem-loader -D`,`npm i lib-flexible -S`;
+    7. 资源内联：`raw-loader`内联html,内联js
+        ```
+        <%= require('raw-loader!./meta.html') %>
+        <title>Document</title>
+        <script>
+            <%= require('raw-loader!babel-loader!../node_modules/lib-flexible/flexible.js') %>
+        </script>
+        ```
+       - 代码层面：页面框架初始化脚本，上报相关打点，css内联避免页面闪动；
+       - 请求层面：减少http网络请求，小图片或者字体内联(url-loader)；
+       - style-loader:内联css；html-inline-css-webpack-plugin;
+    8. [多页面打包](./md/多页面打包.md)
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
