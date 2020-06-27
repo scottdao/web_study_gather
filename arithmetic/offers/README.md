@@ -45,3 +45,4 @@ console.log(v2);
 let v3 = stack.out_statck();
 console.log(v3);
 ```
+- 链表交换相邻元素

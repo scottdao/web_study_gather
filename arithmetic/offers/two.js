@@ -15,7 +15,7 @@ function feibo(n) {
         f1 = f2;
         f2 = result;
     }
-    return result; 
+    return result;  
 }
 let a = feibo(8)
 // console.log(a)
