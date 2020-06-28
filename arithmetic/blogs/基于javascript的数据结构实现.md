@@ -405,3 +405,5 @@ var inOrderTraverseNode = function(node, callback) {
 - 总结：二叉搜索树就建立成功啦，树这种数据结构，也是使用相对比较频繁的一种数据结构，特别应用于底层框架的开发。
 
 ##### 字典
+
+- map
