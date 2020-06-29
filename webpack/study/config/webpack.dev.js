@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { entry, htmlWebpackPlugins } = require('./mutli-page-config.js');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const config = {
     entry: entry,
     output: {
@@ -48,9 +49,11 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
-        ...htmlWebpackPlugins
-    ],
-   devtool:"inline-source-map"
+        ...htmlWebpackPlugins,
+        new FriendlyErrorsWebpackPlugin()
+    ],  
+    stats:"errors-only",
+    devtool:"inline-source-map"
 //    devtool:"cheap-source-map"
 };
 

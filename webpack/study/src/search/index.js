@@ -2,19 +2,28 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import './style/index.less';
-import '../../commons'
-// import Dog from'./imgs/dog.png';
+import '../../commons';
 class Search extends React.Component{
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             Text:()=>{}
+        }
+    }
+    
     render(){
-        // debugger;
-       // a = 0;
         return <div className='body-div'>
                 search
-                <div className="body-div-img"></div>
+                <div className="body-div-img" onClick={()=>{
+                    import ('./text.js').then((text)=>{
+                        this.setState({
+                            Text:text.default
+                        })
+                    })
+                }}></div>
                 刘道
-                { 
-                    // <img src={Dog} />
-                }
+                {this.state.Text()}
         </div>
     }
 }

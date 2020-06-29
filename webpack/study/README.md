@@ -152,7 +152,34 @@
     4. cheap:不包含列信息
     5. inline:将map作为dataURI嵌入，不单独生成.map文件
     6. module: 包含loader的sourcemap
-- 
+-  **scope hosting:** 通过mode:production开启webpack.optimizi.ModuleConcatenationPlugin插件
+    1. webpack打包机制：打包成一个匿名函数；modules是一个数组，每一项是一个模块的初始化函数，模块会被函数包裹，import会被转换成_webpack_require；通过webpack_require加载模块，通过webpack_require_(0)进行启动程序。
+    2. 原理：将模块所有代码按照引用顺序放在一个函数作用域里，然后适当的重命名一些变量以防止变量名冲突。
+    3. 对比：通过scoping hotsing 可以减 少函数声明代码和内存开销。
+- **代码分割：**
+    1. 适用场景：1.抽离相同代码到一个共享块；2.脚本懒加载，使得初始化下载代码更小;
+    2. commonjs:require.ensure;es6:动态import需要babel转换;
+    3. 用法: `npm i @babel/plugin-syntax-dynamic-import -D`;
+    4. 代码动态加载；
+- **eslint:**Airbnb:eslint-config-airbnb; 
+    1. 基于ealint:recommoend配置并改进
+    2. 能够帮助发现代码错误的规则，全部开启
+    3. eslint 落地执行：
+    4. ci/cd集成：lint pipline
+    5. 本地开发:husky;`npm install husky -D`
+    ```
+        "scripts": {
+            "precommit":"lint-staged"
+        },
+        "lint-staged":{
+            "linters":{
+            "*.{js,scss}":["eslint --fix", "git add"]
+            }
+        },
+    ```
+    6. eslint:`npm install  eslint eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-config-airbnb -D`;`npm i eslint-loader babel-eslint -D`;
+    7. 打包基础库：
+    8. stats：打包输出日志设置；stats:errors-only;输出错误日志；`npm i friendly-errors-webpack-plugin -D`
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
