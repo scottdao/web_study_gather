@@ -180,6 +180,8 @@
     6. eslint:`npm install  eslint eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-config-airbnb -D`;`npm i eslint-loader babel-eslint -D`;
     7. 打包基础库：
     8. stats：打包输出日志设置；stats:errors-only;输出错误日志；`npm i friendly-errors-webpack-plugin -D`
+    9. webpack-merge库:
+       
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
