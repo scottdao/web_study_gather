@@ -403,7 +403,147 @@ var inOrderTraverseNode = function(node, callback) {
   };
 ```
 - 总结：二叉搜索树就建立成功啦，树这种数据结构，也是使用相对比较频繁的一种数据结构，特别应用于底层框架的开发。
+#### 集合
+- 没有重复元素，没有顺序概念的数数据结构
+- 接下来为大家简单实现集合方法:集合的增删改查；
+```
+
+function Set() {
+  var items = {};
+
+  // 判断是否是集合的值
+  this.has = function(value) {
+    return value in items;
+  };
+
+  // 添加元素
+  this.add = function(value) {
+    if (!this.has(value)) {
+      items[value] = value;
+      return true;
+    }
+    return false;
+  };
+
+  // 移除元素
+  this.remove = function(value) {
+    if (this.has(value)) {
+      delete items[value];
+      return true;
+    }
+    return false;
+  };
+  this.clear = function() {
+    items = {};
+  };
+  this.size = function() {
+    return Object.keys(items).length;
+  };
+  this.values = function() {
+    return Object.keys(items);
+  };
+
+  
+}
+```
+- 交集：
+```
+
+  this.intersection = function(otherSet) {
+    var intersectionSet = new Set();
+    var values = this.values();
+    for (var i = 0; i < values.length; i++) {
+      if (otherSet.has(values[i])) {
+        intersectionSet.add(values[i]);
+      }
+    }
+    return intersectionSet;
+  };
+```
+- 差集
+```
+ this.difference = function(otherSet) {
+    var differenceSet = new Set();
+    values = this.values();
+    for (var i = 0; i < values.length; i++) {
+      if (!otherSet.has(values[i])) {
+        differenceSet.add(values[i]);
+      }
+    }
+    return differenceSet;
+  };
+```
+- 并集
+```
+this.union = function(otherSet) {
+    var unionSet = new Set();
+    var values = this.values();
+    for (var i = 0; i < values.length; i++) {
+      unionSet.add(values[i]);
+    }
+    values = otherSet.values();
+    for (var i = 0; i < values.length; i++) {
+      unionSet.add(values[i]);
+    }
+    return unionSet;
+  };
+```
+- 子集
+```
+this.subSet = function(otherSet) {
+    if (this.size() > otherSet.size()) {
+      return false;
+    } else {
+      var value = this.values();
+      for (var i = 0; i < values.length; i++) {
+        if (!otherSet.has(values[i])) {
+          return false;
+        }
+      }
+      return true;
+    }
+  };
+```
 
 ##### 字典
-
-- map
+```
+function Dictionary() {
+  var items = {};
+  this.has = function(value) {
+    return value in items;
+  };
+  this.set = function(key, value) {
+    items[key] = value;
+  };
+  this.remove = function(key) {
+    if (this.has(key)) {
+      delete items[key];
+    }
+  };
+  this.get = function(key) {
+    return this.has(key) ? items[key] : undefined;
+  };
+  this.values = function() {
+    var values = [];
+    for (var i in items) {
+      if (this.has(i)) {
+        values.push(items[i]);
+      }
+    }
+    return values;
+  };
+  this.getItems = function() {
+    return items;
+  };
+  this.clear = function() {
+    items = {};
+  };
+  this.size = function() {
+    return Object.keys(items).length;
+  };
+  this.keys = function() {
+    return Object.keys(items);
+  };
+}
+```
+- **总结：** 这上面，本人实现了栈，队列，树，优先队列，集合及字典这几种简单的数据结构实现，接下来一篇将会实现堆，原地建堆，散列表及图的数据结构的实现

@@ -83,7 +83,33 @@ function mergeSort(arr) {
 }
 
 // 快速排序
-function quickSort(){
+function q_sort(items, left, right){
+  let l = left,r = right, mid_value = Math.floor((left+right)/2);
+  while(l<=r){
+    while(items[l]<items[mid_value]){
+      l++;
+    }
+    while (items[r]>items[mid_value]) {
+      r++;
+    }
+    if(l<=r){
+      let temp = items[l];
+      items[l] = items[r];
+      items[r] = temp;
+    }
+  }
+  if(items.length>1){
+    if(left<l-1){
+      q_sort(items, left, l-1);
+    }
+    if(l<right){
+      q_sort(items, l, right);
+    }
+  }
+
+}
+function quickSort(arr){
+  q_sort(arr, 0, arr.length-1);
 }
 
 var a = [2, 5, 1, 4, 3, 6, 21, 5];
