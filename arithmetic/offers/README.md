@@ -46,3 +46,17 @@ let v3 = stack.out_statck();
 console.log(v3);
 ```
 - 链表交换相邻元素
+```
+function swapEle(head) {
+    let pre, pre.next = {}, head;
+    while (pre.next && pre.next.next) {
+        let a =   pre.next;
+        let b =   a.next;
+        pre.next = b;
+        b.next = a;
+        a.next = b;
+        pre = a;
+    }
+    return pre.next;
+}
+```

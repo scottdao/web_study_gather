@@ -200,3 +200,55 @@ function merge(){
 let a = merge([1,2,3], [2,3,5,2,1,7], [3,41,2,9]);
 console.log(a);
 ```
+
+- 对象迭代实现属性可迭代，采用列队去实现
+```
+ let obj = {
+            a:1,
+            b:2,
+            c:3,
+            [Symbol.iterator]:function(){
+                let self = this;
+                let names = [];
+                for (const key in self) {
+                    names.push(key)
+                }
+                return {
+                    next(){
+                        if(names.length>0){
+                            let value =names.shift();
+                            return {
+                                value,
+                                done:false
+                            }
+                        }else{
+                            return {
+                                done:true
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+    for (const iterator of obj) {
+        console.log(iterator)
+    }       
+```
+- 实现柯里化函数的两种方案；
+1. one
+```
+let currey = function (fn) {
+    Function.prototype.add = add
+    return fn.add
+}
+```
+2. two
+```
+let curry2 = function (fn1) {
+    return function(){
+        return add.apply(fn1, arguments)
+    } ;
+}
+``` 
