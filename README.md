@@ -54,8 +54,9 @@
    ```
   - 保存就行
 9. **解决git clone 下载报错**
-   - windows环境下
-   - git config --global http.sslVerify false
+   - windows-git环境下
+   - `git config --global http.sslVerify false`
+   - 
 - 获取远程仓库的方式:
   1. git clone 直接拉取项目；
   ```
