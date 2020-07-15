@@ -33,4 +33,4 @@ function n1() {
 let c = curry2(n1)
 let h = c(1,2)
 let g = c(1)(2);
-console.log(c, h,g);
+// console.log(c, h,g);
