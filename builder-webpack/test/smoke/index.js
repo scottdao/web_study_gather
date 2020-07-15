@@ -18,7 +18,7 @@ ramraf('./dist',()=>{
             modules:false,
             children:false
         }))
-        console.log('webpack test')
+        console.log('webpack test..........')
         mocha.addFile(path.join(__dirname, 'html-test.js'));
         mocha.addFile(path.join(__dirname, 'css-js-test.js'));
         mocha.run();
