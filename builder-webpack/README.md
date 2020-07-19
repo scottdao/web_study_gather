@@ -22,12 +22,16 @@
  `npm run test`
 - 总结：
 1. 测试是否生成想要的文件,可以通过`mocha.addFile`进行测试
-2. 测试文件的功能，采用断言库去写；
+2. 测试文件的功能，采用断言库`assert`去写；
 3. 测试覆盖率，可以采用`istanbu`和`nyc`去实现
+4. 组件`react`与`vue`测试
 - 持续集成
  1. 快速发现错误
  2. 防止分支大幅偏离主干
  3. 核心措施:代码集成主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。
+- travis CI集成测试  
+
 ##### 参考文档
 - [mocha](https://mochajs.org/) 
+- [教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
 
