@@ -6,7 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin= require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { entry, htmlWebpackPlugins } = require('./mutli-page-config.js');
-
+// const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+// const smwp = new SpeedMeasureWebpackPlugin();
+// const Happypack = require('happypack');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const config = {
     entry:entry,
     output: {
@@ -19,7 +22,8 @@ const config = {
             {
                 test: /\.js|.jsx$/,
                 use: [
-                    'babel-loader', 
+                    // 'happypack/loader'
+                   'babel-loader', 
                     // 'eslint-loader'
                      ]
             },
@@ -81,8 +85,11 @@ const config = {
            cssProcessor:require('cssnano')
        }),
         new CleanWebpackPlugin(),
+        // new Happypack({
+        //     loaders:['babel-loader']
+        // }),
         ...htmlWebpackPlugins,
-
+        // new BundleAnalyzerPlugin()
     ],
   //  devtool:"cheap-source-map",
   optimization: {

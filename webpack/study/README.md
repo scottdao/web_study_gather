@@ -181,7 +181,44 @@
     7. 打包基础库：
     8. stats：打包输出日志设置；stats:errors-only;输出错误日志；`npm i friendly-errors-webpack-plugin -D`
     9. webpack-merge库:
-       
+    10. webpack-bundle-analyzer:代码库包的体积大小的分析
+    11. speed-measure-webpack-plugin：可以看到每个loader和插件得耗时
+#### webpack4.0 优化原因
+- v8带来的优化(for of 代替 foreach/ map和set代替object/includes代替indexOf)
+- 默认使用更快的md4 hash算法
+- webpack AST 可以直接从loader传递给AST， 减少解析时间
+- 使用字符串方法代替正则表达式 
+
+#### webpack 多进程多实例优化
+- HappyPack多进程解析资源:在webpack4.0使用需要将happypack5.0引入
+   - 原理：每次webpack 解析一个模块,Happypack会将它的依赖分配给worker线程中
+```
+ module: {
+        rules: [
+            {
+                test: /\.js|.jsx$/,
+                use: [
+                    'happypack/loader'
+                  
+                     ]
+            },
+            ....
+ }
+new Happypack({
+     loaders:['babel-loader']
+}),
+```
+- webpakc4.0:thread-loader解析资源
+    - 原理:每次webpack解析一个模块，thread-loader会将它及它的依赖分配给worker线程中
+    ```
+    {
+        loader:"thread-loader",
+        options:{
+            workers:3
+        }
+    }
+    ```
+ 
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
