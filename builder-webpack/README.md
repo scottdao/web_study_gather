@@ -30,7 +30,11 @@
  2. 防止分支大幅偏离主干
  3. 核心措施:代码集成主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。
 - travis CI集成测试  
+- speed-measure-webpack-plugin：可以看到每个loader和插件得耗时
+- stats:构建统计信息,颗粒度粗，无法做到细致分析；
+```
 
+```
 ##### 参考文档
 - [mocha](https://mochajs.org/) 
 - [教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)

@@ -4,8 +4,10 @@ const {merge} = require('webpack-merge');
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const baseConfig = require('./webpack.base');
-
-const prodConfig = {
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+const smwp = new SpeedMeasureWebpackPlugin();
+// console.log(smwp)
+const prodConfig = smwp.wrap({
   mode: 'production',
   plugins: [
     new OptimizeCSSAssetsPlugin({
@@ -39,6 +41,6 @@ const prodConfig = {
       },
     },
   },
-};
+});
 
 module.exports = merge(baseConfig, prodConfig);

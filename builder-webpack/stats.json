@@ -1,0 +1,2472 @@
+
+
+ SMP  ⏱  
+General output time took 1.45 secs
+
+ SMP  ⏱  Plugins
+OptimizeCssAssetsWebpackPlugin took 0.276 secs
+HtmlWebpackExternalsPlugin took 0.001 secs
+
+ SMP  ⏱  Loaders
+babel-loader took 0.748 secs
+  module count = 6
+mini-css-extract-plugin, and 
+css-loader, and 
+less-loader, and 
+postcss-loader, and 
+px2rem-loader took 0.205 secs
+  module count = 1
+css-loader, and 
+less-loader, and 
+postcss-loader, and 
+px2rem-loader took 0.137 secs
+  module count = 1
+raw-loader, and 
+babel-loader, and 
+babel-loader took 0.087 secs
+  module count = 1
+html-webpack-plugin took 0.018 secs
+  module count = 2
+file-loader took 0.01 secs
+  module count = 1
+raw-loader took 0.004 secs
+  module count = 1
+modules with no loaders took 0 secs
+  module count = 2
+
+
+
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.43.0",
+  "hash": "af8f0506d1b9109efc61",
+  "time": 1445,
+  "builtAt": 1595253790775,
+  "publicPath": "",
+  "outputPath": "D:\\study\\github\\scottPackaging\\builder-webpack\\dist",
+  "assetsByChunkName": {
+    "vendors": "vendors_af8f0506d1b9109efc61.js",
+    "index": "index_af8f0506d1b9109efc61.js",
+    "search": [
+      "search_a236e509.css",
+      "search_af8f0506d1b9109efc61.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "3_af8f0506d1b9109efc61.js",
+      "size": 188,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "imgs/dog.a1a2a606.png",
+      "size": 26749,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "index.html",
+      "size": 2611,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "index_af8f0506d1b9109efc61.js",
+      "size": 1678,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "index"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "search.html",
+      "size": 406,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "search_a236e509.css",
+      "size": 208,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "search"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "search_af8f0506d1b9109efc61.js",
+      "size": 4543,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "search"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "vendors_af8f0506d1b9109efc61.js",
+      "size": 92,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "vendors"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "index": {
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [
+        "vendors_af8f0506d1b9109efc61.js",
+        "index_af8f0506d1b9109efc61.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "search": {
+      "chunks": [
+        0,
+        2
+      ],
+      "assets": [
+        "vendors_af8f0506d1b9109efc61.js",
+        "search_a236e509.css",
+        "search_af8f0506d1b9109efc61.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "index": {
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [
+        "vendors_af8f0506d1b9109efc61.js",
+        "index_af8f0506d1b9109efc61.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "search": {
+      "chunks": [
+        0,
+        2
+      ],
+      "assets": [
+        "vendors_af8f0506d1b9109efc61.js",
+        "search_a236e509.css",
+        "search_af8f0506d1b9109efc61.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "reason": "split chunk (cache group: commons) (name: vendors)",
+      "size": 51,
+      "names": [
+        "vendors"
+      ],
+      "files": [
+        "vendors_af8f0506d1b9109efc61.js"
+      ],
+      "hash": "83634d186ecd7ae8d678",
+      "siblings": [
+        1,
+        2
+      ],
+      "parents": [],
+      "children": [
+        3
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 2,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\commons\\index.js",
+          "name": "./commons/index.js",
+          "index": 3,
+          "index2": 2,
+          "size": 51,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "issuerId": 3,
+          "issuerName": "./src/index/index.js",
+          "issuerPath": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "name": "./src/index/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../../commons",
+              "loc": "3:0-23"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../../commons",
+              "loc": "28:0-23"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": [
+            "add"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "function add() {\n  return 'aaa';\n}\n\nexport { add };"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "index",
+          "request": "D:/study/github/scottPackaging/builder-webpack/src/index/index.js",
+          "reasons": []
+        },
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "search",
+          "request": "D:/study/github/scottPackaging/builder-webpack/src/search/index.js",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 207,
+      "names": [
+        "index"
+      ],
+      "files": [
+        "index_af8f0506d1b9109efc61.js"
+      ],
+      "hash": "94612282b4db5ae7ddda",
+      "siblings": [
+        0
+      ],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "external \"React\"",
+          "name": "external \"React\"",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1,
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "issuerId": 3,
+          "issuerName": "./src/index/index.js",
+          "issuerPath": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "name": "./src/index/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "1:0-26"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "4:21-26"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "25:0-26"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "52:26-31"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "54:32-37"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "68:2-7"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "70:30-35"
+            },
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+              "module": "./src/search/text.js",
+              "moduleName": "./src/search/text.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "1:0-26"
+            },
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+              "module": "./src/search/text.js",
+              "moduleName": "./src/search/text.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "4:22-27"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": 1,
+          "identifier": "external \"ReactDOM\"",
+          "name": "external \"ReactDOM\"",
+          "index": 2,
+          "index2": 1,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1,
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "issuerId": 3,
+          "issuerName": "./src/index/index.js",
+          "issuerPath": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "name": "./src/index/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react-dom",
+              "loc": "2:0-33"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react-dom",
+              "loc": "4:28-36"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react-dom",
+              "loc": "26:0-33"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react-dom",
+              "loc": "70:0-8"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "name": "./src/index/index.js",
+          "index": 0,
+          "index2": 3,
+          "size": 123,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "D:/study/github/scottPackaging/builder-webpack/src/index/index.js",
+              "loc": "index"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "import React from 'react';\nimport ReactDom from 'react-dom';\nimport '../../commons';\nconsole.log('index', React, ReactDom);"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "index",
+          "request": "D:/study/github/scottPackaging/builder-webpack/src/index/index.js",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 4453,
+      "names": [
+        "search"
+      ],
+      "files": [
+        "search_a236e509.css",
+        "search_af8f0506d1b9109efc61.js"
+      ],
+      "hash": "186722fd6525b95d0ef2",
+      "siblings": [
+        0
+      ],
+      "parents": [],
+      "children": [
+        3
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "external \"React\"",
+          "name": "external \"React\"",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1,
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "issuerId": 3,
+          "issuerName": "./src/index/index.js",
+          "issuerPath": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "name": "./src/index/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "1:0-26"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "4:21-26"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "25:0-26"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "52:26-31"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "54:32-37"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "68:2-7"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "70:30-35"
+            },
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+              "module": "./src/search/text.js",
+              "moduleName": "./src/search/text.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react",
+              "loc": "1:0-26"
+            },
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+              "module": "./src/search/text.js",
+              "moduleName": "./src/search/text.js",
+              "type": "harmony import specifier",
+              "userRequest": "react",
+              "loc": "4:22-27"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": 1,
+          "identifier": "external \"ReactDOM\"",
+          "name": "external \"ReactDOM\"",
+          "index": 2,
+          "index2": 1,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1,
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "issuerId": 3,
+          "issuerName": "./src/index/index.js",
+          "issuerPath": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "name": "./src/index/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react-dom",
+              "loc": "2:0-33"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+              "module": "./src/index/index.js",
+              "moduleName": "./src/index/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react-dom",
+              "loc": "4:28-36"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "react-dom",
+              "loc": "26:0-33"
+            },
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "react-dom",
+              "loc": "70:0-8"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": 4,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "name": "./src/search/index.js",
+          "index": 4,
+          "index2": 6,
+          "size": 4075,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "D:/study/github/scottPackaging/builder-webpack/src/search/index.js",
+              "loc": "search"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "'use strict';\n\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nimport React from 'react';\nimport ReactDom from 'react-dom';\nimport './style/index.less';\nimport '../../commons';\n\nvar Search = /*#__PURE__*/function (_React$Component) {\n  _inherits(Search, _React$Component);\n\n  var _super = _createSuper(Search);\n\n  function Search(props) {\n    var _this;\n\n    _classCallCheck(this, Search);\n\n    _this = _super.call(this, props);\n    _this.state = {\n      Text: function Text() {}\n    };\n    return _this;\n  }\n\n  _createClass(Search, [{\n    key: \"render\",\n    value: function render() {\n      var _this2 = this;\n\n      return /*#__PURE__*/React.createElement(\"div\", {\n        className: \"body-div\"\n      }, \"search\", /*#__PURE__*/React.createElement(\"div\", {\n        className: \"body-div-img\",\n        onClick: function onClick() {\n          import('./text.js').then(function (text) {\n            _this2.setState({\n              Text: text[\"default\"]\n            });\n          });\n        }\n      }), \"\\u5218\\u9053\", this.state.Text());\n    }\n  }]);\n\n  return Search;\n}(React.Component);\n\nReactDom.render( /*#__PURE__*/React.createElement(Search, null), document.getElementById('root'));"
+        },
+        {
+          "id": 5,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "name": "./src/search/style/index.less",
+          "index": 5,
+          "index2": 5,
+          "size": 39,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "issuerId": 4,
+          "issuerName": "./src/search/index.js",
+          "issuerPath": [
+            {
+              "id": 4,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "name": "./src/search/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [
+            "imgs/dog.a1a2a606.png"
+          ],
+          "reasons": [
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./style/index.less",
+              "loc": "27:0-28"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "// extracted by mini-css-extract-plugin"
+        },
+        {
+          "id": "",
+          "identifier": "css D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less 0",
+          "name": "css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+          "index": 6,
+          "index2": 4,
+          "size": 255,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "issuerId": 5,
+          "issuerName": "./src/search/style/index.less",
+          "issuerPath": [
+            {
+              "id": 4,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "name": "./src/search/index.js"
+            },
+            {
+              "id": 5,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "name": "./src/search/style/index.less"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "module": "./src/search/style/index.less",
+              "moduleName": "./src/search/style/index.less"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "search",
+          "request": "D:/study/github/scottPackaging/builder-webpack/src/search/index.js",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 148,
+      "names": [],
+      "files": [
+        "3_af8f0506d1b9109efc61.js"
+      ],
+      "hash": "4d652781cff56fdfd24d",
+      "siblings": [],
+      "parents": [
+        0,
+        2
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 6,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+          "name": "./src/search/text.js",
+          "index": 7,
+          "index2": 7,
+          "size": 148,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            3
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "issuerId": 4,
+          "issuerName": "./src/search/index.js",
+          "issuerPath": [
+            {
+              "id": 4,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "name": "./src/search/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 4,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+              "module": "./src/search/index.js",
+              "moduleName": "./src/search/index.js",
+              "type": "import()",
+              "userRequest": "./text.js",
+              "loc": "57:10-29"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./src/search/index.js (referenced with import())"
+          ],
+          "depth": 1,
+          "source": "import React from \"react\";\n\nvar Text = function Text() {\n  return /*#__PURE__*/React.createElement(\"div\", null, \"text.js\");\n};\n\nexport default Text;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 4,
+          "module": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "moduleName": "./src/search/index.js",
+          "loc": "57:10-29",
+          "request": "./text.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "external \"React\"",
+      "name": "external \"React\"",
+      "index": 1,
+      "index2": 0,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1,
+        2
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+      "issuerId": 3,
+      "issuerName": "./src/index/index.js",
+      "issuerPath": [
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "name": "./src/index/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "module": "./src/index/index.js",
+          "moduleName": "./src/index/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "react",
+          "loc": "1:0-26"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "module": "./src/index/index.js",
+          "moduleName": "./src/index/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "4:21-26"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "react",
+          "loc": "25:0-26"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "52:26-31"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "54:32-37"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "68:2-7"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "70:30-35"
+        },
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+          "module": "./src/search/text.js",
+          "moduleName": "./src/search/text.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "react",
+          "loc": "1:0-26"
+        },
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+          "module": "./src/search/text.js",
+          "moduleName": "./src/search/text.js",
+          "type": "harmony import specifier",
+          "userRequest": "react",
+          "loc": "4:22-27"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1
+    },
+    {
+      "id": 1,
+      "identifier": "external \"ReactDOM\"",
+      "name": "external \"ReactDOM\"",
+      "index": 2,
+      "index2": 1,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1,
+        2
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+      "issuerId": 3,
+      "issuerName": "./src/index/index.js",
+      "issuerPath": [
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "name": "./src/index/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "module": "./src/index/index.js",
+          "moduleName": "./src/index/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "react-dom",
+          "loc": "2:0-33"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "module": "./src/index/index.js",
+          "moduleName": "./src/index/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react-dom",
+          "loc": "4:28-36"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "react-dom",
+          "loc": "26:0-33"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "react-dom",
+          "loc": "70:0-8"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1
+    },
+    {
+      "id": 2,
+      "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\commons\\index.js",
+      "name": "./commons/index.js",
+      "index": 3,
+      "index2": 2,
+      "size": 51,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+      "issuerId": 3,
+      "issuerName": "./src/index/index.js",
+      "issuerPath": [
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "name": "./src/index/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+          "module": "./src/index/index.js",
+          "moduleName": "./src/index/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "../../commons",
+          "loc": "3:0-23"
+        },
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "../../commons",
+          "loc": "28:0-23"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": [
+        "add"
+      ],
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "function add() {\n  return 'aaa';\n}\n\nexport { add };"
+    },
+    {
+      "id": 3,
+      "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.js",
+      "name": "./src/index/index.js",
+      "index": 0,
+      "index2": 3,
+      "size": 123,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "D:/study/github/scottPackaging/builder-webpack/src/index/index.js",
+          "loc": "index"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is an entry point"
+      ],
+      "depth": 0,
+      "source": "import React from 'react';\nimport ReactDom from 'react-dom';\nimport '../../commons';\nconsole.log('index', React, ReactDom);"
+    },
+    {
+      "id": 4,
+      "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+      "name": "./src/search/index.js",
+      "index": 4,
+      "index2": 6,
+      "size": 4075,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "D:/study/github/scottPackaging/builder-webpack/src/search/index.js",
+          "loc": "search"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is an entry point"
+      ],
+      "depth": 0,
+      "source": "'use strict';\n\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nimport React from 'react';\nimport ReactDom from 'react-dom';\nimport './style/index.less';\nimport '../../commons';\n\nvar Search = /*#__PURE__*/function (_React$Component) {\n  _inherits(Search, _React$Component);\n\n  var _super = _createSuper(Search);\n\n  function Search(props) {\n    var _this;\n\n    _classCallCheck(this, Search);\n\n    _this = _super.call(this, props);\n    _this.state = {\n      Text: function Text() {}\n    };\n    return _this;\n  }\n\n  _createClass(Search, [{\n    key: \"render\",\n    value: function render() {\n      var _this2 = this;\n\n      return /*#__PURE__*/React.createElement(\"div\", {\n        className: \"body-div\"\n      }, \"search\", /*#__PURE__*/React.createElement(\"div\", {\n        className: \"body-div-img\",\n        onClick: function onClick() {\n          import('./text.js').then(function (text) {\n            _this2.setState({\n              Text: text[\"default\"]\n            });\n          });\n        }\n      }), \"\\u5218\\u9053\", this.state.Text());\n    }\n  }]);\n\n  return Search;\n}(React.Component);\n\nReactDom.render( /*#__PURE__*/React.createElement(Search, null), document.getElementById('root'));"
+    },
+    {
+      "id": 5,
+      "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+      "name": "./src/search/style/index.less",
+      "index": 5,
+      "index2": 5,
+      "size": 39,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+      "issuerId": 4,
+      "issuerName": "./src/search/index.js",
+      "issuerPath": [
+        {
+          "id": 4,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "name": "./src/search/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+        "imgs/dog.a1a2a606.png"
+      ],
+      "reasons": [
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./style/index.less",
+          "loc": "27:0-28"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "// extracted by mini-css-extract-plugin"
+    },
+    {
+      "id": 6,
+      "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\text.js",
+      "name": "./src/search/text.js",
+      "index": 7,
+      "index2": 7,
+      "size": 148,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        3
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+      "issuerId": 4,
+      "issuerName": "./src/search/index.js",
+      "issuerPath": [
+        {
+          "id": 4,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "name": "./src/search/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 4,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "module": "./src/search/index.js",
+          "moduleName": "./src/search/index.js",
+          "type": "import()",
+          "userRequest": "./text.js",
+          "loc": "57:10-29"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "default"
+      ],
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./src/search/index.js (referenced with import())"
+      ],
+      "depth": 1,
+      "source": "import React from \"react\";\n\nvar Text = function Text() {\n  return /*#__PURE__*/React.createElement(\"div\", null, \"text.js\");\n};\n\nexport default Text;"
+    },
+    {
+      "id": "",
+      "identifier": "css D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less 0",
+      "name": "css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+      "index": 6,
+      "index2": 4,
+      "size": 255,
+      "built": false,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+      "issuerId": 5,
+      "issuerName": "./src/search/style/index.less",
+      "issuerPath": [
+        {
+          "id": 4,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.js",
+          "name": "./src/search/index.js"
+        },
+        {
+          "id": 5,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "name": "./src/search/style/index.less"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 5,
+          "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "module": "./src/search/style/index.less",
+          "moduleName": "./src/search/style/index.less"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": [
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "",
+      "outputPath": "D:\\study\\github\\scottPackaging\\builder-webpack\\dist",
+      "assetsByChunkName": {
+        "HtmlWebpackPlugin_0": "__child-HtmlWebpackPlugin_0",
+        "HtmlWebpackPlugin_1": "__child-HtmlWebpackPlugin_1"
+      },
+      "assets": [
+        {
+          "name": "__child-HtmlWebpackPlugin_0",
+          "size": 8894,
+          "chunks": [
+            0
+          ],
+          "chunkNames": [
+            "HtmlWebpackPlugin_0"
+          ],
+          "info": {},
+          "emitted": false
+        },
+        {
+          "name": "__child-HtmlWebpackPlugin_1",
+          "size": 4253,
+          "chunks": [
+            1
+          ],
+          "chunkNames": [
+            "HtmlWebpackPlugin_1"
+          ],
+          "info": {},
+          "emitted": false
+        }
+      ],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "HtmlWebpackPlugin_0": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "__child-HtmlWebpackPlugin_0"
+          ],
+          "children": {},
+          "childAssets": {}
+        },
+        "HtmlWebpackPlugin_1": {
+          "chunks": [
+            1
+          ],
+          "assets": [
+            "__child-HtmlWebpackPlugin_1"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "HtmlWebpackPlugin_0": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "__child-HtmlWebpackPlugin_0"
+          ],
+          "children": {},
+          "childAssets": {}
+        },
+        "HtmlWebpackPlugin_1": {
+          "chunks": [
+            1
+          ],
+          "assets": [
+            "__child-HtmlWebpackPlugin_1"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "chunks": [
+        {
+          "id": 0,
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "size": 5151,
+          "names": [
+            "HtmlWebpackPlugin_0"
+          ],
+          "files": [
+            "__child-HtmlWebpackPlugin_0"
+          ],
+          "hash": "d79ee37989ea6da2eaf2",
+          "siblings": [],
+          "parents": [],
+          "children": [],
+          "childrenByOrder": {},
+          "modules": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "index": 0,
+              "index2": 2,
+              "size": 660,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+                  "loc": "HtmlWebpackPlugin_0"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 0,
+              "source": "var _ = __non_webpack_require__(\"D:\\\\study\\\\github\\\\scottPackaging\\\\builder-webpack\\\\node_modules\\\\lodash\\\\lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    ' +\n((__t = ( require('raw-loader!./meta.html') )) == null ? '' : __t) +\n'\\r\\n    <title>Document</title>\\r\\n    <script>\\r\\n        ' +\n((__t = ( require('raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js') )) == null ? '' : __t) +\n'\\r\\n    </script>\\r\\n   \\r\\n</head>\\r\\n<body>\\r\\n    <div id=\"root\"></div>\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
+            },
+            {
+              "id": 1,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\raw-loader\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\meta.html",
+              "name": "./node_modules/raw-loader!./src/index/meta.html",
+              "index": 1,
+              "index2": 0,
+              "size": 918,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "issuerId": 0,
+              "issuerName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "issuerPath": [
+                {
+                  "id": 0,
+                  "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+                  "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+                  "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+                  "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+                  "type": "cjs require",
+                  "userRequest": "raw-loader!./meta.html",
+                  "loc": "4:10-43"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 1,
+              "source": "module.exports = \"<meta name=\\\"title\\\" content=\\\"聚星直播 | 领先的泛娱乐直播平台\\\"><meta http-equiv=\\\"x-ua-compatible\\\" content=\\\"IE=edge\\\"><meta name=\\\"renderer\\\" content=\\\"webkit|ie-comp|ie-stand\\\"><meta name=\\\"keywords\\\" content=\\\"聚星直播,酷我聚星、酷我聚星网、酷我、在线演艺、娱乐直播、酷我真人秀\\\"><meta name=\\\"description\\\" itemprop=\\\"description\\\" content=\\\"聚星直播，酷我聚星直播是国内领先的泛娱乐直播平台，支持海量用户同时在线互动。直播特色多种多样、内容精彩纷呈，支持视频聊天、互动交友、视频清晰稳定。快来加入，总有一款主播会打动你。\\\"><meta itemprop=\\\"name\\\" id=\\\"metaName\\\" content=\\\"聚星直播\\\"><meta itemprop=\\\"image\\\" id=\\\"metaImage\\\" content=\\\"https://imagexc.kuwo.cn/kuwolive/pic178.jpg\\\"><meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\">\""
+            },
+            {
+              "id": 2,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\raw-loader\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\lib-flexible\\flexible.js",
+              "name": "./node_modules/raw-loader!./node_modules/babel-loader/lib!./node_modules/lib-flexible/flexible.js",
+              "index": 2,
+              "index2": 1,
+              "size": 3573,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "issuerId": 0,
+              "issuerName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "issuerPath": [
+                {
+                  "id": 0,
+                  "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+                  "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+                  "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+                  "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+                  "type": "cjs require",
+                  "userRequest": "raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js",
+                  "loc": "6:10-88"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 1,
+              "source": "module.exports = \";\\n\\n(function (win, lib) {\\n  var doc = win.document;\\n  var docEl = doc.documentElement;\\n  var metaEl = doc.querySelector('meta[name=\\\"viewport\\\"]');\\n  var flexibleEl = doc.querySelector('meta[name=\\\"flexible\\\"]');\\n  var dpr = 0;\\n  var scale = 0;\\n  var tid;\\n  var flexible = lib.flexible || (lib.flexible = {});\\n\\n  if (metaEl) {\\n    console.warn('将根据已有的meta标签来设置缩放比例');\\n    var match = metaEl.getAttribute('content').match(/initial\\\\-scale=([\\\\d\\\\.]+)/);\\n\\n    if (match) {\\n      scale = parseFloat(match[1]);\\n      dpr = parseInt(1 / scale);\\n    }\\n  } else if (flexibleEl) {\\n    var content = flexibleEl.getAttribute('content');\\n\\n    if (content) {\\n      var initialDpr = content.match(/initial\\\\-dpr=([\\\\d\\\\.]+)/);\\n      var maximumDpr = content.match(/maximum\\\\-dpr=([\\\\d\\\\.]+)/);\\n\\n      if (initialDpr) {\\n        dpr = parseFloat(initialDpr[1]);\\n        scale = parseFloat((1 / dpr).toFixed(2));\\n      }\\n\\n      if (maximumDpr) {\\n        dpr = parseFloat(maximumDpr[1]);\\n        scale = parseFloat((1 / dpr).toFixed(2));\\n      }\\n    }\\n  }\\n\\n  if (!dpr && !scale) {\\n    var isAndroid = win.navigator.appVersion.match(/android/gi);\\n    var isIPhone = win.navigator.appVersion.match(/iphone/gi);\\n    var devicePixelRatio = win.devicePixelRatio;\\n\\n    if (isIPhone) {\\n      // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案\\n      if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {\\n        dpr = 3;\\n      } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {\\n        dpr = 2;\\n      } else {\\n        dpr = 1;\\n      }\\n    } else {\\n      // 其他设备下，仍旧使用1倍的方案\\n      dpr = 1;\\n    }\\n\\n    scale = 1 / dpr;\\n  }\\n\\n  docEl.setAttribute('data-dpr', dpr);\\n\\n  if (!metaEl) {\\n    metaEl = doc.createElement('meta');\\n    metaEl.setAttribute('name', 'viewport');\\n    metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');\\n\\n    if (docEl.firstElementChild) {\\n      docEl.firstElementChild.appendChild(metaEl);\\n    } else {\\n      var wrap = doc.createElement('div');\\n      wrap.appendChild(metaEl);\\n      doc.write(wrap.innerHTML);\\n    }\\n  }\\n\\n  function refreshRem() {\\n    var width = docEl.getBoundingClientRect().width;\\n\\n    if (width / dpr > 540) {\\n      width = 540 * dpr;\\n    }\\n\\n    var rem = width / 10;\\n    docEl.style.fontSize = rem + 'px';\\n    flexible.rem = win.rem = rem;\\n  }\\n\\n  win.addEventListener('resize', function () {\\n    clearTimeout(tid);\\n    tid = setTimeout(refreshRem, 300);\\n  }, false);\\n  win.addEventListener('pageshow', function (e) {\\n    if (e.persisted) {\\n      clearTimeout(tid);\\n      tid = setTimeout(refreshRem, 300);\\n    }\\n  }, false);\\n\\n  if (doc.readyState === 'complete') {\\n    doc.body.style.fontSize = 12 * dpr + 'px';\\n  } else {\\n    doc.addEventListener('DOMContentLoaded', function (e) {\\n      doc.body.style.fontSize = 12 * dpr + 'px';\\n    }, false);\\n  }\\n\\n  refreshRem();\\n  flexible.dpr = win.dpr = dpr;\\n  flexible.refreshRem = refreshRem;\\n\\n  flexible.rem2px = function (d) {\\n    var val = parseFloat(d) * this.rem;\\n\\n    if (typeof d === 'string' && d.match(/rem$/)) {\\n      val += 'px';\\n    }\\n\\n    return val;\\n  };\\n\\n  flexible.px2rem = function (d) {\\n    var val = parseFloat(d) / this.rem;\\n\\n    if (typeof d === 'string' && d.match(/px$/)) {\\n      val += 'rem';\\n    }\\n\\n    return val;\\n  };\\n})(window, window['lib'] || (window['lib'] = {}));\""
+            }
+          ],
+          "filteredModules": 0,
+          "origins": [
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "HtmlWebpackPlugin_0",
+              "request": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "size": 573,
+          "names": [
+            "HtmlWebpackPlugin_1"
+          ],
+          "files": [
+            "__child-HtmlWebpackPlugin_1"
+          ],
+          "hash": "f9ed4d0a83a7248c3a82",
+          "siblings": [],
+          "parents": [],
+          "children": [],
+          "childrenByOrder": {},
+          "modules": [
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.html",
+              "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/search/index.html",
+              "index": 3,
+              "index2": 3,
+              "size": 573,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                1
+              ],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.html",
+                  "loc": "HtmlWebpackPlugin_1"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 0,
+              "source": "var _ = __non_webpack_require__(\"D:\\\\study\\\\github\\\\scottPackaging\\\\builder-webpack\\\\node_modules\\\\lodash\\\\lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    <meta charset=\"UTF-8\">\\r\\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\r\\n    <title>Document</title>\\r\\n</head>\\r\\n<body>\\r\\n    <div id=\"root\"></div>\\r\\n    <!-- <script src=\"../dist/search.js\"></script> -->\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
+            }
+          ],
+          "filteredModules": 0,
+          "origins": [
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "HtmlWebpackPlugin_1",
+              "request": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.html",
+              "reasons": []
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+          "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+          "index": 0,
+          "index2": 2,
+          "size": 660,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "loc": "HtmlWebpackPlugin_0"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0,
+          "source": "var _ = __non_webpack_require__(\"D:\\\\study\\\\github\\\\scottPackaging\\\\builder-webpack\\\\node_modules\\\\lodash\\\\lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    ' +\n((__t = ( require('raw-loader!./meta.html') )) == null ? '' : __t) +\n'\\r\\n    <title>Document</title>\\r\\n    <script>\\r\\n        ' +\n((__t = ( require('raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js') )) == null ? '' : __t) +\n'\\r\\n    </script>\\r\\n   \\r\\n</head>\\r\\n<body>\\r\\n    <div id=\"root\"></div>\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
+        },
+        {
+          "id": 1,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\raw-loader\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\meta.html",
+          "name": "./node_modules/raw-loader!./src/index/meta.html",
+          "index": 1,
+          "index2": 0,
+          "size": 918,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+          "issuerId": 0,
+          "issuerName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "type": "cjs require",
+              "userRequest": "raw-loader!./meta.html",
+              "loc": "4:10-43"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "module.exports = \"<meta name=\\\"title\\\" content=\\\"聚星直播 | 领先的泛娱乐直播平台\\\"><meta http-equiv=\\\"x-ua-compatible\\\" content=\\\"IE=edge\\\"><meta name=\\\"renderer\\\" content=\\\"webkit|ie-comp|ie-stand\\\"><meta name=\\\"keywords\\\" content=\\\"聚星直播,酷我聚星、酷我聚星网、酷我、在线演艺、娱乐直播、酷我真人秀\\\"><meta name=\\\"description\\\" itemprop=\\\"description\\\" content=\\\"聚星直播，酷我聚星直播是国内领先的泛娱乐直播平台，支持海量用户同时在线互动。直播特色多种多样、内容精彩纷呈，支持视频聊天、互动交友、视频清晰稳定。快来加入，总有一款主播会打动你。\\\"><meta itemprop=\\\"name\\\" id=\\\"metaName\\\" content=\\\"聚星直播\\\"><meta itemprop=\\\"image\\\" id=\\\"metaImage\\\" content=\\\"https://imagexc.kuwo.cn/kuwolive/pic178.jpg\\\"><meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\">\""
+        },
+        {
+          "id": 2,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\raw-loader\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\lib-flexible\\flexible.js",
+          "name": "./node_modules/raw-loader!./node_modules/babel-loader/lib!./node_modules/lib-flexible/flexible.js",
+          "index": 2,
+          "index2": 1,
+          "size": 3573,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+          "issuerId": 0,
+          "issuerName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\index\\index.html",
+              "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index/index.html",
+              "type": "cjs require",
+              "userRequest": "raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js",
+              "loc": "6:10-88"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "module.exports = \";\\n\\n(function (win, lib) {\\n  var doc = win.document;\\n  var docEl = doc.documentElement;\\n  var metaEl = doc.querySelector('meta[name=\\\"viewport\\\"]');\\n  var flexibleEl = doc.querySelector('meta[name=\\\"flexible\\\"]');\\n  var dpr = 0;\\n  var scale = 0;\\n  var tid;\\n  var flexible = lib.flexible || (lib.flexible = {});\\n\\n  if (metaEl) {\\n    console.warn('将根据已有的meta标签来设置缩放比例');\\n    var match = metaEl.getAttribute('content').match(/initial\\\\-scale=([\\\\d\\\\.]+)/);\\n\\n    if (match) {\\n      scale = parseFloat(match[1]);\\n      dpr = parseInt(1 / scale);\\n    }\\n  } else if (flexibleEl) {\\n    var content = flexibleEl.getAttribute('content');\\n\\n    if (content) {\\n      var initialDpr = content.match(/initial\\\\-dpr=([\\\\d\\\\.]+)/);\\n      var maximumDpr = content.match(/maximum\\\\-dpr=([\\\\d\\\\.]+)/);\\n\\n      if (initialDpr) {\\n        dpr = parseFloat(initialDpr[1]);\\n        scale = parseFloat((1 / dpr).toFixed(2));\\n      }\\n\\n      if (maximumDpr) {\\n        dpr = parseFloat(maximumDpr[1]);\\n        scale = parseFloat((1 / dpr).toFixed(2));\\n      }\\n    }\\n  }\\n\\n  if (!dpr && !scale) {\\n    var isAndroid = win.navigator.appVersion.match(/android/gi);\\n    var isIPhone = win.navigator.appVersion.match(/iphone/gi);\\n    var devicePixelRatio = win.devicePixelRatio;\\n\\n    if (isIPhone) {\\n      // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案\\n      if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {\\n        dpr = 3;\\n      } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {\\n        dpr = 2;\\n      } else {\\n        dpr = 1;\\n      }\\n    } else {\\n      // 其他设备下，仍旧使用1倍的方案\\n      dpr = 1;\\n    }\\n\\n    scale = 1 / dpr;\\n  }\\n\\n  docEl.setAttribute('data-dpr', dpr);\\n\\n  if (!metaEl) {\\n    metaEl = doc.createElement('meta');\\n    metaEl.setAttribute('name', 'viewport');\\n    metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');\\n\\n    if (docEl.firstElementChild) {\\n      docEl.firstElementChild.appendChild(metaEl);\\n    } else {\\n      var wrap = doc.createElement('div');\\n      wrap.appendChild(metaEl);\\n      doc.write(wrap.innerHTML);\\n    }\\n  }\\n\\n  function refreshRem() {\\n    var width = docEl.getBoundingClientRect().width;\\n\\n    if (width / dpr > 540) {\\n      width = 540 * dpr;\\n    }\\n\\n    var rem = width / 10;\\n    docEl.style.fontSize = rem + 'px';\\n    flexible.rem = win.rem = rem;\\n  }\\n\\n  win.addEventListener('resize', function () {\\n    clearTimeout(tid);\\n    tid = setTimeout(refreshRem, 300);\\n  }, false);\\n  win.addEventListener('pageshow', function (e) {\\n    if (e.persisted) {\\n      clearTimeout(tid);\\n      tid = setTimeout(refreshRem, 300);\\n    }\\n  }, false);\\n\\n  if (doc.readyState === 'complete') {\\n    doc.body.style.fontSize = 12 * dpr + 'px';\\n  } else {\\n    doc.addEventListener('DOMContentLoaded', function (e) {\\n      doc.body.style.fontSize = 12 * dpr + 'px';\\n    }, false);\\n  }\\n\\n  refreshRem();\\n  flexible.dpr = win.dpr = dpr;\\n  flexible.refreshRem = refreshRem;\\n\\n  flexible.rem2px = function (d) {\\n    var val = parseFloat(d) * this.rem;\\n\\n    if (typeof d === 'string' && d.match(/rem$/)) {\\n      val += 'px';\\n    }\\n\\n    return val;\\n  };\\n\\n  flexible.px2rem = function (d) {\\n    var val = parseFloat(d) / this.rem;\\n\\n    if (typeof d === 'string' && d.match(/px$/)) {\\n      val += 'rem';\\n    }\\n\\n    return val;\\n  };\\n})(window, window['lib'] || (window['lib'] = {}));\""
+        },
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.html",
+          "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/search/index.html",
+          "index": 3,
+          "index2": 3,
+          "size": 573,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\html-webpack-plugin\\lib\\loader.js!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\index.html",
+              "loc": "HtmlWebpackPlugin_1"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0,
+          "source": "var _ = __non_webpack_require__(\"D:\\\\study\\\\github\\\\scottPackaging\\\\builder-webpack\\\\node_modules\\\\lodash\\\\lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    <meta charset=\"UTF-8\">\\r\\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\r\\n    <title>Document</title>\\r\\n</head>\\r\\n<body>\\r\\n    <div id=\"root\"></div>\\r\\n    <!-- <script src=\"../dist/search.js\"></script> -->\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
+        }
+      ],
+      "filteredModules": 0,
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "HtmlWebpackCompiler"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "",
+      "outputPath": "D:\\study\\github\\scottPackaging\\builder-webpack\\dist",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "chunks": [
+        {
+          "id": 0,
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "size": 4217,
+          "names": [
+            "mini-css-extract-plugin"
+          ],
+          "files": [
+            "*"
+          ],
+          "hash": "4bf6d4ba74860bfa3503",
+          "siblings": [],
+          "parents": [],
+          "children": [],
+          "childrenByOrder": {},
+          "modules": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "index": 0,
+              "index2": 3,
+              "size": 805,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "!!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "loc": "mini-css-extract-plugin"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 0,
+              "source": "// Imports\nvar ___CSS_LOADER_API_IMPORT___ = require(\"../../../node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = require(\"../../../node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = require(\"../../imgs/dog.png\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.id, \".body-div {\\n  color: red;\\n  font-size: 0.26666667rem;\\n}\\n.body-div-img {\\n  background: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\n  height: 0.26666667rem;\\n  width: 0.26666667rem;\\n  display: -webkit-box;\\n  display: -webkit-flex;\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n"
+            },
+            {
+              "id": 1,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\runtime\\api.js",
+              "name": "./node_modules/css-loader/dist/runtime/api.js",
+              "index": 1,
+              "index2": 0,
+              "size": 2517,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "issuerId": 0,
+              "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "issuerPath": [
+                {
+                  "id": 0,
+                  "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "type": "cjs require",
+                  "userRequest": "../../../node_modules/css-loader/dist/runtime/api.js",
+                  "loc": "2:34-97"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 1,
+              "source": "\"use strict\";\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\n\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}"
+            },
+            {
+              "id": 2,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\runtime\\getUrl.js",
+              "name": "./node_modules/css-loader/dist/runtime/getUrl.js",
+              "index": 2,
+              "index2": 1,
+              "size": 830,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "issuerId": 0,
+              "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "issuerPath": [
+                {
+                  "id": 0,
+                  "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "type": "cjs require",
+                  "userRequest": "../../../node_modules/css-loader/dist/runtime/getUrl.js",
+                  "loc": "3:38-104"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": null,
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 1,
+              "source": "\"use strict\";\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};"
+            },
+            {
+              "id": 3,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\file-loader\\dist\\cjs.js??ref--7!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\imgs\\dog.png",
+              "name": "./src/imgs/dog.png",
+              "index": 3,
+              "index2": 2,
+              "size": 65,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [
+                0
+              ],
+              "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "issuerId": 0,
+              "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "issuerPath": [
+                {
+                  "id": 0,
+                  "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": 0,
+                  "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+                  "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+                  "type": "cjs require",
+                  "userRequest": "../../imgs/dog.png",
+                  "loc": "4:36-65"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less (referenced with cjs require)"
+              ],
+              "depth": 1,
+              "source": "export default __webpack_public_path__ + \"imgs/dog.a1a2a606.png\";"
+            }
+          ],
+          "filteredModules": 0,
+          "origins": [
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "mini-css-extract-plugin",
+              "request": "!!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "reasons": []
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+          "index": 0,
+          "index2": 3,
+          "size": 805,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "!!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "loc": "mini-css-extract-plugin"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0,
+          "source": "// Imports\nvar ___CSS_LOADER_API_IMPORT___ = require(\"../../../node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = require(\"../../../node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = require(\"../../imgs/dog.png\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.id, \".body-div {\\n  color: red;\\n  font-size: 0.26666667rem;\\n}\\n.body-div-img {\\n  background: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\n  height: 0.26666667rem;\\n  width: 0.26666667rem;\\n  display: -webkit-box;\\n  display: -webkit-flex;\\n  display: -ms-flexbox;\\n  display: flex;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n"
+        },
+        {
+          "id": 1,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\runtime\\api.js",
+          "name": "./node_modules/css-loader/dist/runtime/api.js",
+          "index": 1,
+          "index2": 0,
+          "size": 2517,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "issuerId": 0,
+          "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "type": "cjs require",
+              "userRequest": "../../../node_modules/css-loader/dist/runtime/api.js",
+              "loc": "2:34-97"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "\"use strict\";\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\n\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}"
+        },
+        {
+          "id": 2,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\babel-loader\\lib\\index.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\runtime\\getUrl.js",
+          "name": "./node_modules/css-loader/dist/runtime/getUrl.js",
+          "index": 2,
+          "index2": 1,
+          "size": 830,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "issuerId": 0,
+          "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "type": "cjs require",
+              "userRequest": "../../../node_modules/css-loader/dist/runtime/getUrl.js",
+              "loc": "3:38-104"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "\"use strict\";\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};"
+        },
+        {
+          "id": 3,
+          "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\file-loader\\dist\\cjs.js??ref--7!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\imgs\\dog.png",
+          "name": "./src/imgs/dog.png",
+          "index": 3,
+          "index2": 2,
+          "size": 65,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+          "issuerId": 0,
+          "issuerName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "name": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\css-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\less-loader\\dist\\cjs.js!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\postcss-loader\\src\\index.js??ref--6-3!D:\\study\\github\\scottPackaging\\builder-webpack\\node_modules\\px2rem-loader\\index.js??ref--6-4!D:\\study\\github\\scottPackaging\\builder-webpack\\src\\search\\style\\index.less",
+              "module": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "moduleName": "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less",
+              "type": "cjs require",
+              "userRequest": "../../imgs/dog.png",
+              "loc": "4:36-65"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-3!./node_modules/px2rem-loader??ref--6-4!./src/search/style/index.less (referenced with cjs require)"
+          ],
+          "depth": 1,
+          "source": "export default __webpack_public_path__ + \"imgs/dog.a1a2a606.png\";"
+        }
+      ],
+      "filteredModules": 0,
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/less-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/px2rem-loader/index.js??ref--6-4!src/search/style/index.less"
+    }
+  ]
+}

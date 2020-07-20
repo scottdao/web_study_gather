@@ -7,6 +7,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { entry, htmlWebpackPlugins } = require('./mutli-page-config.js');
+
 const projectRoot = process.cwd(); //根目录重新设置
 const config = {
     entry: entry,
