@@ -21,9 +21,10 @@ const config = {
         rules: [
             {
                 test: /\.js|.jsx$/,
+                include:path.resolve('src'),
                 use: [
                     // 'happypack/loader'
-                   'babel-loader', 
+                   'babel-loader?cacheDirectory=true', 
                     // 'eslint-loader'
                      ]
             },
@@ -60,7 +61,7 @@ const config = {
                         limit: 2048,
                         name: path.posix.join('imgs/[name].[hash:8].[ext]'),
                         // 图片的hash跟css和js的hash概念不一样，图片的hash,md5由图片内容来决定，css/js只要有文件变化，整个项目都会发生变化。
-                    },
+                    },   
                 },
             },
             {
@@ -76,6 +77,14 @@ const config = {
             },
         ]
     },
+    resolve:{
+        // alias:{
+        //     'react':path.resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
+        //     "react-dom":path.resolve(__dirname,'./node_modules/react-dom/umd/react-dom.production.min.js')
+        // },
+        // extensions:['.js'],
+        // mainFields:['main']
+    },
     plugins: [
        new MiniCssExtractPlugin({
            filename:'[name]_[contenthash:8].css'
@@ -85,6 +94,12 @@ const config = {
            cssProcessor:require('cssnano')
        }),
         new CleanWebpackPlugin(),
+        new webpack.DllReferencePlugin({
+            manifest:require('../build/library/library.json')
+        }),
+          new webpack.DllReferencePlugin({
+            manifest:require('../build/library/plgLib.json')
+        }),
         // new Happypack({
         //     loaders:['babel-loader']
         // }),

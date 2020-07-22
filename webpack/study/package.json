@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config ./config/webpack.dev.js --open",
     "build": "webpack --config ./config/webpack.prod.js",
+    "build:dll": "webpack --config ./config/webpack.dll.js",
     "watch": "webpack --watch",
     "build:stats": "webpack --config ./config/webpack.prod.js --json > stats.json",
     "precommit": "lint-staged"
@@ -43,6 +44,7 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "glob": "^7.1.6",
     "happypack": "^5.0.1",
+    "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.1.1",
@@ -66,6 +68,8 @@
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   }
 }

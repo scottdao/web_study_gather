@@ -218,7 +218,63 @@ new Happypack({
         }
     }
     ```
- 
+- extrenals:分包插件，`html-webpack-externals-plugin`,`splitchunks`;
+    - dllPlugin分包: `dllReferencePlugin`对`manifest.json`引用;
+    思路：将react,react-dom等基础包提取出来，单独引入；
+```
+    const path = require('path');
+    const Webpack = require('webpack')
+    module.exports = {
+        entry:{
+            library:[
+                'react',
+                'react-dom',
+                "redux",
+                "react-redux"
+            ],
+            plgLib:[
+                'antd',
+                'lodash',
+                'jquery'
+            ]
+        },
+        output:{
+            filename:'[name]_[hash].dll.js',
+            path:path.join(__dirname, '../build/library'),
+            library:'[name]'
+        },
+        plugins:[
+            new Webpack.DllPlugin({
+                name:'[name]_[hash]',
+                path: path.join(__dirname, '../build/library/[name].json')
+            }),
+            //  new Webpack.DllPlugin({
+            //     name:'[name]_[hash]',
+            //     path: path.join(__dirname, '../build/library/[name].json')
+            // })
+        ]
+    }
+```
+- 在html阶段中单独引入；
+#### 缓存，减少二次构建速度
+```
+babel-loader?cacheDirectory=true //babel缓存
+// 开启压缩缓存：terserWebpackPlugin
+// 模块缓存：hard-source-webpack-plugin
+```
+#### 缩少构建目标
+- 目的:尽可能的少构建模块
+- babel-loader不解析node_modules 
+- 优化resolve.modules的配置
+- 优化resolve.mainFields配置
+- 优化resolve.extensions配置
+#### tree shaking
+- 删除无用css: PurifyCSS 遍历代码 识别无用的css class
+ 1. purgecss-webpack-plugin和mini-css-extract-plugin配合使用   
+- uncss: html需要通过jsdom 加载，所有的样式通过postCss解析，通过document.querySelector来识别html文件里面不存在的选择器
+#### 图片压缩
+- 基于node库的imagemin或者tinypng API
+使用:配置image-webpack-loader
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档
