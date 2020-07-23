@@ -275,6 +275,8 @@ babel-loader?cacheDirectory=true //babel缓存
 #### 图片压缩
 - 基于node库的imagemin或者tinypng API
 使用:配置image-webpack-loader
+#### 动态polyfill.io官方提供服务
+- polyfill servers：polyfill.min.js根据浏览器下发不同的proyfill.min.js的内容，来兼容不同浏览器对es6语法的兼容；
 - **mode**:用来指定当前构建环境:production/development/none,设置mode可以使用webpack内置函数，默认值为production
 
 - 参考文档

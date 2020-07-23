@@ -1,0 +1,22 @@
+{
+  "name": "scott",
+  "version": "1.0.0",
+  "description": "- git 忽略文件无法生效，一般因为本地缓存，得清除",
+  "main": ".cz-config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "cz-customizable": "^6.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
