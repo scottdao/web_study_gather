@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <!-- <input type="text" v-model="message"> -->
+    </div>
+    <!-- <div id="data">{{message}}</div> -->
+    <!-- <script src="./myapp/node_modules/vue/dist/vue.js"></script> -->
+    <script src="./index.js"></script>
+    <script>
+        
+        const app6 = new Vue({
+            el:"#app",
+            data:{
+                message:'页面加载于 ' + new Date().toLocaleString()
+            }
+        })
+       // app6.$mount("#data")
+        /**
+         * new Vue对象中el元素的优先级高于$mount中的元素
+         * ****/
+        // 1. vue.prototype.$mount 方法获取root元素并挂在到VUE类;
+        // 2. getOuterHTML 将获取到的root元素节点进行处理成string类型
+        // 3. compileToFunctions 将字符类型的root元素经过compile和generate编译生成处理ast语法树数据结构
+        // 4. parse方法阶段处理成ast语法树；
+        // 5. generate方法将ast语法树进行字符窜元素传render函数（通过with方法）通过_c方法去创建元素，
+       // console.log(app6)
+    </script>
+   
+</body>
+</html>
