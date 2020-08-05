@@ -12,3 +12,55 @@
   - localtion.hash，onhashchange监听hash值得变化 
 + history API
   -  localtion.history, onpopstate监听history的变化
+  -  
++ 组件
+  - vue实例
++ solt 插槽
+  - 普通插槽
+  - 作用域插槽
++ 计算属性与监听属性
+  - computed:数据变化时计算并处理逻辑，没变化时，不触发；提高性能。
+  - watch:监听数据的变化
++ 响应式更新：
+  - getter和setter方法，（watch监听，数据变化没有getter是无法监听到的）。
++ 生命周期
++ jsx与template
+  - template
+    1.  html模板语法扩展
+    2.  内置指令
+    3.  cssvue 
+    4.  灵活度低
+    5.  But 
+   - jsx
+    1. 灵活
+    2. vue逻辑使用jsx
+      ```
+      ...
+      <vNOde :myData="selfName" name='123'/>
+      ...
+      components:{
+        solt,
+        nodeB,
+        nodeA,
+        nodeC,
+        vNOde:{
+            functional: true,
+            render(h, cxt) {
+              console.log( cxt)
+              return <div>1111:{cxt.props.name}</div>
+            }
+        }
+      ```
++ 指令
+  - v-html:解析html
+  - v-show:视图显示
+  - v-if:判断句
+  - v-once:
+  - v-on：事件(@)
+  - v-for
+  - v-bind:属性(:)
+  - v-model:双向数据绑定
++ 高级特性
+  - provide:组件通信
+  - inject:接受数据
+  - 
