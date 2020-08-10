@@ -50,7 +50,7 @@
         // 通用发布-订阅
 
         var event = {
-            cacheListen:{},
+            cacheListen:[],
             listen:function(key, fn){
                 var cache = this.cacheListen[key];
                 if(!cache){
