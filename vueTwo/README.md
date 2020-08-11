@@ -63,4 +63,24 @@
 + 高级特性
   - provide:组件通信
   - inject:接受数据
-  - 
+
++ vuex数据状态管理
+  - state初始化数据
+  - getter
+  - actions异步接口请求
+  - mutations同步
+  ```
+  - action通过dispatch提交
+  - mutation通过commit提交
+  - getter与计算属性类似具有缓存
+  |
+  ```
++ vuex核心概念：
+  - State:this.$store.state.xx取值 - 提供响应式数据
+  - getter:this.$store.getter.xx取值 - 借助Vue的计算属性computed来实现缓存
+  - Mutation:this.$store.commit('xxx')赋值- 更改state
+  - Action:this.$store.dispatch('xxx')赋值- 触发mutation方法
+  - Module:Vue.set动态添加stated到响应式数据中
+  - new Vue({}) 响应式数据实现
++ ssr服务端渲染:
+  

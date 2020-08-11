@@ -1,6 +1,7 @@
 <template>
   <div id="solt">
-      solt插槽
+    solt插槽
+    <slot></slot>
   </div>
 </template>
 <script>
