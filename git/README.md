@@ -8,4 +8,4 @@
     2. xxxx --list
     优先级：local>global>system
 + 暂存区：git add 与 git commit
-+ 
++ 变更文件名:git mv file --> newFile
