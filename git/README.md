@@ -69,3 +69,11 @@
   - git clone 进行本地区备份：--bare 裸仓库
     1. `git clone --bare file:///e/study/git-study zhineng.git`
     2. 将备份的可以当作一个远当仓库
++ git 远程仓库创建
+  - git  remote add <url> 远程仓库
+  - git  remote rm  <name>  删除远程仓库
+  - git fetch <name>
+  - git pull <name>
+  - git push <name>
++ git 冲突解决；
++ git push -f 强制更新,慎用
