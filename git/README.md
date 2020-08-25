@@ -77,3 +77,11 @@
   - git push <name>
 + git 冲突解决；
 + git push -f 强制更新,慎用
++ merge方案（github）
+  - master与feature分支不可回退，不可以采用git push -f强制更新
+  - git merge <branch>：合并到主分支，会在主分支产生一个commit，将当前分支变更到主分支
+  - git merge --squash <branch>:合并主分支时，将当前分支commit形成一个变更集，合并到主分支，产生一个新的节点；【线性分支演变】
+  - rebase：将特性分支的变更集的commit，会在主分支产生三个commit变更集节点；【线性分支演变】
+  1. git merge 
+  2. git 
++ github issues功能
