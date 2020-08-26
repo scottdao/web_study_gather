@@ -7,20 +7,48 @@
 </head>
 <body>
     <div id="app">
-        <p>{{message}}</p>
-        <!-- <input type="text" v-model="message"> -->
+        <p>{{message}}</p>{{top}}
+        <input type="text"  onkeyup="onkeydownClick(this)">
+        {{b}}
+        <span id="x">
+            {{x}}
+        </span>
+        
     </div>
-    <!-- <div id="data">{{message}}</div> -->
-    <script src="./myapp/node_modules/vue/dist/vue.js"></script>
+    <!-- <script src="./myapp/node_modules/vue/dist/vue.js"></script> -->
     <script src="./index.js"></script>
     <script>
         
         const app6 = new Vue({
             el:"#app",
             data:{
-                message:'页面加载于 ' + new Date().toLocaleString()
+                message:'页面加载于 ' + new Date().toLocaleString(),
+                a:123,
+                top:123,
+                b:12331,
+                x:'我是谁'
             }
         })
+        function onkeydownClick(e){
+           // console.log(e.value)
+           app6.data.x = e.value
+           // console.log(app6)
+        }
+        
+Object.defineProperty(app6.data, 'x',{
+  get(){
+      return this.data.x
+  },
+  set(v){
+      document.getElementById('x').innerHTML = v
+  }
+})
+    
+        // let o = {a:123};
+        // with(o){
+            
+        //     // return 1122
+        // }
        // app6.$mount("#data")
         /**
          * new Vue对象中el元素的优先级高于$mount中的元素
