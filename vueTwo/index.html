@@ -8,7 +8,7 @@
 <body>
     <div id="app">
         <p>{{message}}</p>{{top}}
-        <input type="text"  onkeyup="onkeydownClick(this)">
+        <input type="text" v-model="x">
         {{b}}
         <span id="x">
             {{x}}
@@ -35,14 +35,7 @@
            // console.log(app6)
         }
         
-Object.defineProperty(app6.data, 'x',{
-  get(){
-      return this.data.x
-  },
-  set(v){
-      document.getElementById('x').innerHTML = v
-  }
-})
+
     
         // let o = {a:123};
         // with(o){
