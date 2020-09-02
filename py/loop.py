@@ -10,11 +10,12 @@
 #     else:
 #         print(item);
 
-list_three = ['l','dao','dy'];
-for item in list_three:
-    if item == 'dy':
-        print('find it');
-        break;
+list_three = ['l', 'dao', 'dy']
+for item in range(0, len(list_three)):
+    # print(list_three[item])
+    if list_three[item] == 'dy':
+        print('find it')
+        break
     else:
-        print('not found');
+        print('not found')
 
