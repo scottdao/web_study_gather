@@ -39,7 +39,12 @@
     1. 列表:`lit = [i*i for i in range(1, 11) if(i % 2) == 0 ]`;
     2. 字典：`dict1 = {i:0 for i in zodiac_name}`
   - 文件内建函数和方法
-    1. 
+    1.  open() 打开文件
+    2.  read() 输入
+    3.  readline() 输入一行
+    4.  seek() 文件内移动
+    5.  write() 输出
+    6.  close() 关闭
 + [**运算符**](./operator.py)
     - 算数运算符
     -  数学运算符：在python里没有自加自增自减；
