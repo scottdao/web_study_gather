@@ -2,3 +2,6 @@ node_modules
 ./largeNumber/node_modules
 ./largeNumber/dist
 package-lock.json
+py/.idea
+py/venv
+py/_pycache_
