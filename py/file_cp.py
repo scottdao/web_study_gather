@@ -1,13 +1,24 @@
-# 文件操作
+# # 文件操作
 file1 = open('files/name.txt', 'w')
-file1.write('ldy456456')
+file1.write('ldy456456;')
 file1.close()
-
-file3 = open('files/name.txt', 'a')
-file3.write('刘道云dsfdsf发放大使')
-file3.close()
 
 file2 = open('files/name.txt')
 f = file2.read()
 print(f)
 file2.close()
+file3 = open('files/name.txt', 'a')
+file3.writelines('\r1. 刘道云dsfdsf发放大使; \r2.fsf')
+file3.close()
+file4  = open('files/name.txt')
+file4_con_line = file4.readline()
+print(file4_con_line)
+# 文件操作
+# file5 = open('files/name.txt')
+# file5_con_lines = file5.readlines()
+# print(file5_con_lines)
+# file6 = open('files/name.txt')
+# tel = file6.tell()
+# print(tel)
+# file6.seek(5, 0)
+# print(file6)
