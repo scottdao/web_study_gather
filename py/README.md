@@ -39,7 +39,7 @@
     1. 列表:`lit = [i*i for i in range(1, 11) if(i % 2) == 0 ]`;
     2. 字典：`dict1 = {i:0 for i in zodiac_name}`
   - 文件内建函数和方法
-    1.  open() 打开文件
+    1.  open(name,encoding='GB18030') 打开文件
     2.  read() 输入
     3.  readline() 输入一行; readlines 多行
     4.  seek() 文件内移动
@@ -48,6 +48,14 @@
   - 异常与错误处理
     1. 异常：是在出现错去时正常控制流以外的动作
     2. 异常处理的流程:检测到错误，引发异常；对异常进行捕获
+    ```
+      try:
+       except Exception[,error]
+      catch{}
+    ```
+    3. 
+  - 函数
+    def
 + [**运算符**](./operator.py)
     - 算数运算符
     -  数学运算符：在python里没有自加自增自减；
