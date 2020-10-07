@@ -56,6 +56,15 @@
     3. 
   - 函数
     def
+    ```
+    from _functools import reduce
+    
+    a = reduce(lambda x, y: x + y, [2, 3, 4], 2)
+    print(a)
+    dicta = {'a':"aaaa", 'b':'bbbb'}
+    b = zip(dicta.values(),dicta.keys())
+    print(dict(b)) //value与key相互交换
+    ```
 + [**运算符**](./operator.py)
     - 算数运算符
     -  数学运算符：在python里没有自加自增自减；
@@ -78,9 +87,31 @@ b = 10%-3;
 + [高级特性](./seniorFunc.py)
     - 切片：字符串，数组获取值；`a = [1,2,3,5]; a[1:5]; a[:1]; a[-2:]`;
     - 迭代：
+    `迭代器：iter(it)调用 next(it)执行
+    list1 = [1,2,3]
+    it = iter(list1);`
+    `def frange(start, stop, step):
+        x=start
+        while x<stop:
+            yield x
+            x +=step
+    for i in frange(10,20,1):
+        print(i)`
     - 列表生成式：
     - 生成器：
     - 迭代器：
-
+    - lambda的用法
+    - 函数闭包
+    1. 闭包与javascript的闭包类似；
+    - 装饰器
+    1. 
+    - 模块
+    1. 模块是在代码量变得相当大之后，为了将需要重复使用的有组织的代码段放在一起，这部分代码附加到现有的程序中，成为导入
+    ```
+    import 模块名称
+    from 模块名称 import 方法名
+    ```
+    - 正则表达式
+        
 ### 参考文档
 - [python](https://www.python.org/)
