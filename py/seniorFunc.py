@@ -1,5 +1,5 @@
 # 高级特性
-#1. 切片
+# 1. 切片
 # list  = ['ldy', 1,35 ,6 ,7 ];
 # a = list[0:3]
 # b = list[:2]
@@ -13,19 +13,21 @@
 # print(''+'4')
 # 利用切片操作，实现一个trim()函数，去除字符串首尾的空格，注意不要调用str的strip()方法：
 # def trim(str):
-#     b = '';
+#     b = ''
 #     for i in str:
-#         if i !=' ':
-#             b+=i;
-#     return b;
+#         if i != ' ':
+#             b += i
+#     return b
+
+
 # print(trim(' dr'))
 # print(trim(' dr') == 'dr')
 # print(trim('dr ') == 'dr')
 # print(trim(' dr ') == 'dr')
-# print(trim('    ')  == '')
+# print(trim('    ') == '')
 
 # 迭代
-# 1.  
+# 1.
 # d = {'a':1,'b':2,'c':3,'f':4};
 # for key in d:
 #         print(key)
@@ -40,9 +42,11 @@
 #     print(x,y)s
 # from collections.abc import  Iterable,Iterator;
 
-def  findMinAndMaxValue(L):
+
+def findMinAndMaxValue(L):
     for item in L:
-         print(item)
+        print(item)
     return()
 
-findMinAndMaxValue([1,2,3,12,8,11,10,0])
+
+findMinAndMaxValue([1, 2, 3, 12, 8, 11, 10, 0])

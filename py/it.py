@@ -1,15 +1,15 @@
-#coding=GBK
-# µü´úÆ÷£ºiter(it)µ÷ÓÃ next(it)Ö´ÐÐ
+# coding=GBK
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iter(it)ï¿½ï¿½ï¿½ï¿½ next(it)Ö´ï¿½ï¿½
 # list1 = [1,2,3]
 # it = iter(list1);
 # print(next(it))
 
-# Éú³ÉÆ÷
-def frange(start, stop, step):
-    x=start
-    while x<stop:
-        yield x
-        x +=step
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# def frange(start, stop, step):
+#     x=start
+#     while x<stop:
+#         yield x
+#         x +=step
 
-for i in frange(10,20,1):
-    print(i)
+# for i in frange(10,20,1):
+#     print(i)
