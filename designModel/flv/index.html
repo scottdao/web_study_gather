@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    <script>
+        window.onload = function() {
+            window.viewportUnitsBuggyfill.init({
+                hacks: window.viewportUnitsBuggyfillHacks
+            });
+
+            // 验证输出
+            const winDPI = window.devicePixelRatio;
+            const uAgent = window.navigator.userAgent;
+            const screenHeight = window.screen.height;
+            const screenWidth = window.screen.width;
+            const winWidth = window.innerWidth;
+            const winHeight = window.innerHeight;
+
+            console.log(winDPI, "设备 DPI");
+            console.log(uAgent, "客户端");
+            console.log(screenWidth, "屏幕宽度");
+            console.log(screenHeight, "屏幕高度");
+            console.log(winWidth, "Windows Width");
+            console.log(winHeight, "Windows Height");
+        };
+    </script>
+    <script src="https://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.3.js" charset="utf-8"></script>
+    <div id="id_test_video" style="width:100%; height:auto;"></div>
+    <script>
+        // var player = new TcPlayer('id_test_video', {
+        //     "flv": 'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv', //请替换成实际可用的播放地址
+        //     // "m3u8_hd": "http://200002949.vod.myqcloud.com/200002949_b6ffc.f230.av.m3u8",
+        //     // "m3u8_sd": "http://200002949.vod.myqcloud.com/200002949_b6ffc.f220.av.m3u8",
+        //     "autoplay": true, //iOS 下 safari 浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+        //     "poster": "http://www.test.com/myimage.jpg",
+        // });
+
+
+        (function() {
+            function getParams(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return decodeURIComponent(r[2]);
+                }
+                return null;
+            }
+            var rtmp = getParams('rtmp'),
+                flv = getParams('flv') || 　'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv',
+                m3u8 = getParams('m3u8'),
+                mp4 = getParams('mp4'),
+                live = (getParams('live') == 'true' ? true : false),
+                coverpic = getParams('coverpic'),
+                width = getParams('width'),
+                height = getParams('height'),
+                volume = getParams('volume'),
+                flash = (getParams('flash') == 'true' ? true : false),
+                h5_flv = (getParams('h5_flv') == 'true' ? true : false),
+                autoplay = (getParams('autoplay') == 'true' ? true : false),
+                log = getParams('log');
+
+            /**
+             * 视频类型播放优先级
+             * mobile ：m3u8>mp4
+             * PC ：RTMP>flv>m3u8>mp4
+             */
+
+            var options = {
+                flv: 'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv',
+                h5_flv: true,
+                // mp4: '//1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f40.mp4',
+                // mp4_hd: '//1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f30.mp4',
+                // mp4_sd: '//1256993030.vod2.myqcloud.com/d520582dvodtransgzp1256993030/7732bd367447398157015849771/v.f20.mp4',
+                clarity: 'od',
+                clarityLabel: {
+                    od: '原画',
+                    hd: '高清',
+                    sd: '标清'
+                },
+                coverpic: coverpic,
+                autoplay: autoplay ? true : false,
+                live: live,
+                width: width || '480',
+                height: height || '320',
+                volume: volume || 0.5,
+                // flash: flash,
+                h5_flv: h5_flv,
+                listener: function(msg) {
+                    console.log(msg, 88888)
+                    if (!log) {
+                        return;
+                    }
+                    if (msg.type != 'timeupdate') {
+                        console.log(msg);
+                    }
+                    if (msg.type == 'load') {
+                        var _div = document.createElement('div');
+                        _div.className = 'marker';
+                        _div.innerText = '测试';
+                        document.querySelector('.vcp-player').appendChild(_div)
+                    }
+                }
+            };
+            var player = new TcPlayer('id_test_video', options);
+            window.tcplayer = player;
+        })();
+    </script>
+</body>
+
+</html>

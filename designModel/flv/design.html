@@ -49,56 +49,38 @@
     <script>
         const flvUrl = 'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv';
         const player = videojs('videoRef', {
-                techOrder: ['html5', 'flvjs'],
-                flvjs: {
-                    mediaDataSource: {
-                        isLive: false,
-                        cors: true,
-                        withCredentials: false,
-                    },
-                },
-                sources: [{
+            techOrder: ['html5', 'flvjs'],
+            flvjs: {
+                mediaDataSource: {
+                    isLive: false,
+                    cors: true,
+                    withCredentials: false,
+                }
+            },
+            sources: [{
+                src: flvUrl,
+                type: 'video/mp4'
+            }],
+            // controls: true,
+            // preload: "none"
+        }, function onPlayerReady() {
+            console.log('player ready')
+
+            player.on('error', (err) => {
+                console.log('first source load fail')
+
+                player.src({
                     src: flvUrl,
-                    type: 'video/mp4'
-                }],
-                // controls: true,
-                // preload: "none"
-            }, function onPlayerReady() {
-                console.log('player ready')
+                    type: 'video/x-flv'
+                });
 
-                player.on('error', (err) => {
-                    console.log('first source load fail')
-
-                    player.src({
-                        src: flvUrl,
-                        type: 'video/x-flv'
-                    });
-
-                    player.ready(function() {
-                        console.log('player ready')
-                        player.load();
-                        player.play();
-                    });
-                })
+                player.ready(function() {
+                    console.log('player ready')
+                    player.load();
+                    player.play();
+                });
             })
-            // if (flvjs.isSupported()) {
-            //     //new Promise(resolve => {
-            //     const videoRef = document.getElementById('videoRef');
-            //     const flvPlayer = flvjs.createPlayer({
-            //         type: 'flv',
-            //         "isLive": true,
-            //         url: 'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv'
-            //     });
-
-        //     flvPlayer.attachMediaElement(videoRef);
-        //     flvPlayer.load();
-        //     // flvPlayer.play();
-        //     document.getElementById('btn').onclick = function() {
-        //         // flvPlayer.muted = false;
-        //         flvPlayer.play();
-        //         // alert(flvjs, 123)
-        //     }
-        // }
+        })
     </script>
 </body>
 
