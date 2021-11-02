@@ -72,8 +72,10 @@
     - git remote rm paul 删除仓库
     -  git push -u origin master 采用强制推送
 --------------------------------------
-
-
+10. **采用ssh公私钥配置**
+   - 生成公钥文件： `ssh-keygen -t rsa`
+   - 复制公钥密文到git服务器进行管理: ` C:\xxx\xxx/.ssh/id_rsa`
+   - 登录git服务器账号：将密文进行添加托管，这样会更加安全可靠
 #### study乐园
 
 - [react/webpack/redux](./react-webpack-redux)
