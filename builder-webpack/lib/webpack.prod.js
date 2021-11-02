@@ -8,7 +8,7 @@ const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
 const smwp = new SpeedMeasureWebpackPlugin();
 // console.log(smwp)
 const prodConfig = smwp.wrap({
-  mode: 'production',
+  mode: 'none',
   plugins: [
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,

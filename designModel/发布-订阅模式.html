@@ -53,9 +53,6 @@
             cacheListen:[],
             listen:function(key, fn){
                 var cache = this.cacheListen[key];
-                if(!cache){
-                    this.cacheListen[key] = [];
-                }
                 this.cacheListen[key].push(fn);
             },
             trigger:function(){
@@ -84,7 +81,6 @@
                 }
             }
         }
-
         var installEvent = function(obj){ //安装事件
             for(var i in event){
                 obj[i] = event[i]

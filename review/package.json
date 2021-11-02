@@ -1,0 +1,11 @@
+{
+  "name": "review",
+  "version": "1.0.0",
+  "description": "- 发布订阅模式 - 观察者模式",
+  "main": "designModel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

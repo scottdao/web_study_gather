@@ -1,0 +1,15 @@
+{
+  "name": "webpacksourcecode",
+  "version": "1.0.0",
+  "description": "**webpack启动** - 安装：局部安装, node_modules/.bin下的找到webpack.cmd或者webpack.sh 脚本    ###  热更新原理（复习）  * webpack compile:将js编译成Bundle  * HMR server: 将热更新的文件注入到 HMR runtime  * HMR runtime: 会注入到浏览器，更新文件变化  * builder server: 把文件提供给浏览器访问  * 启动阶段：webpack compiler ---- bundler server  --注入到--- HRM runtime（builder.js）  * 文件更新阶段：webpack compiler ---- HMR server ---更新到模块代码--- HMR runtime （builder.js）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tapable": "^2.2.1"
+  }
+}

@@ -47,19 +47,20 @@
         <button id="btn" style="width: 50px;height: 50px;">开始</button>
     </div>
     <script>
-        const flvUrl = 'http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv';
+        // const flvUrl = 'http://10.45.206.94:8050/cam/realmonitor/33078399041311041171?subtype=0&streamType=0&token=1627868849_acf688c814248cbe5233e284db65f110abdf3b56&mediatype=HLS.m3u8';
+       const flvUrl = 'http://10.45.206.94:8050/cam/realmonitor/33078399041320040082?subtype=0&streamType=0&remoteIP=&token=1627865444_79645d4d150abb58db678234f8738c9656137c6a&mediatype=FLV'
         const player = videojs('videoRef', {
             techOrder: ['html5', 'flvjs'],
             flvjs: {
                 mediaDataSource: {
-                    isLive: false,
+                    isLive: true,
                     cors: true,
                     withCredentials: false,
                 }
             },
             sources: [{
                 src: flvUrl,
-                type: 'video/mp4'
+                type: 'flv'
             }],
             // controls: true,
             // preload: "none"

@@ -15,7 +15,8 @@ const config = {
         path: path.resolve(projectRoot, 'dist'),
         filename:process.env === 'production' ? '[name]_[chunkhash].js':'[name]_[hash].js'
     },
-    mode:"production",
+    // mode:"production",
+    mode:"none",
     module: {
         rules: [
             {
@@ -73,7 +74,6 @@ const config = {
                         name: '[name]_[hash:8][ext]',
                     },
                 },
-               
             }
         ]
     },
