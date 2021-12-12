@@ -21,7 +21,7 @@
 3. **版本回退**
 - git reset --hard commit_id
 - git push -f origin 分支
-
+- git reset HEAD^（撤销刚刚提交的commit）  或者 git reset * （*撤销暂存*）
 4. **删除远程分支**
 - git branch -r -d origin/分支名；
 - git push origin :分支名
