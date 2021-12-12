@@ -9,12 +9,12 @@
  * 启动阶段：webpack compiler ---- bundler server  --注入到--- HRM runtime（builder.js）
  * 文件更新阶段：webpack compiler ---- HMR server ---更新到模块代码--- HMR runtime （builder.js）
 
-
 ###  文件指纹（复习）
  * 文件指纹
  * chunkHash: 一般用于js，只更新变动过的js文件
  * hash: 文件更新，全部更新
  * contentHash：更新变动过模块内容，不变的则不更新，一般用于css文件
+
 
 ### tree shaking(复习)
 * 必须是es6语法，commonjs不被支持；
@@ -58,9 +58,20 @@
 * parse（arcon进行优化）
 - webpack文件生成阶段
 * 
-- webpack5
-- bundle和bundless
-- vite构建原理
+### 手写简易的webpack
+- babylon:`babylon.parser`获取ast语法树；
+- babel-traverse:
+###  webpack5的优化
+1. tree-shaking嵌套优化
+2. 支持生成es6代码
+3. 模块联邦
+    - 一个javascript的应用在运行过程中动态加载另一个应用的代码，并支持共享依赖（CDN）.不再需要本地安装npm包
+    - `ModuleFederationPlugin`插件将多个应用结合起来
+    - ``
+### bundle和bundless
+- bundle:只请求一个bundle.js文件
+- bundless：请求多个文件；冷启动速度快，HMR更新效率高；文件缓存更优；文件体积有大多，变化不大；
+### vite构建原理
 ```
 
 ```
